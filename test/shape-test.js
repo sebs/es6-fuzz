@@ -6,10 +6,10 @@ describe('Shape', function() {
     assert.equal(typeof Shape, 'function');
   });
   it('can create a new instance', function() {
-    var grade = new Shape(0, 1, 2, 3);
-    assert.equal(grade.x0, 0);
-    assert.equal(grade.x1, 1);
-    assert.equal(grade.x2, 2);
-    assert.equal(grade.x3, 3);
+    var shape = new Shape(0, 1, 2, 3);
+    assert.equal(shape.x0, 0);
+    assert.equal(shape.x1, 1);
+    assert.equal(shape.x2, 2);
+    assert.equal(shape.x3, 3);
   });
 });

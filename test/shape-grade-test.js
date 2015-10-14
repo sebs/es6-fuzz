@@ -10,9 +10,9 @@ describe('Grade', function() {
     assert.equal(grade.x0, 0);
     assert.equal(grade.x1, 1);
   });
-  it('evaluates', function() {
+  it('fuzzify', function() {
     var grade = new Grade(0,10);
-    var res = grade.evaluate(5);
+    var res = grade.fuzzify(5);
     assert.equal(res, 0.5);
   });
 });
