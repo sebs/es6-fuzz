@@ -1,0 +1,21 @@
+{
+  "name": "es6-fuzz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --compilers js:mocha-traceur -w",
+    "jscs": "./node_modules/jscs/bin/jscs --esnext test/* lib/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "jscs": "^2.3.0",
+    "jsdoc": "^3.3.3",
+    "mocha-traceur": "^2.1.0"
+  },
+  "dependencies": {
+    "mocha": "^2.3.3"
+  }
+}
