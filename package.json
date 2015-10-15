@@ -2,11 +2,11 @@
   "name": "es6-fuzz",
   "description": "fuzzy logic with and for es6",
   "version": "1.3.2",
-  "main": "lib/logic.js",
+  "main": "index.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --compilers js:mocha-traceur",
-    "jscs": "./node_modules/jscs/bin/jscs -c --esnext test/* lib/*",
+    "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/shapes/* test/*.js",
     "docs": "./node_modules/documentation/bin/documentation.js lib/logic.js lib/shapes/* -f html -o out"
   },
   "keywords": [
@@ -19,10 +19,14 @@
   "author": "Sebastian Schürmann",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^11.2.0",
+    "documentation": "^2.1.0-alpha2",
+    "es6ify": "^1.6.0",
     "eslint": "^1.6.0",
     "jscs": "^2.3.0",
     "jsdoc": "^3.3.3",
+    "mocha": "^2.3.3",
     "mocha-traceur": "^2.1.0",
-    "mocha": "^2.3.3"
+    "traceur": "0.0.92"
   }
 }
