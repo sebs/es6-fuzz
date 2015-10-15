@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/sebs/es6-fuzz.png)](https://travis-ci.org/sebs/es6-fuzz)
 
 
+
 ## Example
 
 ```javascript
@@ -13,6 +14,10 @@ var res = logic
   .and('enragedAttack', new Grade(90, 100))
   .defuzzify(99);
 ```
+
+## Example 2
+[![Example](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png)](https://travis-ci.org/sebs/es6-fuzz)}
+
 
 ## development
 
