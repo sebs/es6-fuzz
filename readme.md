@@ -1,5 +1,7 @@
 # fuzzylogic for es6
 
+[![Build Status](https://travis-ci.org/sebs/es6-fuzz.png)](https://travis-ci.org/sebs/es6-fuzz)
+
 ```javascript
 var logic = new Logic();
 var res = logic
