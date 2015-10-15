@@ -13,7 +13,8 @@
     "fuzzylogic",
     "fuzzy",
     "rule engine",
-    "javascript"
+    "javascript",
+    "es6"
   ],
   "author": "Sebastian Schürmann",
   "license": "ISC",
