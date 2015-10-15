@@ -5,7 +5,7 @@
   "main": "lib/logic.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --compilers js:mocha-traceur -w",
+    "test": "./node_modules/mocha/bin/mocha --compilers js:mocha-traceur",
     "jscs": "./node_modules/jscs/bin/jscs --esnext test/* lib/*",
     "docs": "./node_modules/documentation/bin/documentation.js lib/logic.js lib/shapes/* -f html -o out"
   },
