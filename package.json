@@ -6,7 +6,7 @@
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --compilers js:mocha-traceur && npm run jscs",
-    "jscs": "./node_modules/jscs/bin/jscs --esnext test/* lib/*",
+    "jscs": "./node_modules/jscs/bin/jscs -c --esnext test/* lib/*",
     "docs": "./node_modules/documentation/bin/documentation.js lib/logic.js lib/shapes/* -f html -o out"
   },
   "keywords": [
