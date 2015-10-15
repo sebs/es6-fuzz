@@ -12,12 +12,12 @@ describe('Trapezoid', function() {
     assert.equal(trapez.x2, 20);
   });
   it('fuzzify', function() {
-    var trapez = new Trapezoid(20, 30, 90)
+    var trapez = new Trapezoid(20, 30, 90);
     var res = trapez.fuzzify(25);
     assert.equal(res, 0.5);
   });
   it('avoid NaN if going over max', function() {
-    var trapez = new Trapezoid(20, 30, 90, 100)
+    var trapez = new Trapezoid(20, 30, 90, 100);
     var res = trapez.fuzzify(99);
     assert.equal(res, 0.09999999999999964);
   });

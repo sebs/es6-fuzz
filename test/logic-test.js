@@ -26,7 +26,7 @@ describe('logic', () => {
       var noAttack = new Triangle(0, 20, 40);
       var normalAttack = new Trapezoid(20, 30, 90, 100);
       var enragedAttack = new Grade(90, 100);
-      var logic = new Logic()
+      var logic = new Logic();
       var res = logic
         .init('noAttack', new Triangle(0, 20, 40))
         .and('normalAttack', new Trapezoid(20, 30,90, 100))
