@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.4.1
+
 commit 2688a716f81d7821a24bdcb5f3b415494cfbca82
 Author: sebs <sebs@2xs.org>
 Date:   Fri Oct 16 18:54:28 2015 +0200

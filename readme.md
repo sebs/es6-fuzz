@@ -25,6 +25,21 @@ var res = logic
   .and('cold', new Trapezoid(8, 12, 18, 20)) // until 12-18 around warm
   .and('hot', new Trapezoid(12, 20, 30, 100)) // all up from 30 surely  hot
   .defuzzify(99);
+
+  console.log(res);
+  { fuzzified: 0.9000000000000004,
+  defuzzified: 'enragedAttack',
+  rules:
+   [ { output: 'noAttack', shape: {}, type: 'init', fuzzy: 0 },
+     { output: 'normalAttack',
+       shape: {},
+       type: 'and',
+       fuzzy: 0.09999999999999964 },
+     { output: 'enragedAttack',
+       shape: {},
+       type: 'and',
+       fuzzy: 0.9000000000000004 } ],
+  toString: [Function] }
 ```
 
 ## development
