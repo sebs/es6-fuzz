@@ -21,6 +21,19 @@ describe('logic', () => {
       assert.equal(typeof logic.not, 'function');
     });
   });
+
+  describe('Not!', () => {
+    it('gets not', function() {
+      var rageRange = new Triangle(0, 20, 40);
+      var logic = new Logic();
+      var res = logic
+        .init('rage', rageRange)
+        .not('no rage', rageRange)
+        .defuzzify(20);
+      assert.equal(res, 'no rage');
+    });
+  });
+
   describe('integration test', () => {
     it('can do a basic attack rage calculation', () => {
       var noAttack = new Triangle(0, 20, 40);
