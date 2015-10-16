@@ -1,9 +1,14 @@
-## `Grade`
+## `constructor`
 
 
 
 
 
+### Examples
+
+```js
+new Shape(1,2,3,4);
+```
 
 
 ## `Grade`
@@ -30,6 +35,38 @@ Returns `Logic` Logic
 ## `Logic`
 
 Logic
+
+
+
+
+
+## `ReverseGrade`
+
+
+
+
+
+
+
+## `Shape`
+
+
+
+
+
+
+
+## `Trapezoid`
+
+
+
+
+
+
+
+## `Triangle`
+
+
 
 
 
