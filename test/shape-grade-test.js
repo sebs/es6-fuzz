@@ -1,4 +1,4 @@
-import { Grade } from '../lib/shapes/grade';
+import { Grade } from '../lib/curve/grade';
 import assert from 'assert';
 
 describe('Grade', function() {

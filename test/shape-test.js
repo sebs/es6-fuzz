@@ -1,4 +1,4 @@
-import { Shape } from '../lib/shapes/shape';
+import { Shape } from '../lib/curve/shape';
 import assert from 'assert';
 
 describe('Shape', function() {

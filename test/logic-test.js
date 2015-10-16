@@ -1,7 +1,7 @@
 import { Logic } from '../lib/logic';
-import { Triangle } from '../lib/shapes/triangle';
-import { Trapezoid } from '../lib/shapes/trapezoid';
-import { Grade } from '../lib/shapes/grade';
+import { Triangle } from '../lib/curve/triangle';
+import { Trapezoid } from '../lib/curve/trapezoid';
+import { Grade } from '../lib/curve/grade';
 
 import assert from 'assert';
 

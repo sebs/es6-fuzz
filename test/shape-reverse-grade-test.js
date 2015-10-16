@@ -1,4 +1,4 @@
-import { ReverseGrade } from '../lib/shapes/reverse-grade';
+import { ReverseGrade } from '../lib/curve/reverse-grade';
 import assert from 'assert';
 
 describe('ReverseGrade', function() {

@@ -1,4 +1,4 @@
-import { Triangle } from '../lib/shapes/triangle';
+import { Triangle } from '../lib/curve/triangle';
 import assert from 'assert';
 describe('Triangle', function() {
   it('is a function', function() {

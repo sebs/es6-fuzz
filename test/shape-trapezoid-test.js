@@ -1,4 +1,4 @@
-import { Trapezoid } from '../lib/shapes/trapezoid';
+import { Trapezoid } from '../lib/curve/trapezoid';
 import assert from 'assert';
 
 describe('Trapezoid', function() {
