@@ -19,3 +19,32 @@ Author: sebs <sebs@2xs.org>
 Date:   Thu Oct 15 14:31:16 2015 +0200
 
     release
+commit c7b6fa3f89e85af4a7936fc3f01ef6987cf8bcf9
+Author: sebs <sebs@2xs.org>
+Date:   Fri Oct 16 20:07:19 2015 +0200
+
+    improved docs
+
+commit 52ca086c8be8af2a65ad73511512c693dcf921ea
+Author: sebs <sebs@2xs.org>
+Date:   Fri Oct 16 19:59:10 2015 +0200
+
+    more docs
+
+commit 75bcc7beeae405c70b1d5662a415407621cf2029
+Author: sebs <sebs@2xs.org>
+Date:   Fri Oct 16 19:55:10 2015 +0200
+
+     A test for NOT!, a dist file
+
+commit c48de355a8caeb82d985a9479ad492f86b083d0b
+Author: sebs <sebs@2xs.org>
+Date:   Fri Oct 16 19:25:25 2015 +0200
+
+    renamed shape to curve
+
+commit b0865ff67fa2d824d0dc11ee7e8d44974d09f715
+Author: sebs <sebs@2xs.org>
+Date:   Fri Oct 16 19:06:09 2015 +0200
+
+    more docs
