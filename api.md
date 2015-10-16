@@ -1,19 +1,14 @@
-## `constructor`
+## `Grade`
 
 
 
 
 
-### Examples
-
-```js
-new Shape(1,2,3,4);
-```
 
 
 ## `Grade`
 
-Grade Type
+
 
 
 
@@ -35,14 +30,6 @@ Returns `Logic` Logic
 ## `Logic`
 
 Logic
-
-
-
-
-
-## `Shape`
-
-Shape
 
 
 
