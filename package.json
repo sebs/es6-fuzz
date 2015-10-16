@@ -6,6 +6,7 @@
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
     "env": "env",
+    "changelog": "git log `git describe --tags --abbrev=0`..HEAD",
     "test": "./node_modules/mocha/bin/mocha --compilers js:mocha-traceur",
     "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/shapes/* test/*.js",
     "docs": "./node_modules/documentation/bin/documentation.js lib/logic.js lib/shapes/* -f html -o out",
