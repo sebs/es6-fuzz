@@ -1,0 +1,27 @@
+{
+  "name": "es6-fuzz",
+  "version": "1.5.0",
+  "homepage": "https://github.com/sebs/es6-fuzz",
+  "authors": [
+    "sebs <sebs@2xs.org>"
+  ],
+  "description": "Fuzzy logic in Javascript with focus on a simple API. Written in es6, compiled to es5",
+  "main": "dist/es6-fuzz-latest.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "fuzzylogic",
+    "fuzzy",
+    "rule",
+    "engine"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
