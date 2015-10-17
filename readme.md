@@ -2,7 +2,21 @@
 
 [![Build Status](https://travis-ci.org/sebs/es6-fuzz.png)](https://travis-ci.org/sebs/es6-fuzz)
 
+## Install and Usage
 
+es6-fuzz is available as a NPM package.
+
+```
+npm install es6-fuzz
+```
+
+bower
+
+Otherwise you can use bower for the browser use case. There is a browser ready export at [/dist](/dist)
+
+```
+bower install es6-fuzz
+```
 
 ## Example
 
@@ -16,7 +30,7 @@ var res = logic
 ```
 
 ## Example 2
-[![Example](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png)](https://travis-ci.org/sebs/es6-fuzz)}
+[!(https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png)](https://travis-ci.org/sebs/es6-fuzz)}
 
 ```javascript
 var logic = new Logic();
