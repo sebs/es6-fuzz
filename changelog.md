@@ -48,3 +48,6 @@ Author: sebs <sebs@2xs.org>
 Date:   Fri Oct 16 19:06:09 2015 +0200
 
     more docs
+
+# 1.6.0
+
