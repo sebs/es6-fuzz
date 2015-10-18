@@ -58,11 +58,31 @@ var res = logic
 
 ## development
 
-* Run tests: npm test
-* Rund a build: node es6ify.js
-* jscs: npm run jscs
-* doc generator: npm run docs
-* pre-release: npm run pre-release
+**Tests** use mocha and a plugin for traceur
+
+```
+npm test
+```
+
+the commando resolves to
+
+```
+./node_modules/mocha/bin/mocha --compilers js:mocha-traceur
+```
+
+You **transpile to es5** with es6ify.js. The commando builds a *latest and a version number based file in dist. This is your oldschool es5 coode if you want it. Its more the browser use case.
+
+```
+node es6ify
+```
+
+You might want to do a **checkstyle** and use jscs, which seems to be fine with es6 :)
+
+```
+npm run jscs
+```
+
+* docs: npm run docs, npm run docs:site
 
 # Stuff
 * http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817
