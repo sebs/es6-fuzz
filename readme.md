@@ -12,9 +12,6 @@
     <img src="https://img.shields.io/npm/l/s6-fuzz.svg"
          alt="license">
   </a>
-  <a href="http://codecov.io/github/sebs/es6-fuzz?branch=master">
-    <img src="http://codecov.io/github/sebs/es6-fuzz/coverage.svg?branch=master" alt="Coverage via Codecov" />
-  </a>
 </p>
 
 ## Install and Usage
