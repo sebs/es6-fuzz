@@ -47,7 +47,10 @@ var res = logic
 ```
 
 ## Example 2
-[!(https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png)](https://travis-ci.org/sebs/es6-fuzz)}
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png" />
+
+
 
 ```javascript
 var logic = new Logic();
