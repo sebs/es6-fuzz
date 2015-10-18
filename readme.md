@@ -1,4 +1,21 @@
 # fuzzylogic for es6
+<p align="center">
+  <a href="https://travis-ci.org/sebs/es6-fuzz">
+    <img src="http://img.shields.io/travis/sebs/es6-fuzz.svg"
+         alt="build status">
+  </a>
+  <a href="https://npmjs.org/package/es6-fuzz">
+    <img src="https://img.shields.io/npm/v/es6-fuzz.svg"
+         alt="npm version">
+  </a>
+  <a href="https://github.com/sebs/es6-fuzz/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/npm/l/s6-fuzz.svg"
+         alt="license">
+  </a>
+  <a href="http://codecov.io/github/sebs/es6-fuzz?branch=master">
+    <img src="http://codecov.io/github/sebs/es6-fuzz/coverage.svg?branch=master" alt="Coverage via Codecov" />
+  </a>
+</p>
 
 [![Build Status](https://travis-ci.org/sebs/es6-fuzz.png)](https://travis-ci.org/sebs/es6-fuzz)
 
