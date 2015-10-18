@@ -8,6 +8,11 @@
     <img src="https://img.shields.io/npm/v/es6-fuzz.svg"
          alt="npm version">
   </a>
+
+  <a href="https://bower.org/package/es6-fuzz">
+    <img src="https://img.shields.io/bower/v/es6-fuzz.svg"
+         alt="npm version">
+  </a>
   <a href="https://github.com/sebs/es6-fuzz/blob/master/LICENSE.md">
     <img src="https://img.shields.io/npm/l/s6-fuzz.svg"
          alt="license">
