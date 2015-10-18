@@ -17,8 +17,6 @@
   </a>
 </p>
 
-[![Build Status](https://travis-ci.org/sebs/es6-fuzz.png)](https://travis-ci.org/sebs/es6-fuzz)
-
 ## Install and Usage
 
 es6-fuzz is available as a NPM package.
