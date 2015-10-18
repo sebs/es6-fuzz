@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Es6-fuzz by sebs</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/sebs/es6-fuzz">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Es6-fuzz</h1>
+            <h2>fuzzylogic with focus on usability for javascript es6</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/sebs/es6-fuzz/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/sebs/es6-fuzz/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="fuzzylogic-for-es6" class="anchor" href="#fuzzylogic-for-es6" aria-hidden="true"><span class="octicon octicon-link"></span></a>fuzzylogic for es6</h1>
+
+<p align="center">
+  <a href="https://travis-ci.org/sebs/es6-fuzz">
+    <img src="http://img.shields.io/travis/sebs/es6-fuzz.svg" alt="build status">
+  </a>
+  <a href="https://npmjs.org/package/es6-fuzz">
+    <img src="https://img.shields.io/npm/v/es6-fuzz.svg" alt="npm version">
+  </a>
+
+  <a href="https://bower.org/package/es6-fuzz">
+    <img src="https://img.shields.io/bower/v/es6-fuzz.svg" alt="npm version">
+  </a>
+  <a href="https://github.com/sebs/es6-fuzz/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/npm/l/s6-fuzz.svg" alt="license">
+  </a>
+</p>
+
+<h2>
+<a id="install-and-usage" class="anchor" href="#install-and-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install and Usage</h2>
+
+<p>es6-fuzz is available as a NPM package.</p>
+
+<pre><code>npm install es6-fuzz
+</code></pre>
+
+<p>bower</p>
+
+<p>Otherwise you can use bower for the browser use case. There is a browser ready export at <a href="/dist">/dist</a></p>
+
+<pre><code>bower install es6-fuzz
+</code></pre>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> logic <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Logic</span>();
+<span class="pl-k">var</span> res <span class="pl-k">=</span> logic
+  .init(<span class="pl-s"><span class="pl-pds">'</span>noAttack<span class="pl-pds">'</span></span>, <span class="pl-k">new</span> <span class="pl-en">Triangle</span>(<span class="pl-c1">0</span>, <span class="pl-c1">20</span>, <span class="pl-c1">40</span>))
+  .and(<span class="pl-s"><span class="pl-pds">'</span>normalAttack<span class="pl-pds">'</span></span>, <span class="pl-k">new</span> <span class="pl-en">Trapezoid</span>(<span class="pl-c1">20</span>, <span class="pl-c1">30</span>, <span class="pl-c1">90</span>, <span class="pl-c1">100</span>))
+  .and(<span class="pl-s"><span class="pl-pds">'</span>enragedAttack<span class="pl-pds">'</span></span>, <span class="pl-k">new</span> <span class="pl-en">Grade</span>(<span class="pl-c1">90</span>, <span class="pl-c1">100</span>))
+  .defuzzify(<span class="pl-c1">99</span>);</pre></div>
+
+<h2>
+<a id="example-2" class="anchor" href="#example-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example 2</h2>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png"></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> logic <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Logic</span>();
+<span class="pl-k">var</span> res <span class="pl-k">=</span> logic
+  .init(<span class="pl-s"><span class="pl-pds">'</span>verycold<span class="pl-pds">'</span></span>, <span class="pl-k">new</span> <span class="pl-en">Triangle</span>(<span class="pl-k">new</span> <span class="pl-en">Trapezoid</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">8</span>, <span class="pl-c1">12</span>))  <span class="pl-c">// until 10 degrees very cold</span>
+  .and(<span class="pl-s"><span class="pl-pds">'</span>cold<span class="pl-pds">'</span></span>, <span class="pl-k">new</span> <span class="pl-en">Trapezoid</span>(<span class="pl-c1">8</span>, <span class="pl-c1">12</span>, <span class="pl-c1">18</span>, <span class="pl-c1">20</span>)) <span class="pl-c">// until 12-18 around warm</span>
+  .and(<span class="pl-s"><span class="pl-pds">'</span>hot<span class="pl-pds">'</span></span>, <span class="pl-k">new</span> <span class="pl-en">Trapezoid</span>(<span class="pl-c1">12</span>, <span class="pl-c1">20</span>, <span class="pl-c1">30</span>, <span class="pl-c1">100</span>)) <span class="pl-c">// all up from 30 surely  hot</span>
+  .defuzzify(<span class="pl-c1">99</span>);
+
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(res);
+  { fuzzified<span class="pl-k">:</span> <span class="pl-c1">0.9000000000000004</span>,
+  defuzzified<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>enragedAttack<span class="pl-pds">'</span></span>,
+  rules<span class="pl-k">:</span>
+   [ { output<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>noAttack<span class="pl-pds">'</span></span>, shape<span class="pl-k">:</span> {}, type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>init<span class="pl-pds">'</span></span>, fuzzy<span class="pl-k">:</span> <span class="pl-c1">0</span> },
+     { output<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>normalAttack<span class="pl-pds">'</span></span>,
+       shape<span class="pl-k">:</span> {},
+       type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>and<span class="pl-pds">'</span></span>,
+       fuzzy<span class="pl-k">:</span> <span class="pl-c1">0.09999999999999964</span> },
+     { output<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>enragedAttack<span class="pl-pds">'</span></span>,
+       shape<span class="pl-k">:</span> {},
+       type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>and<span class="pl-pds">'</span></span>,
+       fuzzy<span class="pl-k">:</span> <span class="pl-c1">0.9000000000000004</span> } ],
+  toString<span class="pl-k">:</span> [<span class="pl-c1">Function</span>] }</pre></div>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>development</h2>
+
+<p><strong>Tests</strong> use mocha and a plugin for traceur</p>
+
+<pre><code>npm test
+</code></pre>
+
+<p>the commando resolves to</p>
+
+<pre><code>./node_modules/mocha/bin/mocha --compilers js:mocha-traceur
+</code></pre>
+
+<p>You <strong>transpile to es5</strong> with es6ify.js. The commando builds a *latest and a version number based file in dist. This is your oldschool es5 coode if you want it. Its more the browser use case.</p>
+
+<pre><code>node es6ify
+</code></pre>
+
+<p>You might want to do a <strong>checkstyle</strong> and use jscs, which seems to be fine with es6 :)</p>
+
+<pre><code>npm run jscs
+</code></pre>
+
+<ul>
+<li>docs: npm run docs, npm run docs:site</li>
+</ul>
+
+<h1>
+<a id="stuff" class="anchor" href="#stuff" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stuff</h1>
+
+<ul>
+<li><a href="http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817">http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817</a></li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/sebs">sebs</a> can be found on <a href="https://github.com/sebs/es6-fuzz">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
