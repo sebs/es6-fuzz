@@ -98,3 +98,5 @@ Author: sebs <sebs@2xs.org>
 Date:   Sat Oct 17 11:48:07 2015 +0200
 
     v1.7.0
+
+## 1.9.0
