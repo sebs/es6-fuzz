@@ -22,6 +22,21 @@ describe('logic', () => {
     });
   });
 
+
+  describe('behaves like a number', function() {
+    var noAttack = new Triangle(0, 20, 40);
+    var normalAttack = new Trapezoid(20, 30, 90, 100);
+    var enragedAttack = new Grade(90, 100);
+    var logic = new Logic();
+    var res = logic
+      .init('noAttack', new Triangle(0, 20, 40))
+      .and('normalAttack', new Trapezoid(20, 30,90, 100))
+      .and('enragedAttack', new Grade(90, 100))
+      .defuzzify(99);
+    var res2 = 0 + res + res;
+    assert.equal(res2, 1.8000000000000007);
+  });
+
   describe('Not!', () => {
     it('gets not', function() {
       var rageRange = new Triangle(0, 20, 40);
@@ -30,7 +45,7 @@ describe('logic', () => {
         .init('rage', rageRange)
         .not('no rage', rageRange)
         .defuzzify(20);
-      assert.equal(res, 'no rage');
+      assert.equal(res.toString(), 'no rage');
     });
   });
 
@@ -45,7 +60,7 @@ describe('logic', () => {
         .and('normalAttack', new Trapezoid(20, 30,90, 100))
         .and('enragedAttack', new Grade(90, 100))
         .defuzzify(99);
-      assert.equal(res, 'enragedAttack');
+      assert.equal(res.toString(), 'enragedAttack');
     });
   });
 });
