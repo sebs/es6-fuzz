@@ -102,3 +102,4 @@ npm run jscs
 
 # Stuff
 * http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817
+* http://computing.dcu.ie/~humphrys/Notes/Neural/sigmoid.html

@@ -23,7 +23,6 @@ describe('Sigmoid', function() {
     assert.equal(res, 0.5);
   });
 
-
   describe('slope', function() {
     it('slope makes actually a difference', function() {
       const fvalue = 10;
