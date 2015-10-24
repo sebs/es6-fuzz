@@ -7,5 +7,7 @@ describe('Constant', function() {
   });
   it('can create a new instance', function() {
     var shape = new Constant(1);
+    var res = shape.fuzzify(5);
+    assert.equal(res, 1);
   });
 });
