@@ -100,3 +100,28 @@ Date:   Sat Oct 17 11:48:07 2015 +0200
     v1.7.0
 
 ## 1.9.0
+
+## 2.0.0
+commit 4ece7c6b3568d9b912b61a1fa4cf58b06996b141
+Author: sebs <sebs@2xs.org>
+Date:   Sat Oct 24 22:22:17 2015 +0200
+
+    more tests
+
+commit 1d6670c36de0eae694f73c28d857d50879a20ea5
+Author: sebs <sebs@2xs.org>
+Date:   Sat Oct 24 21:29:01 2015 +0200
+
+    A sigmoid and things ;)
+
+commit c2c74fdd0716e2a0e00dcce88cda6c1d9cfb0dfb
+Author: sebs <sebs@2xs.org>
+Date:   Sat Oct 24 20:12:36 2015 +0200
+
+    added Contant type
+
+commit d083f4a99a1eb6f8c11e0d1d594889c9d97d8c79
+Author: sebs <sebs@2xs.org>
+Date:   Sat Oct 24 19:50:27 2015 +0200
+
+    removed api docs: need good and simple es6 api docs solution supporting classes
