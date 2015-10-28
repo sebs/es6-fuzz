@@ -21,7 +21,7 @@
   "author": "Sebastian Schürmann",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^11.2.0",
+    "browserify": "^12.0.0",
     "documentation": "^2.1.0-alpha2",
     "es6ify": "^1.6.0",
     "eslint": "^1.6.0",
