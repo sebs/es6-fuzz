@@ -29,6 +29,6 @@
     "jsdoc": "^3.3.3",
     "mocha": "^2.3.3",
     "mocha-traceur": "^2.1.0",
-    "traceur": "0.0.93"
+    "traceur": "0.0.106"
   }
 }
