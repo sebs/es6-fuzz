@@ -125,3 +125,14 @@ Author: sebs <sebs@2xs.org>
 Date:   Sat Oct 24 19:50:27 2015 +0200
 
     removed api docs: need good and simple es6 api docs solution supporting classes
+commit e52c6c5398a1c259310185edb482a535f0fc8bf3
+Author: Sebastian Schürmann <sebs@2xs.org>
+Date:   Sun Aug 14 12:16:44 2016 +0200
+
+    Changelog automated
+
+commit 37d8a87b49531081d82620d95fdd3c7d822fbf06
+Author: Sebastian Schürmann <sebs@2xs.org>
+Date:   Sun Aug 14 12:14:41 2016 +0200
+
+    Added pre and post version builds
