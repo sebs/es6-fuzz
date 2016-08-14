@@ -9,7 +9,9 @@
     "changelog": "git log `git describe --tags --abbrev=0`..HEAD >> changelog.md",
     "test": "./node_modules/mocha/bin/mocha -r blanket --compilers js:mocha-traceur",
     "test:watch": "npm test -- -w",
-    "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/curve/* test/*.js"
+    "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/curve/* test/*.js",
+    "preversion": "npm run jscs",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "fuzzylogic",
