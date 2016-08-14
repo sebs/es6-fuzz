@@ -22,7 +22,6 @@ describe('logic', () => {
     });
   });
 
-
   describe('behaves like a number', function() {
     var noAttack = new Triangle(0, 20, 40);
     var normalAttack = new Trapezoid(20, 30, 90, 100);

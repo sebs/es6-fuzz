@@ -1,0 +1,37 @@
+{
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "return",
+        "try",
+        "catch"
+    ],
+    "disallowMultipleVarDecl": true,
+    "disallowEmptyBlocks": true,
+    "disallowSpacesInsideParentheses": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+    "requireSpaceBeforeBinaryOperators": [
+        "=",
+        "==",
+        "===",
+        "!=",
+        "!=="
+    ],
+    "requireSpaceAfterBinaryOperators": [
+        "=",
+        "==",
+        "===",
+        "!=",
+        "!=="
+    ],
+    "disallowMultipleLineBreaks": true,
+    "validateLineBreaks": "LF",
+    "disallowKeywordsOnNewLine": ["else"],
+    "requireCapitalizedConstructors": true
+}
