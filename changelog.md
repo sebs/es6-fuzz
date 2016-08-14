@@ -176,3 +176,8 @@ Author: Sebastian Schürmann <sebs@2xs.org>
 Date:   Sun Aug 14 12:14:41 2016 +0200
 
     Added pre and post version builds
+commit 0f2fcdea9e96c3f7f92f8c781148863a17421511
+Author: Sebastian Schürmann <sebs@2xs.org>
+Date:   Sun Aug 14 12:25:01 2016 +0200
+
+    (chore): Added .jscsrc, configured it and fixed some double line breaks
