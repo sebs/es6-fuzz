@@ -1,7 +1,7 @@
 {
   "name": "es6-fuzz",
   "description": "fuzzy logic with and for es6",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "main": "index.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
@@ -21,7 +21,10 @@
   "config": {
     "blanket": {
       "pattern": "lib/*",
-      "data-cover-never": [ "node_modules", "tests" ]
+      "data-cover-never": [
+        "node_modules",
+        "tests"
+      ]
     }
   },
   "author": "Sebastian Schürmann",
