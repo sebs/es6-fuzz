@@ -136,3 +136,20 @@ Author: Sebastian Schürmann <sebs@2xs.org>
 Date:   Sun Aug 14 12:14:41 2016 +0200
 
     Added pre and post version builds
+commit f4bed044c3e0b5dc0d4925f5a9af853bd48e03a7
+Author: Sebastian Schürmann <sebs@2xs.org>
+Date:   Sun Aug 14 12:17:57 2016 +0200
+
+    add changelog automatically and ignore debug logs
+
+commit e52c6c5398a1c259310185edb482a535f0fc8bf3
+Author: Sebastian Schürmann <sebs@2xs.org>
+Date:   Sun Aug 14 12:16:44 2016 +0200
+
+    Changelog automated
+
+commit 37d8a87b49531081d82620d95fdd3c7d822fbf06
+Author: Sebastian Schürmann <sebs@2xs.org>
+Date:   Sun Aug 14 12:14:41 2016 +0200
+
+    Added pre and post version builds
