@@ -181,3 +181,10 @@ Author: Sebastian Schürmann <sebs@2xs.org>
 Date:   Sun Aug 14 12:25:01 2016 +0200
 
     (chore): Added .jscsrc, configured it and fixed some double line breaks
+commit 08aefb078e55c7ac66cf8dce41102871169f5c87
+Author: greenkeeperio-bot <support@greenkeeper.io>
+Date:   Tue Sep 27 10:53:35 2016 +0200
+
+    chore(package): update mocha to version 3.1.0
+    
+    https://greenkeeper.io/
