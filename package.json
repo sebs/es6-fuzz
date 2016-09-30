@@ -6,12 +6,11 @@
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
     "env": "env",
-    "changelog": "git log `git describe --tags --abbrev=0`..HEAD >> changelog.md",
+    "changelog": "rm CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
     "test": "./node_modules/mocha/bin/mocha -r blanket --compilers js:mocha-traceur",
     "test:watch": "npm test -- -w",
     "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/curve/* test/*.js",
-    "preversion": "npm run changelog && git add . && git commit -m '(chore): docs'",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm run changelog"
   },
   "keywords": [
     "fuzzylogic",
@@ -33,6 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^13.0.0",
+    "changelog": "^1.0.7",
     "documentation": "^3.0.0",
     "es6ify": "^1.6.0",
     "eslint": "^3.3.0",
