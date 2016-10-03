@@ -1,6 +1,14 @@
+2016-10-03
+==========
+
+  * 2.4.4
+  * (docs): badges
+
 2016-09-30
 ==========
 
+  * (churn): test node 4-6
+  * (churn): changelog
   * 2.4.3
   * (feature): autochangelog
 
@@ -188,6 +196,3 @@
   * release
   * 1.4.0
   * docs
-  * 1.3.3
-  * Added new dist
-  * 1.3.2
