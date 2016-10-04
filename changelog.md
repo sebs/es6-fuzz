@@ -1,6 +1,13 @@
+2016-10-05
+==========
+
+  * 2.5.0
+  * (chrun): deps
+
 2016-10-03
 ==========
 
+  * (churn): changelog
   * 2.4.4
   * (docs): badges
 
@@ -189,10 +196,3 @@
   * Chamgelog generation
   * get a changelog
   * added a automated api doc and a way to generate it.
-
-2015-10-15
-==========
-
-  * release
-  * 1.4.0
-  * docs
