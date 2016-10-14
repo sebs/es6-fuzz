@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/es6-fuzz.svg)](https://badge.fury.io/js/es6-fuzz) [![Build Status](https://travis-ci.org/sebs/es6-fuzz.svg?branch=master)](https://travis-ci.org/sebs/es6-fuzz) [![npm](https://img.shields.io/npm/dt/es6-fuzz.svg?maxAge=2592000)]()
 
+[glossary](./glossary.md)
+
 ## Install and Usage
 
 es6-fuzz is available as a NPM package.
