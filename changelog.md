@@ -1,6 +1,13 @@
+2016-10-14
+==========
+
+  * 2.5.1
+  * Glossary
+
 2016-10-05
 ==========
 
+  * (churn): changelog
   * 2.5.0
   * (chrun): deps
 
@@ -193,6 +200,3 @@
   * A test for NOT!, a dist file
   * renamed shape to curve
   * 1.4.1
-  * Chamgelog generation
-  * get a changelog
-  * added a automated api doc and a way to generate it.
