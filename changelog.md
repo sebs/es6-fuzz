@@ -1,6 +1,9 @@
 2016-10-14
 ==========
 
+  * 2.5.2
+  * Sigmoid as well
+  * (churn): changelog
   * 2.5.1
   * Glossary
 
@@ -198,5 +201,3 @@
   * improved docs
   * more docs
   * A test for NOT!, a dist file
-  * renamed shape to curve
-  * 1.4.1
