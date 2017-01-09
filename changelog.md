@@ -1,9 +1,15 @@
+2017-01-09
+==========
+
+  * 2.5.3
+  * Update deps
+
 2016-10-14
 ==========
 
+  * (churn): changelog
   * 2.5.2
   * Sigmoid as well
-  * (churn): changelog
   * 2.5.1
   * Glossary
 
@@ -198,6 +204,3 @@
   * New release
   * 1.5.0
   * Changelog
-  * improved docs
-  * more docs
-  * A test for NOT!, a dist file
