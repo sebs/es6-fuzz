@@ -7,7 +7,7 @@
   "scripts": {
     "env": "env",
     "changelog": "rm CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
-    "test": "./node_modules/mocha/bin/mocha -r blanket --compilers js:mocha-traceur",
+    "test": "mocha -r blanket --compilers js:mocha-traceur",
     "test:watch": "npm test -- -w",
     "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/curve/* test/*.js",
     "postversion": "git push && git push --tags && npm run changelog"
@@ -38,7 +38,7 @@
     "eslint": "^3.7.1",
     "jscs": "^3.0.7",
     "jsdoc": "^3.4.2",
-    "mocha": "^3.1.0",
+    "mocha": "^3.2.0",
     "mocha-traceur": "^2.1.0",
     "traceur": "0.0.111"
   },
