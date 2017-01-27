@@ -1,6 +1,21 @@
+2017-01-27
+==========
+
+  * 2.5.4
+  * Merge branch 'master' of github.com:sebs/es6-fuzz
+  * Merge pull request [#64](https://github.com/sebs/es6-fuzz/issues/64) from sebs/greenkeeper-browserify-14.0.0
+    Update browserify to version 14.0.0 🚀
+
+2017-01-25
+==========
+
+  * chore(package): update browserify to version 14.0.0
+    https://greenkeeper.io/
+
 2017-01-09
 ==========
 
+  * (churn): changelog
   * 2.5.3
   * Update deps
 
@@ -195,12 +210,3 @@
   * new dist
   * 1.6.0
   * New version
-  * Added bower.json
-  * watch
-
-2015-10-16
-==========
-
-  * New release
-  * 1.5.0
-  * Changelog
