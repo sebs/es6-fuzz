@@ -1,12 +1,13 @@
 2017-04-04
 ==========
 
+  * 2.5.7
+  * (churn): changelog
   * 2.5.6
   * Added docs
   * Fix output ght pages
   * DOcs
   * Ghpages
-  * (churn): changelog
   * 2.5.5
   * Autorelease
 
@@ -207,5 +208,3 @@
   * fix graphic
   * 1.8.0
   * added bower
-  * removed cov
-  * license
