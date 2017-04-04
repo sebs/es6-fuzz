@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body style="background: transparent;">
+    <script src="scripts/docstrap.lib.js"></script>
+    <script src="scripts/lunr.min.js"></script>
+    <script src="scripts/fulltext-search.js"></script>
+
+    <script type="text/x-docstrap-searchdb">
+    {"tutorials.list.html":{"id":"tutorials.list.html","title":"Tutorials","body":" es6-fuzz Tutorials manual Tutorials × Search results Close "},"index.html":{"id":"index.html","title":"Index","body":" es6-fuzz Tutorials manual fuzzylogic for es6 glossary Install and Usagees6-fuzz is available as a NPM package. npm install es6-fuzzbower Otherwise you can use bower for the browser use case. There is a browser ready export at /dist bower install es6-fuzzExamplevar logic = new Logic(); var res = logic .init('noAttack', new Triangle(0, 20, 40)) .and('normalAttack', new Trapezoid(20, 30, 90, 100)) .and('enragedAttack', new Grade(90, 100)) .defuzzify(99);Example 2 var logic = new Logic(); var res = logic .init('verycold', new Triangle(new Trapezoid(0, 0, 8, 12)) // until 10 degrees very cold .and('cold', new Trapezoid(8, 12, 18, 20)) // until 12-18 around warm .and('hot', new Trapezoid(12, 20, 30, 100)) // all up from 30 surely hot .defuzzify(99); console.log(res); { fuzzified: 0.9000000000000004, defuzzified: 'enragedAttack', rules: [ { output: 'noAttack', shape: {}, type: 'init', fuzzy: 0 }, { output: 'normalAttack', shape: {}, type: 'and', fuzzy: 0.09999999999999964 }, { output: 'enragedAttack', shape: {}, type: 'and', fuzzy: 0.9000000000000004 } ], toString: [Function] }developmentTests use mocha and a plugin for traceur npm testthe commando resolves to ./node_modules/mocha/bin/mocha --compilers js:mocha-traceurYou transpile to es5 with es6ify.js. The commando builds a *latest and a version number based file in dist. This is your oldschool es5 coode if you want it. Its more the browser use case. node es6ifyYou might want to do a checkstyle and use jscs, which seems to be fine with es6 :) npm run jscs docs: npm run docs, npm run docs:site Stuff http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817 http://computing.dcu.ie/~humphrys/Notes/Neural/sigmoid.html × Search results Close "},"tutorial-manual.html":{"id":"tutorial-manual.html","title":"Tutorial: manual","body":" es6-fuzz Tutorials manual manual × Search results Close "}}
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Searcher.init();
+        });
+
+        $(window).on("message", function(msg) {
+            var msgData = msg.originalEvent.data;
+
+            if (msgData.msgid != "docstrap.quicksearch.start") {
+                return;
+            }
+
+            var results = Searcher.search(msgData.searchTerms);
+
+            window.parent.postMessage({"results": results, "msgid": "docstrap.quicksearch.done"}, "*");
+        });
+    </script>
+</body>
+</html>
