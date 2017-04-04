@@ -2,7 +2,7 @@
   "name": "es6-fuzz",
   "description": "fuzzy logic with and for es6",
   "version": "2.5.5",
-  "main": "index.js",
+  "main": "lib/logic.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
     "docs": "jsdoc -c ./jsdoc.json -t ./node_modules/ink-docstrap/template -R ./Readme.md -u ./docs",
