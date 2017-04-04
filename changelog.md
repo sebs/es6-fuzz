@@ -1,6 +1,12 @@
 2017-04-04
 ==========
 
+  * 2.5.6
+  * Added docs
+  * Fix output ght pages
+  * DOcs
+  * Ghpages
+  * (churn): changelog
   * 2.5.5
   * Autorelease
 
@@ -203,14 +209,3 @@
   * added bower
   * removed cov
   * license
-  * build stats
-  * added docs
-  * fixing test:watch
-
-2015-10-17
-==========
-
-  * More docs
-  * v1.7.0
-  * 1.7.0
-  * New Bower version
