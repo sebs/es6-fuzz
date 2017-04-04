@@ -1,9 +1,11 @@
 2017-04-04
 ==========
 
+  * 2.5.10
+  * Added curves
+  * (churn): changelog
   * 2.5.9
   * add missing dep
-  * (churn): changelog
   * 2.5.8
   * Pages
   * 2.5.7
@@ -200,10 +202,3 @@
     * Logic.c now provides all curves
     * more docs, it still sucks here
     * toNumber should help a bit
-
-2015-10-18
-==========
-
-  * fixing license
-  * Added latest js code
-  * Let ;) Yeah!
