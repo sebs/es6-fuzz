@@ -1,9 +1,11 @@
 2017-04-04
 ==========
 
+  * 2.5.9
+  * add missing dep
+  * (churn): changelog
   * 2.5.8
   * Pages
-  * (churn): changelog
   * 2.5.7
   * 2.5.6
   * Added docs
@@ -205,6 +207,3 @@
   * fixing license
   * Added latest js code
   * Let ;) Yeah!
-  * Merge branch 'master' of github.com:sebs/es6-fuzz
-  * I find this a little slicker ;)I find this a little slicker ;)
-  * fix graphic
