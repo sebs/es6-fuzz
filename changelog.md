@@ -1,8 +1,10 @@
 2017-04-04
 ==========
 
-  * 2.5.7
+  * 2.5.8
+  * Pages
   * (churn): changelog
+  * 2.5.7
   * 2.5.6
   * Added docs
   * Fix output ght pages
@@ -206,5 +208,3 @@
   * Merge branch 'master' of github.com:sebs/es6-fuzz
   * I find this a little slicker ;)I find this a little slicker ;)
   * fix graphic
-  * 1.8.0
-  * added bower
