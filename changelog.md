@@ -1,6 +1,13 @@
+2017-04-04
+==========
+
+  * 2.5.5
+  * Autorelease
+
 2017-01-27
 ==========
 
+  * (churn): changelog
   * 2.5.4
   * Merge branch 'master' of github.com:sebs/es6-fuzz
   * Merge pull request [#64](https://github.com/sebs/es6-fuzz/issues/64) from sebs/greenkeeper-browserify-14.0.0
@@ -207,6 +214,3 @@
   * v1.7.0
   * 1.7.0
   * New Bower version
-  * new dist
-  * 1.6.0
-  * New version
