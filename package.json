@@ -10,8 +10,10 @@
     "changelog": "rm CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
     "test": "mocha -r blanket --compilers js:mocha-traceur",
     "test:watch": "npm test -- -w",
+    "addpush": "git add . && git commit . -m 'docs'",
+    "pages": "node ./scripts/publish-gh.js",
     "jscs": "./node_modules/jscs/bin/jscs --esnext lib/logic.js lib/curve/* test/*.js",
-    "postversion": "git push && git push --tags && npm run changelog"
+    "postversion": "git push && git push --tags && npm run changelog && npm run docs && npm run addpush && npm run pages"
   },
   "keywords": [
     "fuzzylogic",
