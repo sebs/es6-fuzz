@@ -4,10 +4,16 @@
         "dictionaries": ["jsdoc","closure"]
     },
     "source": {
+      "include": [ "./lib/init.js" ],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
     },
+    "analytics":{"ua":"UA-85700100-1", "domain":"https://sebs.github.io/es6-fuzz/"},
     "plugins": [],
     "templates": {
-        "cleverLinks": false,
-        "monospaceLinks": false
-    }
+      "cleverLinks": true,
+      "monospaceLinks": false,
+      "systemName"            : "es6-fuzz",
+      "copyright"             :  "Sebastian Schürmann"
+  }
 }

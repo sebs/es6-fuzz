@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
+    "docs": "jsdoc -c ./jsdoc.json -t ./node_modules/ink-docstrap/template -R ./Readme.md -u ./docs",
     "env": "env",
     "changelog": "rm CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
     "test": "mocha -r blanket --compilers js:mocha-traceur",
@@ -36,8 +37,9 @@
     "documentation": "^4.0.0-beta10",
     "es6ify": "^1.6.0",
     "eslint": "^3.7.1",
+    "ink-docstrap": "^1.3.0",
     "jscs": "^3.0.7",
-    "jsdoc": "^3.4.2",
+    "jsdoc": "^3.4.3",
     "mocha": "^3.2.0",
     "mocha-traceur": "^2.1.0",
     "traceur": "0.0.111"
