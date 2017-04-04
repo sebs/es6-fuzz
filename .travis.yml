@@ -1,5 +1,13 @@
 language: node_js
 node_js:
-  - "4"
-  - "5"
-  - "6"
+- '4'
+- '5'
+- '6'
+deploy:
+  provider: npm
+  email: sebs@2xs.org
+  api_key:
+    secure: T35SMb9f2nbwvl1yviqoofkaAon01DmgSoV4Stf0ZNb1FVdpEAv7yAhWJ4NJAueg9cY+WF+M1n3i/3dy3+v5xAC3Vd1gNfuRAWjCTf7eEbhmRPoSBXeOBSFR3I3MTMN6L2iiRTv9TIqhLMBRydJ4dVeYlvFDybTlM3lfEXzfQ60bbZ3xppv9rjDj7qg0SAi3ro1Xf7aCZ9fnlsZDj5nA5KtHdFrdvp+YV/H62z6g+L/wWpFgipfIL6ZXDgBuMF3rA4XzlyiKW4FcNC9nfRGdMpJeoiqsmubOL40E64RrZnXbU8FkEQkX+taRoyWipTvENvPxDWBlRABxp6h/2qElRtKLaaGbJzzZqu8FoSauLX93rusaTAlwjtEIjZuxlZkKiGAiB/Otl9R6AS1QUBxlZckGum4z/VHGhZyCBhtIqlC2X3+1d//ooGjoDt/r+/cfL/hiChGsyV14ftOf/KEvtX25vTUOYgcoBezLNJG0TI/KEyxeEQGxDhM2BBmMydwGs2k54fZ2BS5w2r7Ue04JTcFcChXfQ590rHFMRx/HSD8Axk/zhir4lgGU/Umr9erbeTr1UaUvjYR8TgPgIeEnMQQOvqXMd7wvrajrfjMlKGxhqAPumtMVcB4S+QznVBqZkuRbszflwU+J1OT4GAgvsV2xhd77Nz19VrQWo+JE0mk=
+  on:
+    tags: true
+    repo: sebs/es6-fuzz
