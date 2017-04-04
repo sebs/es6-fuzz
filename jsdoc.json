@@ -4,7 +4,17 @@
         "dictionaries": ["jsdoc","closure"]
     },
     "source": {
-      "include": [ "./lib/logic.js" ],
+      "include": [
+        "./lib/logic.js",
+        "./lib/curve/constant.js",
+        "./lib/curve/fuzzy-function.js",
+        "./lib/curve/grade.js",
+        "./lib/curve/reverse-grade.js",
+        "./lib/curve/shape.js",
+        "./lib/curve/sigmoid.js",
+        "./lib/curve/trapezoid.js",
+        "./lib/curve/triangle.js"
+      ],
         "includePattern": ".+\\.js(doc)?$",
         "excludePattern": "(^|\\/|\\\\)_"
     },
