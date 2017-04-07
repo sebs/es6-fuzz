@@ -1,9 +1,14 @@
 2017-04-07
 ==========
 
+  * 2.6.2
+  * Added last release
+  * Badges
+  * Changelog
+  * Added changelog link
+  * (churn): changelog
   * 2.6.1
   * Docs
-  * (churn): changelog
   * 2.6.0
   * Added link to api docs
   * More docs
@@ -190,13 +195,3 @@
 ==========
 
   * more tests
-  * A sigmoid and things ;)
-  * added Contant type
-  * removed api docs: need good and simple es6 api docs solution supporting classes
-  * 1.10.0
-  * Added function as a "shape"
-
-2015-10-23
-==========
-
-  * Not sure if I like the valueOf .... now we have to decide if number or string usage
