@@ -4,7 +4,7 @@
 
 * [glossary](./glossary.md)
 * [api docs](https://github.com/sebs/es6-fuzz)
-* [changelog](./CHANGELOG.md)
+* [changelog](./changelog.md)
 
 ## Install and Usage
 
