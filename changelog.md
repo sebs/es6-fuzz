@@ -1,12 +1,13 @@
 2017-04-07
 ==========
 
+  * 2.6.3
+  * (churn): changelog
   * 2.6.2
   * Added last release
   * Badges
   * Changelog
   * Added changelog link
-  * (churn): changelog
   * 2.6.1
   * Docs
   * 2.6.0
@@ -190,8 +191,3 @@
   * v3.0.0
   * v
   * dist
-
-2015-10-24
-==========
-
-  * more tests
