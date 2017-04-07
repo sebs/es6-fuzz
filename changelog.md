@@ -1,6 +1,9 @@
 2017-04-07
 ==========
 
+  * 2.6.1
+  * Docs
+  * (churn): changelog
   * 2.6.0
   * Added link to api docs
   * More docs
@@ -197,6 +200,3 @@
 ==========
 
   * Not sure if I like the valueOf .... now we have to decide if number or string usage
-  * let instead of var
-  * it seems more readable
-  * Even more es6y
