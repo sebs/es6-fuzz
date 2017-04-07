@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>es6-fuzz Index</title>
+	<title>es6-fuzz Class: Trapezoid</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,76 +72,120 @@
 		<div id="main">
 			
 
+	<h1 class="page-title">Class: Trapezoid</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Trapezoid
+        </h2>
+        
+            <div class="class-description">Class representing a Trapezoid.</div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="Trapezoid"><span class="type-signature"></span>new Trapezoid()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
 	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
 	
 
 
 
-
-
-
-
-
-
-
-
-	
 	
 
+	
+
+	
+
+	
+</dl>
 
 
+    
 
+    
 
-    <section class="readme-section">
-        <article><h1>fuzzylogic for es6</h1><p><a href="https://badge.fury.io/js/es6-fuzz"><img src="https://badge.fury.io/js/es6-fuzz.svg" alt="npm version"></a> <a href="https://travis-ci.org/sebs/es6-fuzz"><img src="https://travis-ci.org/sebs/es6-fuzz.svg?branch=master" alt="Build Status"></a> <a href=""><img src="https://img.shields.io/npm/dt/es6-fuzz.svg?maxAge=2592000" alt="npm"></a></p>
-<ul>
-<li><a href="./glossary.md">glossary</a></li>
-<li><a href="https://github.com/sebs/es6-fuzz">api docs</a></li>
-</ul>
-<h2>Install and Usage</h2><p>es6-fuzz is available as a NPM package.</p>
-<pre class="prettyprint source"><code>npm install es6-fuzz</code></pre><p>bower</p>
-<p>Otherwise you can use bower for the browser use case. There is a browser ready export at <a href="/dist">/dist</a></p>
-<pre class="prettyprint source"><code>bower install es6-fuzz</code></pre><h2>Example</h2><pre class="prettyprint source lang-javascript"><code>var logic = new Logic();
-var res = logic
-  .init('noAttack', new Triangle(0, 20, 40))
-  .and('normalAttack', new Trapezoid(20, 30, 90, 100))
-  .and('enragedAttack', new Grade(90, 100))
-  .defuzzify(99);</code></pre><h2>Example 2</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png" /></p>
-<pre class="prettyprint source lang-javascript"><code>var logic = new Logic();
-var res = logic
-  .init('verycold', new Triangle(new Trapezoid(0, 0, 8, 12))  // until 10 degrees very cold
-  .and('cold', new Trapezoid(8, 12, 18, 20)) // until 12-18 around warm
-  .and('hot', new Trapezoid(12, 20, 30, 100)) // all up from 30 surely  hot
-  .defuzzify(99);
+    
 
-  console.log(res);
-  { fuzzified: 0.9000000000000004,
-  defuzzified: 'enragedAttack',
-  rules:
-   [ { output: 'noAttack', shape: {}, type: 'init', fuzzy: 0 },
-     { output: 'normalAttack',
-       shape: {},
-       type: 'and',
-       fuzzy: 0.09999999999999964 },
-     { output: 'enragedAttack',
-       shape: {},
-       type: 'and',
-       fuzzy: 0.9000000000000004 } ],
-  toString: [Function] }</code></pre><h2>development</h2><p><strong>Tests</strong> use mocha and a plugin for traceur</p>
-<pre class="prettyprint source"><code>npm test</code></pre><p>the commando resolves to</p>
-<pre class="prettyprint source"><code>./node_modules/mocha/bin/mocha --compilers js:mocha-traceur</code></pre><p>You <strong>transpile to es5</strong> with es6ify.js. The commando builds a *latest and a version number based file in dist. This is your oldschool es5 coode if you want it. Its more the browser use case.</p>
-<pre class="prettyprint source"><code>node es6ify</code></pre><p>You might want to do a <strong>checkstyle</strong> and use jscs, which seems to be fine with es6 :)</p>
-<pre class="prettyprint source"><code>npm run jscs</code></pre><ul>
-<li>docs: npm run docs, npm run docs:site</li>
-</ul>
-<h1>Stuff</h1><ul>
-<li>http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817</li>
-<li>http://computing.dcu.ie/~humphrys/Notes/Neural/sigmoid.html</li>
-</ul></article>
-    </section>
+    
 
+    
 
+    
 
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
