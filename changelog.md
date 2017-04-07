@@ -1,9 +1,17 @@
+2017-04-07
+==========
+
+  * 2.6.0
+  * Added link to api docs
+  * More docs
+
 2017-04-04
 ==========
 
+  * Added latest es5 export to dist
+  * (churn): changelog
   * 2.5.10
   * Added curves
-  * (churn): changelog
   * 2.5.9
   * add missing dep
   * 2.5.8
@@ -192,13 +200,3 @@
   * let instead of var
   * it seems more readable
   * Even more es6y
-
-2015-10-19
-==========
-
-  * 1.9.0
-  * Merge branch 'master' of github.com:sebs/es6-fuzz
-  * Some changes
-    * Logic.c now provides all curves
-    * more docs, it still sucks here
-    * toNumber should help a bit
