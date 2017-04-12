@@ -1,8 +1,21 @@
+2017-04-12
+==========
+
+  * 2.6.4
+  * mMore Documentation
+  * Added node version 7
+  * Fuzzify documented
+
+2017-04-09
+==========
+
+  * Adding Google Tracking code to docs
+
 2017-04-07
 ==========
 
-  * 2.6.3
   * (churn): changelog
+  * 2.6.3
   * 2.6.2
   * Added last release
   * Badges
@@ -177,17 +190,3 @@
 
   * Merge pull request [#1](https://github.com/sebs/es6-fuzz/issues/1) from sebs/greenkeeper-browserify-12.0.0
     Update browserify to version 12.0.0 🚀
-
-2015-10-26
-==========
-
-  * chore(package): update browserify to version 12.0.0
-    http://greenkeeper.io/
-
-2015-10-25
-==========
-
-  * 2.0.0
-  * v3.0.0
-  * v
-  * dist
