@@ -6,7 +6,6 @@
 [![Travis](https://img.shields.io/travis/sebs/es6-fuzz.svg)](https://travis-ci.org/sebs/es6-fuzz)
 [![GitHub issues](https://img.shields.io/github/issues/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/issues)
 
-* [glossary](./glossary.md)
 * [api docs](https://github.com/sebs/es6-fuzz)
 * [changelog](./changelog.md)
 
