@@ -7,7 +7,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/issues)
 
 * [api docs](https://github.com/sebs/es6-fuzz)
-* [changelog](./changelog.md)
+* [changelog](./docs/changelog.md)
 
 ## Install and Usage
 
