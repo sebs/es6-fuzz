@@ -1,8 +1,10 @@
 2017-04-12
 ==========
 
-  * 2.7.1
+  * 2.7.2
+  * Changelog link
   * (churn): changelog
+  * 2.7.1
   * Dist
   * 2.7.0
   * More docs
@@ -154,12 +156,3 @@
     https://greenkeeper.io/
   * chore(package): update traceur to version 0.0.111
     https://greenkeeper.io/
-  * Merge pull request [#50](https://github.com/sebs/es6-fuzz/issues/50) from sebs/greenkeeper-eslint-2.12.0
-    Update eslint to version 2.12.0 🚀
-  * chore(package): update eslint to version 2.12.0
-    https://greenkeeper.io/
-
-2016-02-08
-==========
-
-  * Updated packages
