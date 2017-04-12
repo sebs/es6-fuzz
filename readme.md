@@ -98,6 +98,10 @@ npm run jscs
 * http://de.slideshare.net/BCSLeicester/fuzzy-logic-in-the-real-world-2326817
 * http://computing.dcu.ie/~humphrys/Notes/Neural/sigmoid.html
 
-## Supported Node.js
+## Supported Node.js Versions
 
 Versions: 4, 5, 6 and 7
+
+## Related
+
+* https://www.npmjs.com/package/gaussian
