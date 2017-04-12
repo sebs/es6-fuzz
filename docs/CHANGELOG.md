@@ -1,8 +1,9 @@
 2017-04-12
 ==========
 
-  * Dist
+  * 2.7.1
   * (churn): changelog
+  * Dist
   * 2.7.0
   * More docs
   * 2.6.4
@@ -162,11 +163,3 @@
 ==========
 
   * Updated packages
-
-2015-11-29
-==========
-
-  * Merge pull request [#6](https://github.com/sebs/es6-fuzz/issues/6) from sebs/greenkeeper-traceur-0.0.93
-    Update traceur to version 0.0.93 🚀
-  * chore(package): update traceur to version 0.0.93
-    http://greenkeeper.io/
