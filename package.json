@@ -6,7 +6,7 @@
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
     "env": "env",
-    "changelog": "rm CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
+    "changelog": "rm ./docs/CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > ./docs/CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
     "test": "mocha -r blanket --compilers js:mocha-traceur",
     "test:watch": "npm test -- -w",
     "addpush": "git add . && git commit . -m 'docs'",

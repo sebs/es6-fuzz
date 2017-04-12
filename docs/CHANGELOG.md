@@ -1,9 +1,10 @@
 2017-04-12
 ==========
 
+  * Dist
+  * (churn): changelog
   * 2.7.0
   * More docs
-  * (churn): changelog
   * 2.6.4
   * mMore Documentation
   * Added node version 7
@@ -169,13 +170,3 @@
     Update traceur to version 0.0.93 🚀
   * chore(package): update traceur to version 0.0.93
     http://greenkeeper.io/
-
-2015-11-05
-==========
-
-  * update deps
-
-2015-11-04
-==========
-
-  * New travis profile, giving up on old node versions
