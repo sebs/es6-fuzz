@@ -1,6 +1,9 @@
 2017-04-12
 ==========
 
+  * 2.7.0
+  * More docs
+  * (churn): changelog
   * 2.6.4
   * mMore Documentation
   * Added node version 7
@@ -176,17 +179,3 @@
 ==========
 
   * New travis profile, giving up on old node versions
-  * Merge pull request [#3](https://github.com/sebs/es6-fuzz/issues/3) from sebs/greenkeeper-documentation-3.0.0
-    Update documentation to version 3.0.0 🚀
-
-2015-10-30
-==========
-
-  * chore(package): update documentation to version 3.0.0
-    http://greenkeeper.io/
-
-2015-10-28
-==========
-
-  * Merge pull request [#1](https://github.com/sebs/es6-fuzz/issues/1) from sebs/greenkeeper-browserify-12.0.0
-    Update browserify to version 12.0.0 🚀
