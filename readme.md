@@ -1,10 +1,19 @@
-# fuzzylogic for es6
+# fuzzylogic for javascript
 
 [![npm](https://img.shields.io/npm/dt/es6-fuzz.svg)](https://www.npmjs.com/package/es6-fuzz)
 [![license](https://img.shields.io/github/license/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/blob/master/LICENSE.md)
 [![GitHub tag](https://img.shields.io/github/tag/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz)
 [![Travis](https://img.shields.io/travis/sebs/es6-fuzz.svg)](https://travis-ci.org/sebs/es6-fuzz)
 [![GitHub issues](https://img.shields.io/github/issues/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/issues)
+
+Supported fuzzyfiers
+
+* Constant
+* Grade
+* Reverse Grade
+* Sigmoid
+* Trapezoid
+* Triangle
 
 * [api docs](https://github.com/sebs/es6-fuzz)
 * [changelog](./docs/changelog.md)
@@ -16,15 +25,6 @@ es6-fuzz is available as a NPM package.
 ```
 npm install es6-fuzz
 ```
-
-bower
-
-Otherwise you can use bower for the browser use case. There is a browser ready export at [/dist](/dist)
-
-```
-bower install es6-fuzz
-```
-
 ## Example
 
 ```javascript
@@ -39,8 +39,6 @@ var res = logic
 ## Example 2
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png" />
-
-
 
 ```javascript
 var logic = new Logic();
@@ -105,3 +103,4 @@ Versions: 4, 5, 6 and 7
 ## Related
 
 * https://www.npmjs.com/package/gaussian
+*
