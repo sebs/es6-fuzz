@@ -1,9 +1,16 @@
+2017-04-16
+==========
+
+  * 2.7.3
+  * Removed bower reference
+
 2017-04-12
 ==========
 
+  * Readme
+  * (churn): changelog
   * 2.7.2
   * Changelog link
-  * (churn): changelog
   * 2.7.1
   * Dist
   * 2.7.0
@@ -144,15 +151,3 @@
   * 2.2.0
   * Added mocha
   * 2.1.0
-  * Merge pull request [#49](https://github.com/sebs/es6-fuzz/issues/49) from sebs/greenkeeper-traceur-0.0.111
-    Update traceur to version 0.0.111 🚀
-
-2016-06-10
-==========
-
-  * Merge pull request [#48](https://github.com/sebs/es6-fuzz/issues/48) from sebs/greenkeeper-jscs-3.0.4
-    Update jscs to version 3.0.4 🚀
-  * chore(package): update jscs to version 3.0.4
-    https://greenkeeper.io/
-  * chore(package): update traceur to version 0.0.111
-    https://greenkeeper.io/
