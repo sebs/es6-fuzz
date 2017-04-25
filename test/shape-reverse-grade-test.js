@@ -1,5 +1,6 @@
-import { ReverseGrade } from '../lib/curve/reverse-grade';
-import assert from 'assert';
+'use strict';
+const ReverseGrade = require('../lib/curve/reverse-grade');
+const assert = require('assert');
 
 describe('ReverseGrade', function() {
   it('is a function', function() {

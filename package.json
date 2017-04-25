@@ -7,7 +7,7 @@
   "scripts": {
     "env": "env",
     "changelog": "rm ./docs/CHANGELOG.md && changelog https://github.com/sebs/es6-fuzz all > ./docs/CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
-    "test": "mocha -r blanket --compilers js:mocha-traceur",
+    "test": "mocha -r blanket",
     "test:watch": "npm test -- -w",
     "addpush": "git add . && git commit . -m 'docs'",
     "pages": "node ./scripts/publish-gh.js",

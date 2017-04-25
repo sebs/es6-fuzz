@@ -1,5 +1,5 @@
-import { Constant } from '../lib/curve/constant';
-import assert from 'assert';
+const Constant= require('../lib/curve/constant');
+const assert = require('assert');
 
 describe('Constant', function() {
   it('is a function', function() {

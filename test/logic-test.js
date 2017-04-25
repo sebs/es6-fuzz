@@ -1,9 +1,9 @@
-import { Logic } from '../lib/logic';
-import { Triangle } from '../lib/curve/triangle';
-import { Trapezoid } from '../lib/curve/trapezoid';
-import { Grade } from '../lib/curve/grade';
-
-import assert from 'assert';
+'use strict';
+const Logic = require('../lib/logic');
+const Triangle = require('../lib/curve/triangle');
+const Trapezoid = require('../lib/curve/trapezoid');
+const Grade = require('../lib/curve/grade');
+const assert = require('assert');
 
 describe('logic', () => {
   describe('interface', () => {

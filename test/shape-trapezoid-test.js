@@ -1,5 +1,6 @@
-import { Trapezoid } from '../lib/curve/trapezoid';
-import assert from 'assert';
+'use strict';
+const Trapezoid = require('../lib/curve/trapezoid');
+const assert = require('assert');
 
 describe('Trapezoid', function() {
   it('is a function', function() {

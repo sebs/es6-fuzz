@@ -1,5 +1,6 @@
-import { Shape } from '../lib/curve/shape';
-import assert from 'assert';
+'use strict';
+const Shape = require('../lib/curve/shape');
+const assert = require('assert');
 
 describe('Shape', function() {
   it('is a function', function() {

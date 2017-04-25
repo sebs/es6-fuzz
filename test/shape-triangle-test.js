@@ -1,5 +1,7 @@
-import { Triangle } from '../lib/curve/triangle';
-import assert from 'assert';
+'use strict';
+const Triangle = require('../lib/curve/triangle');
+const assert = require('assert');
+
 describe('Triangle', function() {
   it('is a function', function() {
     assert.equal(typeof Triangle, 'function');

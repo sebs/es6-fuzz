@@ -1,5 +1,6 @@
-import { FuzzyFunction } from '../lib/curve/fuzzy-function';
-import assert from 'assert';
+'use strict';
+const FuzzyFunction= require('../lib/curve/fuzzy-function');
+const assert = require('assert');
 
 describe('FuzzyFunction', function() {
   it('is a function', function() {

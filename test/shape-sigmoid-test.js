@@ -1,5 +1,6 @@
-import { Sigmoid } from '../lib/curve/sigmoid';
-import assert from 'assert';
+'use strict';
+const Sigmoid = require('../lib/curve/sigmoid');
+const assert = require('assert');
 
 describe('Sigmoid', function() {
   it('is a function', function() {

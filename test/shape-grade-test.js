@@ -1,5 +1,6 @@
-import { Grade } from '../lib/curve/grade';
-import assert from 'assert';
+'use strict';
+const Grade = require('../lib/curve/grade');
+const assert = require('assert');
 
 describe('Grade', function() {
   it('is a function', function() {
