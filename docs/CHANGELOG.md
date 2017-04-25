@@ -1,6 +1,14 @@
+2017-04-25
+==========
+
+  * 3.0.0
+  * Info about new version
+  * Moving to a common js require style instead of the module import syntax for usage reasons. I just want the thing here to be usable on plain node. As much "new javascript" is supported I will use. I just want to use the project in anothe rproject and hit that roadblock :) So now this is usable out of a browser.
+
 2017-04-16
 ==========
 
+  * (churn): changelog
   * 2.7.3
   * Removed bower reference
 
@@ -138,16 +146,3 @@
   * (chore): Changed test command
   * Merge pull request [#61](https://github.com/sebs/es6-fuzz/issues/61) from sebs/greenkeeper-eslint-3.3.0
     Update eslint to version 3.3.0 🚀
-
-2016-08-12
-==========
-
-  * chore(package): update eslint to version 3.3.0
-    https://greenkeeper.io/
-
-2016-06-11
-==========
-
-  * 2.2.0
-  * Added mocha
-  * 2.1.0
