@@ -80,7 +80,7 @@ npm test
 
 ## Supported Node.js Versions
 
-Versions: 4, 5, 6 and 7
+Versions: 6 and 7
 
 ## Related
 
