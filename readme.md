@@ -6,8 +6,6 @@
 [![Travis](https://img.shields.io/travis/sebs/es6-fuzz.svg)](https://travis-ci.org/sebs/es6-fuzz)
 [![GitHub issues](https://img.shields.io/github/issues/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/issues)
 
-> I have moded the project to a common js structure instead of the import syntax. If you need a adapter for a non common js system: get me a message or export it yourself. There is a major version upgrade though and I might add releases to old versions
-
 Supported fuzzyfiers
 
 * Constant
