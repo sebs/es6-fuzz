@@ -72,12 +72,6 @@ var res = logic
 npm test
 ```
 
-You might want to do a **checkstyle** and use jscs, which seems to be fine with es6 :)
-
-```
-npm run jscs
-```
-
 * docs: npm run docs, npm run docs:site
 
 # Stuff
