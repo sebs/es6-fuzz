@@ -72,18 +72,6 @@ var res = logic
 npm test
 ```
 
-the commando resolves to
-
-```
-./node_modules/mocha/bin/mocha --compilers js:mocha-traceur
-```
-
-You **transpile to es5** with es6ify.js. The commando builds a *latest and a version number based file in dist. This is your oldschool es5 coode if you want it. Its more the browser use case.
-
-```
-node es6ify
-```
-
 You might want to do a **checkstyle** and use jscs, which seems to be fine with es6 :)
 
 ```
