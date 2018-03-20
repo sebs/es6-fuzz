@@ -28,7 +28,10 @@ npm install es6-fuzz
 ## Example
 
 ```javascript
+const Logic = require('es6-fuzz');
 var logic = new Logic();
+const {Grade, Trapezoid, Triangle} = logic.c;
+
 var res = logic
   .init('noAttack', new Triangle(0, 20, 40))
   .and('normalAttack', new Trapezoid(20, 30, 90, 100))
@@ -42,9 +45,12 @@ var res = logic
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuzzy_logic_temperature_en.svg/300px-Fuzzy_logic_temperature_en.svg.png" />
 
 ```javascript
+const Logic = require('es6-fuzz');
 var logic = new Logic();
+const {Trapezoid} = logic.c;
+
 var res = logic
-  .init('verycold', new Triangle(new Trapezoid(0, 0, 8, 12))  // until 10 degrees very cold
+  .init('verycold', new Trapezoid(0, 0, 8, 12))  // until 10 degrees very cold
   .and('cold', new Trapezoid(8, 12, 18, 20)) // until 12-18 around warm
   .and('hot', new Trapezoid(12, 20, 30, 100)) // all up from 30 surely  hot
   .defuzzify(99);
