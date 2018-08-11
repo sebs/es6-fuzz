@@ -1,7 +1,7 @@
 {
   "name": "es6-fuzz",
   "description": "fuzzy logic with and for es6",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "lib/logic.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
