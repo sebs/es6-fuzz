@@ -29,9 +29,10 @@ describe('logic', () => {
     var logic = new Logic();
     var res = logic
       .init('noAttack', new Triangle(0, 20, 40))
-      .and('normalAttack', new Trapezoid(20, 30,90, 100))
-      .and('enragedAttack', new Grade(90, 100))
+      .or('normalAttack', new Trapezoid(20, 30,90, 100))
+      .or('enragedAttack', new Grade(90, 100))
       .defuzzify(99);
+
     var res2 = 0 + res + res;
     assert.equal(res2, 1.8000000000000007);
   });
@@ -56,8 +57,8 @@ describe('logic', () => {
       var logic = new Logic();
       var res = logic
         .init('noAttack', new Triangle(0, 20, 40))
-        .and('normalAttack', new Trapezoid(20, 30,90, 100))
-        .and('enragedAttack', new Grade(90, 100))
+        .or('normalAttack', new Trapezoid(20, 30,90, 100))
+        .or('enragedAttack', new Grade(90, 100))
         .defuzzify(99);
       assert.equal(res.toString(), 'enragedAttack');
     });
