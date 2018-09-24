@@ -8,12 +8,14 @@
 
 Supported fuzzyfiers
 
+
 * Constant
 * Grade
 * Reverse Grade
 * Sigmoid
 * Trapezoid
 * Triangle
+
 
 * [api docs](https://github.com/sebs/es6-fuzz)
 * [changelog](./docs/changelog.md)
