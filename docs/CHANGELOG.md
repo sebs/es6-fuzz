@@ -1,6 +1,47 @@
+2018-09-24
+==========
+
+  * 3.0.4
+  * remove package-lock before release
+  * Update deps
+  * Remove package-lock.json
+
+2018-08-11
+==========
+
+  * 3.0.2
+  * Fixed a bug where nop logic was executed
+    * actually examples were wrong
+    * no return values for logic
+
+2018-03-20
+==========
+
+  * Merge pull request [#69](https://github.com/sebs/es6-fuzz/issues/69) from felixdrp/patch-1
+    Update logic.js
+  * Update logic.js
+    Added Trapezoid to Logic class
+
+2017-07-27
+==========
+
+  * 3.0.1
+  * Update readme
+
+2017-05-09
+==========
+
+  * readme
+  * Readme
+  * removed dist
+  * Removed es6 infrastructure
+  * Removed package remark
+  * Removed incompatible node versions from build
+
 2017-04-25
 ==========
 
+  * (churn): changelog
   * 3.0.0
   * Info about new version
   * Moving to a common js require style instead of the module import syntax for usage reasons. I just want the thing here to be usable on plain node. As much "new javascript" is supported I will use. I just want to use the project in anothe rproject and hit that roadblock :) So now this is usable out of a browser.
@@ -120,29 +161,3 @@
   * (churn): test node 4-6
   * (churn): changelog
   * 2.4.3
-  * (feature): autochangelog
-
-2016-09-27
-==========
-
-  * 2.4.2
-  * (chore): docs
-  * chore(package): update mocha to version 3.1.0
-    https://greenkeeper.io/
-
-2016-08-14
-==========
-
-  * 2.4.1
-  * (chore): docs
-  * (chore): Added .jscsrc, configured it and fixed some double line breaks
-  * 2.4.0
-  * changes
-  * add changelog automatically and ignore debug logs
-  * Changelog automated
-  * Added pre and post version builds
-  * 2.3.0
-  * Merge branch 'master' of github.com:sebs/es6-fuzz
-  * (chore): Changed test command
-  * Merge pull request [#61](https://github.com/sebs/es6-fuzz/issues/61) from sebs/greenkeeper-eslint-3.3.0
-    Update eslint to version 3.3.0 🚀
