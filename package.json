@@ -1,7 +1,7 @@
 {
   "name": "es6-fuzz",
   "description": "fuzzy logic with and for es6",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "main": "lib/logic.js",
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "scripts": {
@@ -12,6 +12,7 @@
     "addpush": "git add . && git commit . -m 'docs'",
     "pages": "node ./scripts/publish-gh.js",
     "docs": "jsdoc -c ./jsdoc.json -t ./node_modules/ink-docstrap/template -R ./Readme.md -u ./docs",
+    "preversion": "rm -f package-lock.json",
     "postversion": "git push && git push --tags && npm run changelog && npm run docs && npm run pages"
   },
   "keywords": [
