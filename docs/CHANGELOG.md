@@ -1,6 +1,22 @@
+2019-01-15
+==========
+
+  * 3.0.5
+  * Updated docs gen
+
 2018-09-24
 ==========
 
+  * Badges
+  * Add text=auto
+  * docs
+  * Move badges to top
+  * Docs: Move icons behind the heading
+  * CI: Only node 9 and 10
+  * Add node6 to 10 to target
+  * Add Homepage
+  * fix list
+  * (churn): changelog
   * 3.0.4
   * remove package-lock before release
   * Update deps
@@ -138,26 +154,3 @@
   * (churn): changelog
   * 2.5.2
   * Sigmoid as well
-  * 2.5.1
-  * Glossary
-
-2016-10-05
-==========
-
-  * (churn): changelog
-  * 2.5.0
-  * (chrun): deps
-
-2016-10-03
-==========
-
-  * (churn): changelog
-  * 2.4.4
-  * (docs): badges
-
-2016-09-30
-==========
-
-  * (churn): test node 4-6
-  * (churn): changelog
-  * 2.4.3
