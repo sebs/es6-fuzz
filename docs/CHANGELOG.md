@@ -1,6 +1,15 @@
+2022-06-02
+==========
+
+  * feature: chehck if init was called before any logic os performed
+  * test: add another example to the tests
+  * chore: remove travis config
+  * chore: update dependencies
+
 2019-01-15
 ==========
 
+  * (churn): changelog
   * 3.0.5
   * Updated docs gen
 
@@ -145,12 +154,3 @@
 ==========
 
   * (churn): changelog
-  * 2.5.3
-  * Update deps
-
-2016-10-14
-==========
-
-  * (churn): changelog
-  * 2.5.2
-  * Sigmoid as well
