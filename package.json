@@ -7,7 +7,7 @@
   "homepage": "https://github.com/sebs/es6-fuzz",
   "scripts": {
     "changelog": "rm ./docs/CHANGELOG.md && npx changelog https://github.com/sebs/es6-fuzz all > ./docs/CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
-    "test": "mocha",
+    "test": "npx mocha",
     "test:watch": "npm test -- -w",
     "addpush": "git add . && git commit . -m 'docs'",
     "pages": "node ./scripts/publish-gh.js",
@@ -22,27 +22,11 @@
     "javascript",
     "es6"
   ],
-  "config": {
-    "blanket": {
-      "pattern": "lib/*",
-      "data-cover-never": [
-        "node_modules",
-        "tests"
-      ]
-    }
-  },
   "author": "Sebastian Schürmann",
   "license": "MIT",
   "devDependencies": {
-    "blanket": "1.2.3",
-    "changelog": "1.4.2",
-    "documentation": "13.2.5",
-    "es6ify": "1.6.0",
-    "eslint": "8.16.0",
     "gh-pages": "4.0.0",
-    "ink-docstrap": "1.3.2",
-    "jscs": "3.0.7",
-    "mocha": "10.0.0"
+    "ink-docstrap": "1.3.2"
   },
   "dependencies": {
     "boon-js": "2.0.3"
