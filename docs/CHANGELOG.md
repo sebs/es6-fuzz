@@ -1,3 +1,11 @@
+2022-06-11
+==========
+
+  * 3.0.7
+  * fix: revert dep change
+  * refactor: make dependencies lighter
+  * (churn): changelog
+
 2022-06-02
 ==========
 
@@ -136,12 +144,3 @@
   * Ghpages
   * 2.5.5
   * Autorelease
-
-2017-01-27
-==========
-
-  * (churn): changelog
-  * 2.5.4
-  * Merge branch 'master' of github.com:sebs/es6-fuzz
-  * Merge pull request [#64](https://github.com/sebs/es6-fuzz/issues/64) from sebs/greenkeeper-browserify-14.0.0
-    Update browserify to version 14.0.0 🚀
