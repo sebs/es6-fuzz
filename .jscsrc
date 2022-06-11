@@ -14,7 +14,6 @@
     "disallowEmptyBlocks": true,
     "disallowSpacesInsideParentheses": true,
     "disallowSpaceAfterObjectKeys": true,
-    "requireSpaceAfterBinaryOperators": true,
     "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
     "requireSpaceBeforeBinaryOperators": [
         "=",

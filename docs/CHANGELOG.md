@@ -1,6 +1,8 @@
 2022-06-02
 ==========
 
+  * 3.0.6
+  * (churn): changelog
   * feature: chehck if init was called before any logic os performed
   * test: add another example to the tests
   * chore: remove travis config
@@ -143,14 +145,3 @@
   * Merge branch 'master' of github.com:sebs/es6-fuzz
   * Merge pull request [#64](https://github.com/sebs/es6-fuzz/issues/64) from sebs/greenkeeper-browserify-14.0.0
     Update browserify to version 14.0.0 🚀
-
-2017-01-25
-==========
-
-  * chore(package): update browserify to version 14.0.0
-    https://greenkeeper.io/
-
-2017-01-09
-==========
-
-  * (churn): changelog
