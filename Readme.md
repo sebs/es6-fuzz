@@ -5,7 +5,6 @@
 [![npm](https://img.shields.io/npm/dt/es6-fuzz.svg)](https://www.npmjs.com/package/es6-fuzz)
 [![license](https://img.shields.io/github/license/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/blob/master/LICENSE.md)
 [![GitHub tag](https://img.shields.io/github/tag/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz)
-[![Travis](https://img.shields.io/travis/sebs/es6-fuzz.svg)](https://travis-ci.org/sebs/es6-fuzz)
 [![GitHub issues](https://img.shields.io/github/issues/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/issues)
 
 Supported fuzzyfiers
@@ -19,8 +18,8 @@ Supported fuzzyfiers
 * Triangle
 
 
-* [api docs](https://github.com/sebs/es6-fuzz)
-* [changelog](./docs/changelog.md)
+* [api docs](http://sebs.github.io/es6-fuzz)
+* [changelog](https://github.com/sebs/es6-fuzz/blob/master/docs/CHANGELOG.md)
 
 ## Install and Usage
 
