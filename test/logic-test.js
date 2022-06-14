@@ -61,7 +61,6 @@ describe('logic', () => {
         .or('enragedAttack', new Grade(90, 100))
         .defuzzify(99);
       assert.equal(res.toString(), 'enragedAttack');
-      console.log(res)
     });
   });
 });
