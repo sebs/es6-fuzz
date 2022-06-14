@@ -43,9 +43,9 @@ describe('logic', () => {
       var logic = new Logic();
       var res = logic
         .init('rage', rageRange)
-        .not('no rage', rageRange)
+        .not('norage', rageRange)
         .defuzzify(20);
-      assert.equal(res.toString(), 'no rage');
+      assert.equal(res.toString(), 'norage');
     });
   });
 
@@ -61,6 +61,7 @@ describe('logic', () => {
         .or('enragedAttack', new Grade(90, 100))
         .defuzzify(99);
       assert.equal(res.toString(), 'enragedAttack');
+      console.log(res)
     });
   });
 });
