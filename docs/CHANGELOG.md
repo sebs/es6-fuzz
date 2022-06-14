@@ -1,10 +1,18 @@
+2022-06-14
+==========
+
+  * 4.0.0
+  * feature: make the api work with boonJsInputs
+  * feature: add a test for outoput names only to consist of alphabet
+    letters
+
 2022-06-11
 ==========
 
+  * (churn): changelog
   * 3.0.7
   * fix: revert dep change
   * refactor: make dependencies lighter
-  * (churn): changelog
 
 2022-06-02
 ==========
@@ -142,5 +150,3 @@
   * Fix output ght pages
   * DOcs
   * Ghpages
-  * 2.5.5
-  * Autorelease
