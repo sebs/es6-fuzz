@@ -58,6 +58,61 @@ var res = logic
 
 * hot
 
+
+## Usage with boon-js
+
+In order to combine 2 fuzzy functions with boolean logic, there is a compat layer for boon-js which allows the sauge of 'boolean expression language'. 
+
+Example of a monster biting when its cold and you are close to it: 
+ 
+
+Heat part:
+
+```js
+var logicHeat = new Logic();
+const optimalTemperature = new Triangle(10, 20, 30);
+const toColdTemperature = new Triangle(0, 10, 15);
+const toHotTemperature = new Triangle(25, 40, 60);
+
+logicHeat.init('cold', toColdTemperature)
+logicHeat.or('optimal', optimalTemperature)
+logicHeat.or('hot', toHotTemperature);
+```
+
+Distance Part
+
+```js
+
+var logicDistance = new Logic();
+const close = new Triangle(0, 10, 20);
+const far = new Triangle(5, 50, 100);
+
+logicDistance.init('close', close)
+logicDistance.or('far', far)
+
+```
+
+Now we marry the 2 and use boon js
+
+```js
+const monsterBiteTest = getEvaluator(
+    'heat.cold AND distance.close',
+);
+const resHeat = logicHeat.defuzzify(2, 'heat');
+const resClose = logicDistance.defuzzify(2, 'distance');
+
+const jsBoonInput = { ...resHeat.boonJsInputs, ...resClose.boonJsInputs }
+
+monsterBiteTest(jsBoonInput) 
+// returns true
+```
+
+    
+
+
+
+
+
 ## development
 
 **Tests** use mocha and a plugin for traceur
