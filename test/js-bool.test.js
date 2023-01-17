@@ -60,7 +60,7 @@ describe('js-bool test', () => {
 
 
     describe('can combine 2 fuzzy decisions via boonJs', ()=>{
-        it.only('monster bites when heat is cold and distance is close', ()=>{
+        it('monster bites when heat is cold and distance is close', ()=>{
             
             const resHeat = logicHeat.defuzzify(2, 'heat');
             const resClose = logicDistance.defuzzify(2, 'distance');
