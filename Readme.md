@@ -1,4 +1,4 @@
-# es6-fuzz 
+# js-fuzzy-logic ( forked from: es6-fuzz ) 
 
 > Fuzzy Logic in Javascript
 
