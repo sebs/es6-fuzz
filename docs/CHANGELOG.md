@@ -1,3 +1,12 @@
+2023-01-19
+==========
+  * 4.1.0
+  * Added batch evaluation api
+  * (churn): changelog
+  * feature: Add a class that allows client code to group evaluator rules in an array of 3-tuples,
+    each 3-tuple associates the evaluator to its output and evaluation result.
+
+
 2022-06-14
 ==========
 
