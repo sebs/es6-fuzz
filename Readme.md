@@ -21,12 +21,6 @@ Supported fuzzyfiers
 * [api docs](http://sebs.github.io/es6-fuzz)
 * [changelog](https://github.com/sebs/es6-fuzz/blob/master/docs/CHANGELOG.md)
 
-## Install and Usage
-
-es6-fuzz is available as a NPM package.
-
-```
-npm install es6-fuzz
 ```
 ## Example
 
