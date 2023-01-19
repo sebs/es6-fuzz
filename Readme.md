@@ -57,6 +57,8 @@ var res = logic
 
 * hot
 
+## Example 3: Usage of the RuleBase class
+(see example-1-RuleBase.js)
 
 ## Usage with boon-js
 
