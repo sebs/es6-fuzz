@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('node:test');
 const Grade = require('../lib/curve/grade');
 const assert = require('assert');
 

@@ -1,3 +1,4 @@
+const { describe, it, beforeEach } = require('node:test');
 const assert = require('assert');
 const Logic = require('../lib/logic');
 const Triangle = require('../lib/curve/triangle');

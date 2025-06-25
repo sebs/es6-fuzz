@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('node:test');
 const FuzzyFunction= require('../lib/curve/fuzzy-function');
 const assert = require('assert');
 

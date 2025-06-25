@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('node:test');
 const Shape = require('../lib/curve/shape');
 const assert = require('assert');
 

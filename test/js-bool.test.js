@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('node:test');
 const Logic = require('../lib/logic');
 const Triangle = require('../lib/curve/triangle');
 const Trapezoid = require('../lib/curve/trapezoid');
