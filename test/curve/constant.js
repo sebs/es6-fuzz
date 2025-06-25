@@ -1,5 +1,5 @@
 const { describe, it } = require('node:test');
-const Constant= require('../lib/curve/constant');
+const Constant= require('../../lib/curve/constant');
 const assert = require('assert');
 
 describe('Constant', function() {

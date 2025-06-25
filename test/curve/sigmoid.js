@@ -1,6 +1,6 @@
 'use strict';
 const { describe, it } = require('node:test');
-const Sigmoid = require('../lib/curve/sigmoid');
+const Sigmoid = require('../../lib/curve/sigmoid');
 const assert = require('assert');
 
 describe('Sigmoid', function() {

@@ -1,6 +1,6 @@
 'use strict';
 const { describe, it } = require('node:test');
-const Triangle = require('../lib/curve/triangle');
+const Triangle = require('../../lib/curve/triangle');
 const assert = require('assert');
 
 describe('Triangle', function() {

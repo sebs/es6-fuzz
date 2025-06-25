@@ -1,6 +1,6 @@
 'use strict';
 const { describe, it } = require('node:test');
-const ReverseGrade = require('../lib/curve/reverse-grade');
+const ReverseGrade = require('../../lib/curve/reverse-grade');
 const assert = require('assert');
 
 describe('ReverseGrade', function() {
