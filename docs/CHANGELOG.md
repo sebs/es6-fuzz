@@ -1,9 +1,11 @@
 2025-06-26
 ==========
 
+  * 4.0.4
+  * fix: edge cases
+  * (churn): changelog
   * 4.0.3
   * refactor: cleaned up test structure
-  * (churn): changelog
   * 4.0.2
   * docs: add a clearer test case for constant
   * fix: [#76](https://github.com/sebs/es6-fuzz/issues/76) sigmoid implementation with weird microoptimizations
@@ -163,5 +165,3 @@
 
   * Added latest es5 export to dist
   * (churn): changelog
-  * 2.5.10
-  * Added curves
