@@ -18,7 +18,6 @@
         "includePattern": ".+\\.js(doc)?$",
         "excludePattern": "(^|\\/|\\\\)_"
     },
-    "analytics":{"ua":"UA-85700100-2", "domain":"https://sebs.github.io/es6-fuzz/"},
     "plugins": [],
     "templates": {
       "cleverLinks": true,

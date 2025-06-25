@@ -1,9 +1,30 @@
+Need to install the following packages:
+changelog@1.4.2
+Ok to proceed? (y) 2025-06-26
+==========
+
+  * 4.0.2
+  * docs: add a clearer test case for constant
+  * fix: [#76](https://github.com/sebs/es6-fuzz/issues/76) sigmoid implementation with weird microoptimizations
+    * added a different sigmoid function with easier to understand parameters
+
+2023-01-18
+==========
+
+  * test: find the bug with trapezoid special form square
+
+2023-01-17
+==========
+
+  * test: more tests for the trapezoid
+
 2022-06-14
 ==========
 
+  * chore: link docs
+  * (churn): changelog
   * 4.0.1
   * fix: update readme
-  * (churn): changelog
   * 4.0.0
   * feature: make the api work with boonJsInputs
   * feature: add a test for outoput names only to consist of alphabet
@@ -145,8 +166,3 @@
   * Added curves
   * 2.5.9
   * add missing dep
-  * 2.5.8
-  * Pages
-  * 2.5.7
-  * 2.5.6
-  * Added docs
