@@ -1,8 +1,9 @@
-Need to install the following packages:
-changelog@1.4.2
-Ok to proceed? (y) 2025-06-26
+2025-06-26
 ==========
 
+  * 4.0.3
+  * refactor: cleaned up test structure
+  * (churn): changelog
   * 4.0.2
   * docs: add a clearer test case for constant
   * fix: [#76](https://github.com/sebs/es6-fuzz/issues/76) sigmoid implementation with weird microoptimizations
@@ -164,5 +165,3 @@ Ok to proceed? (y) 2025-06-26
   * (churn): changelog
   * 2.5.10
   * Added curves
-  * 2.5.9
-  * add missing dep
