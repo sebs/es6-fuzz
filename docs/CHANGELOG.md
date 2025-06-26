@@ -1,6 +1,9 @@
 2025-06-27
 ==========
 
+  * 6.0.1
+  * refactor: update docs solution
+  * (churn): changelog
   * 6.0.0
   * chore: update deps
 
@@ -157,9 +160,3 @@
 ==========
 
   * Adding Google Tracking code to docs
-
-2017-04-07
-==========
-
-  * (churn): changelog
-  * 2.6.3
