@@ -8,7 +8,7 @@ import Shape from './shape';
 class Triangle extends Shape {
   /**
    * Fuzzify
-   * @param {number} - Point on X axis
+   * @param {number} x - Point on X axis
    * @return {number} fuzzy output 0..1
    */
   fuzzify(x: number): number {

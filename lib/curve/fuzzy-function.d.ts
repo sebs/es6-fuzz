@@ -3,12 +3,12 @@ declare class FuzzyFunction {
     private readonly cb;
     /**
      * Create a FuzzyFunction.
-     * @param {functions}  - callback.
+     * @param {function} cb - callback function.
      */
     constructor(cb: (val: number) => number);
     /**
      * Fuzzify
-     * @param {number} - val
+     * @param {number} val - value to fuzzify
      */
     fuzzify(val: number): number;
 }

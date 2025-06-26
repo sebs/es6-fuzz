@@ -8,7 +8,7 @@ import Shape from './shape';
 class Trapezoid extends Shape {
   /**
    * Fuzzify
-   * @param {number} - Point on X axis
+   * @param {number} val - Point on X axis
    * @return {number} fuzzy output 0..1
    */
   fuzzify(val: number): number {

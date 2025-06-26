@@ -13,23 +13,9 @@ const TYPE_AND = 'and';
 const TYPE_OR = 'or';
 const TYPE_NOT = 'not';
 
-type RuleType = typeof TYPE_INIT | typeof TYPE_AND | typeof TYPE_OR | typeof TYPE_NOT;
+type RuleType = Logic.RuleType;
+type Rule = Logic.Rule;
 
-interface Rule {
-  output: string;
-  shape: Shape;
-  type: RuleType;
-  fuzzy?: number;
-}
-
-interface DefuzzifyResult {
-  boonJsInputs: Record<string, boolean>;
-  fuzzified: number;
-  defuzzified: string;
-  rules: Rule[];
-  valueOf(): number;
-  toString(): string;
-}
 
 const ruleEngine = {
   and(a: Shape, b: Shape, value: number): number {
@@ -117,7 +103,7 @@ class Logic {
     return this;
   }
 
-  defuzzify(value: number, as?: string): DefuzzifyResult {
+  defuzzify(value: number, as?: string): Logic.DefuzzifyResult {
     this.checkInitCalled();
     let defuzzified = 'none';
     let fuzzified = 0;
@@ -172,6 +158,26 @@ class Logic {
         return defuzzified;
       }
     };
+  }
+}
+
+namespace Logic {
+  export type RuleType = 'init' | 'and' | 'or' | 'not';
+
+  export interface Rule {
+    output: string;
+    shape: Shape;
+    type: RuleType;
+    fuzzy?: number;
+  }
+
+  export interface DefuzzifyResult {
+    boonJsInputs: Record<string, boolean>;
+    fuzzified: number;
+    defuzzified: string;
+    rules: Rule[];
+    valueOf(): number;
+    toString(): string;
   }
 }
 
