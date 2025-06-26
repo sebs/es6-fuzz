@@ -7,8 +7,8 @@
   "homepage": "https://github.com/sebs/es6-fuzz",
   "scripts": {
     "changelog": "rm ./docs/CHANGELOG.md && npx changelog https://github.com/sebs/es6-fuzz all > ./docs/CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
-    "test": "node --test",
-    "test:watch": "node --test --watch",
+    "test": "node --test ./test/*.test.js ./test/**/*.test.js ./test/curve/**/*.test.js",
+    "test:watch": "node --test --watch ./test/*.test.js ./test/**/*.test.js ./test/curve/**/*.test.js",
     "addpush": "git add . && git commit . -m 'docs'",
     "pages": "node ./scripts/publish-gh.js",
     "docs": "jsdoc -c ./jsdoc.json -t ./node_modules/ink-docstrap/template -R ./Readme.md -u ./docs",
