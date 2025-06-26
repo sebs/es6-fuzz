@@ -7,8 +7,7 @@
 [![GitHub tag](https://img.shields.io/github/tag/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz)
 [![GitHub issues](https://img.shields.io/github/issues/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/issues)
 
-Supported fuzzyfiers
-
+## Supported fuzzyfiers
 
 * Constant
 * Grade
@@ -16,7 +15,6 @@ Supported fuzzyfiers
 * Sigmoid
 * Trapezoid
 * Triangle
-
 
 * [api docs](http://sebs.github.io/es6-fuzz)
 * [changelog](https://github.com/sebs/es6-fuzz/blob/master/docs/CHANGELOG.md)
@@ -128,9 +126,8 @@ npm test
 
 ## Supported Node.js Versions
 
-Versions: 6 and 7
+Versions: 20+
 
 ## Related
 
 * https://www.npmjs.com/package/gaussian
-*
