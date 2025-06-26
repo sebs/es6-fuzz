@@ -114,7 +114,7 @@ monsterBiteTest(jsBoonInput)
 
 ## development
 
-**Tests** use mocha and a plugin for traceur
+**Tests** use node internal testing framework
 
 ```
 npm test
