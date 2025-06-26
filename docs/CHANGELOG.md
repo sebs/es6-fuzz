@@ -1,8 +1,12 @@
 2025-06-26
 ==========
 
-  * 5.0.0
+  * 5.0.1
+  * refactor: cleanup of test files
+  * chore: remove unused test
+  * docs: add correct name of test framework
   * (churn): changelog
+  * 5.0.0
   * 4.0.4
   * fix: edge cases
   * 4.0.3
@@ -156,7 +160,3 @@
   * Changelog
   * Added changelog link
   * 2.6.1
-  * Docs
-  * 2.6.0
-  * Added link to api docs
-  * More docs
