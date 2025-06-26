@@ -1,11 +1,20 @@
+2025-06-27
+==========
+
+  * 6.0.0
+  * chore: update deps
+
 2025-06-26
 ==========
 
+  * Merge branch 'master' into refactor/convert-ts
+  * (churn): changelog
+  * refactor: convert to typescript
+  * Create SECURITY.md
   * 5.0.1
   * refactor: cleanup of test files
   * chore: remove unused test
   * docs: add correct name of test framework
-  * (churn): changelog
   * 5.0.0
   * 4.0.4
   * fix: edge cases
@@ -154,9 +163,3 @@
 
   * (churn): changelog
   * 2.6.3
-  * 2.6.2
-  * Added last release
-  * Badges
-  * Changelog
-  * Added changelog link
-  * 2.6.1
