@@ -1,0 +1,1 @@
+{"version":3,"file":"sigmoid.d.ts","sourceRoot":"","sources":["../../src/curve/sigmoid.ts"],"names":[],"mappings":"AACA;;;;;;GAMG;AACH,cAAM,OAAO;IACX,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAS;IAChC,OAAO,CAAC,QAAQ,CAAC,KAAK,CAAS;IAE/B;;;;OAIG;gBACS,MAAM,GAAE,MAAU,EAAE,KAAK,GAAE,MAAU;IAIjD;;;;OAIG;IACH,OAAO,CAAC,CAAC,EAAE,MAAM,GAAG,MAAM;CAS3B;AACD,SAAS,OAAO,CAAC"}

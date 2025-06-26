@@ -1,0 +1,51 @@
+# Source files (TypeScript)
+src/
+
+# Test files
+test/
+*.test.js
+*.test.ts
+
+# Documentation source
+docs/
+out/
+jsdoc.json
+
+# Development files
+.gitignore
+.editorconfig
+tsconfig.json
+tsconfig.test.json
+
+# Scripts
+scripts/
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+
+# Build artifacts that shouldn't be published
+*.tsbuildinfo
+
+# Keep only compiled JS in lib/
+# Everything else is excluded

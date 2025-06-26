@@ -1,23 +1,18 @@
-'use strict';
 /** Class representing a Constant. */
-class Constant {
-    cValue;
+declare class Constant {
+    private readonly cValue;
     /**
      * Create a Constant Value.
      * @param {number} constantValue - The value.
      * @example
      * new Constant(10)
      */
-    constructor(constantValue) {
-        this.cValue = constantValue;
-    }
+    constructor(constantValue: number);
     /**
      * Fuzzify
      * @return {number} constant output
      */
-    fuzzify() {
-        return this.cValue;
-    }
+    fuzzify(): number;
 }
-module.exports = Constant;
-//# sourceMappingURL=constant.js.map
+export = Constant;
+//# sourceMappingURL=constant.d.ts.map
