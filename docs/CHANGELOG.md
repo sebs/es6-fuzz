@@ -1,9 +1,10 @@
 2025-06-26
 ==========
 
+  * 5.0.0
+  * (churn): changelog
   * 4.0.4
   * fix: edge cases
-  * (churn): changelog
   * 4.0.3
   * refactor: cleaned up test structure
   * 4.0.2
@@ -159,9 +160,3 @@
   * 2.6.0
   * Added link to api docs
   * More docs
-
-2017-04-04
-==========
-
-  * Added latest es5 export to dist
-  * (churn): changelog
