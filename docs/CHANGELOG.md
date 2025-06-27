@@ -1,10 +1,18 @@
 2025-06-27
 ==========
 
+  * 6.0.7
+  * fix: changelog got lost
+  * 6.0.6
+  * fix: wrong folder for docs generation
+  * fix: entrypoints for docs
+  * (churn): changelog
+  * 6.0.5
+  * fix: less content from the repo gets published
+  * chore: unclaude my heart
   * 6.0.4
   * feature: render examples
   * feature: svg renderer
-  * (churn): changelog
   * 6.0.3
   * fix: all outputs
   * 6.0.2
@@ -139,20 +147,3 @@
   * (churn): changelog
   * 3.0.0
   * Info about new version
-  * Moving to a common js require style instead of the module import syntax for usage reasons. I just want the thing here to be usable on plain node. As much "new javascript" is supported I will use. I just want to use the project in anothe rproject and hit that roadblock :) So now this is usable out of a browser.
-
-2017-04-16
-==========
-
-  * (churn): changelog
-  * 2.7.3
-  * Removed bower reference
-
-2017-04-12
-==========
-
-  * Readme
-  * (churn): changelog
-  * 2.7.2
-  * Changelog link
-  * 2.7.1
