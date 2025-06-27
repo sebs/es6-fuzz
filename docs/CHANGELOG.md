@@ -1,9 +1,12 @@
 2025-06-27
 ==========
 
+  * 6.0.2
+  * fix: exports
+  * docs: update reademe version
+  * (churn): changelog
   * 6.0.1
   * refactor: update docs solution
-  * (churn): changelog
   * 6.0.0
   * chore: update deps
 
@@ -152,11 +155,3 @@
   * 2.7.0
   * More docs
   * 2.6.4
-  * mMore Documentation
-  * Added node version 7
-  * Fuzzify documented
-
-2017-04-09
-==========
-
-  * Adding Google Tracking code to docs
