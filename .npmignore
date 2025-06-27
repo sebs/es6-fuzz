@@ -49,3 +49,11 @@ node_modules/
 
 # Keep only compiled JS in lib/
 # Everything else is excluded
+
+
+.claude
+example.js
+example2.js
+typedoc.json
+.jscsrc
+.gitattributes
