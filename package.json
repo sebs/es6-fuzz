@@ -15,7 +15,7 @@
     "test:watch": "npm run build && tsx --test --watch ./test/*.test.ts ./test/**/*.test.ts ./test/curve/**/*.test.ts",
     "addpush": "git add . && git commit . -m 'docs'",
     "pages": "node ./scripts/publish-gh.js",
-    "docs": "typedoc",
+    "docs": "typedoc --entryPointStrategy expand --entryPoints src",
     "preversion": "rm -f package-lock.json",
     "postversion": "git push && git push --tags && npm run changelog && npm run docs && npm run pages",
     "render-examples": "node lib/render-examples.js"
