@@ -1,12 +1,14 @@
 2025-06-27
 ==========
 
+  * 6.0.8
+  * fix: unclaude my heart again
+  * (churn): changelog
   * 6.0.7
   * fix: changelog got lost
   * 6.0.6
   * fix: wrong folder for docs generation
   * fix: entrypoints for docs
-  * (churn): changelog
   * 6.0.5
   * fix: less content from the repo gets published
   * chore: unclaude my heart
@@ -140,10 +142,3 @@
   * Removed es6 infrastructure
   * Removed package remark
   * Removed incompatible node versions from build
-
-2017-04-25
-==========
-
-  * (churn): changelog
-  * 3.0.0
-  * Info about new version
