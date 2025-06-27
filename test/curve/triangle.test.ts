@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import Triangle from '../../lib/curve/triangle';
+import { Triangle } from '../../lib/curve/triangle';
 import assert from 'assert';
 
 describe('Triangle', function() {

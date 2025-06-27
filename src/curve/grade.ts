@@ -1,11 +1,11 @@
 'use strict';
-import Shape from './shape';
+import { Shape } from './shape';
 /**
  * Class representing a Grade.
  * @example
  * new Grade(0, 10)
  */
-class Grade extends Shape {
+export class Grade extends Shape {
   /**
    * Fuzzify
    * @param {number} val - Point on X axis
@@ -31,4 +31,3 @@ class Grade extends Shape {
     return result;
   }
 }
-export = Grade;

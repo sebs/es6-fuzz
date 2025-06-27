@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Grade from '../../lib/curve/grade';
+import { Grade } from '../../lib/curve/grade';
 
 describe('Grade edge cases', function() {
   describe('vertical grade (x0=x1)', function() {

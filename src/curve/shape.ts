@@ -1,6 +1,6 @@
 'use strict';
 /** Base class representing a Shape. */
-abstract class Shape {
+export abstract class Shape {
   readonly x0!: number;
   readonly x1!: number;
   readonly x2!: number;
@@ -40,4 +40,3 @@ abstract class Shape {
   abstract fuzzify(val: number): number;
 }
 
-export = Shape;

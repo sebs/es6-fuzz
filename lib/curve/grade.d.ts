@@ -1,10 +1,10 @@
-import Shape from './shape';
+import { Shape } from './shape';
 /**
  * Class representing a Grade.
  * @example
  * new Grade(0, 10)
  */
-declare class Grade extends Shape {
+export declare class Grade extends Shape {
     /**
      * Fuzzify
      * @param {number} val - Point on X axis
@@ -12,5 +12,4 @@ declare class Grade extends Shape {
      */
     fuzzify(val: number): number;
 }
-export = Grade;
 //# sourceMappingURL=grade.d.ts.map

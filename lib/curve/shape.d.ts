@@ -1,5 +1,5 @@
 /** Base class representing a Shape. */
-declare abstract class Shape {
+export declare abstract class Shape {
     readonly x0: number;
     readonly x1: number;
     readonly x2: number;
@@ -19,5 +19,4 @@ declare abstract class Shape {
      */
     abstract fuzzify(val: number): number;
 }
-export = Shape;
 //# sourceMappingURL=shape.d.ts.map

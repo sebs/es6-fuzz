@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
+import { Logic } from '../../lib/logic';
 
 describe('Performance with many rules', function() {
   it('should handle 100+ rules efficiently', function() {

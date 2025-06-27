@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Triangle from '../../lib/curve/triangle';
+import { Triangle } from '../../lib/curve/triangle';
 
 describe('Triangle degenerate cases', function() {
   describe('triangle with all points equal (x0=x1=x2)', function() {

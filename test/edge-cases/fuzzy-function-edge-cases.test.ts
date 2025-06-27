@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import FuzzyFunction from '../../lib/curve/fuzzy-function';
+import { FuzzyFunction } from '../../lib/curve/fuzzy-function';
 
 describe('FuzzyFunction edge cases', function() {
   describe('functions returning values outside [0,1]', function() {

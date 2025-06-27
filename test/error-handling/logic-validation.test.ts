@@ -1,8 +1,8 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
-import Triangle from '../../lib/curve/triangle';
+import { Logic } from '../../lib/logic';
+import { Triangle } from '../../lib/curve/triangle';
 
 describe('Logic class validation', function() {
   describe('method calls without init', function() {

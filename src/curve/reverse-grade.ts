@@ -1,7 +1,7 @@
 'use strict';
-import Shape from './shape';
+import { Shape } from './shape';
 /** Class representing a ReverseGrade. */
-class ReverseGrade extends Shape {
+export class ReverseGrade extends Shape {
   /**
    * Fuzzify
    * @param {number} val - Point on X axis
@@ -26,4 +26,3 @@ class ReverseGrade extends Shape {
     return result;
   }
 }
-export = ReverseGrade;

@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import ReverseGrade from '../../lib/curve/reverse-grade';
+import { ReverseGrade } from '../../lib/curve/reverse-grade';
 
 describe('ReverseGrade edge cases', function() {
   describe('vertical reverse grade (x0=x1)', function() {

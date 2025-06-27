@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
+import { Logic } from '../../lib/logic';
 
 describe('Mixing all shape types', function() {
   it('should work with all shape types in one Logic instance', function() {

@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
+import { Logic } from '../../lib/logic';
 
 describe('AND/OR/NOT combinations', function() {
   it('should correctly implement fuzzy AND logic', function() {

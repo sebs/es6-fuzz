@@ -1,11 +1,11 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Triangle from '../../lib/curve/triangle';
-import Trapezoid from '../../lib/curve/trapezoid';
-import Grade from '../../lib/curve/grade';
-import ReverseGrade from '../../lib/curve/reverse-grade';
-import Sigmoid from '../../lib/curve/sigmoid';
+import { Triangle } from '../../lib/curve/triangle';
+import { Trapezoid } from '../../lib/curve/trapezoid';
+import { Grade } from '../../lib/curve/grade';
+import { ReverseGrade } from '../../lib/curve/reverse-grade';
+import { Sigmoid } from '../../lib/curve/sigmoid';
 
 describe('Shapes with very large x values', function() {
   describe('Infinity handling', function() {

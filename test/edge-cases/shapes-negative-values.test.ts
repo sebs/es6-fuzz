@@ -1,8 +1,8 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Triangle from '../../lib/curve/triangle';
-import Trapezoid from '../../lib/curve/trapezoid';
+import { Triangle } from '../../lib/curve/triangle';
+import { Trapezoid } from '../../lib/curve/trapezoid';
 
 describe('Shapes with negative x values', function() {
   describe('triangle with negative x values', function() {

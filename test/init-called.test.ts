@@ -1,7 +1,7 @@
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../lib/logic';
-import Triangle from '../lib/curve/triangle';
+import { Logic } from '../lib/logic';
+import { Triangle } from '../lib/curve/triangle';
 
 describe('Example Test', function() {
     

@@ -1,6 +1,6 @@
 'use strict';
 /** Class representing a Constant. */
-class Constant {
+export class Constant {
   private readonly cValue: number;
 
   /**
@@ -20,4 +20,3 @@ class Constant {
     return this.cValue;
   }
 }
-export = Constant;

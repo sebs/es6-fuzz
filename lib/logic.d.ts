@@ -1,13 +1,13 @@
-import Shape from './curve/shape';
-import Grade from './curve/grade';
-import ReverseGrade from './curve/reverse-grade';
-import Triangle from './curve/triangle';
-import Trapezoid from './curve/trapezoid';
-import Constant from './curve/constant';
-import FuzzyFunction from './curve/fuzzy-function';
-import Sigmoid from './curve/sigmoid';
+import { Shape } from './curve/shape';
+import { Grade } from './curve/grade';
+import { ReverseGrade } from './curve/reverse-grade';
+import { Triangle } from './curve/triangle';
+import { Trapezoid } from './curve/trapezoid';
+import { Constant } from './curve/constant';
+import { FuzzyFunction } from './curve/fuzzy-function';
+import { Sigmoid } from './curve/sigmoid';
 /** Class helping with FuzzyLogic. */
-declare class Logic {
+export declare class Logic {
     private initCalled;
     private rules;
     c: {
@@ -46,5 +46,5 @@ declare namespace Logic {
         toString(): string;
     }
 }
-export = Logic;
+export {};
 //# sourceMappingURL=logic.d.ts.map

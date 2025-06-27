@@ -1,5 +1,5 @@
 /** Class representing a FuzzyFunction. */
-class FuzzyFunction  {
+export class FuzzyFunction  {
   private readonly cb: (val: number) => number;
 
   /**
@@ -21,4 +21,3 @@ class FuzzyFunction  {
     throw Error('fuzzified result must be smaller than 1 but greater than 0 but is' + res);
   }
 }
-export = FuzzyFunction;

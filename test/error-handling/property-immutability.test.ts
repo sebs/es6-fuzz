@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Triangle from '../../lib/curve/triangle';
+import { Triangle } from '../../lib/curve/triangle';
 
 describe('Property immutability', function() {
   describe('shape properties are read-only', function() {

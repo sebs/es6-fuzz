@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Trapezoid from '../../lib/curve/trapezoid';
+import { Trapezoid } from '../../lib/curve/trapezoid';
 
 describe('Trapezoid special cases', function() {
   describe('square trapezoid (x1=x2)', function() {

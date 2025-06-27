@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import ReverseGrade from '../../lib/curve/reverse-grade';
+import { ReverseGrade } from '../../lib/curve/reverse-grade';
 import assert from 'assert';
 
 describe('ReverseGrade', function() {

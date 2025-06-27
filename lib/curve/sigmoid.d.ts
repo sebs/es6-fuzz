@@ -5,7 +5,7 @@
  * sigmoid = new Sigmoid(0, 100000);
  * sigmoid2.fuzzify(10);
  */
-declare class Sigmoid {
+export declare class Sigmoid {
     private readonly center;
     private readonly slope;
     /**
@@ -21,5 +21,4 @@ declare class Sigmoid {
      */
     fuzzify(x: number): number;
 }
-export = Sigmoid;
 //# sourceMappingURL=sigmoid.d.ts.map

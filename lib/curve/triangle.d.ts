@@ -1,10 +1,10 @@
-import Shape from './shape';
+import { Shape } from './shape';
 /**
  * Class representing a Triangle.
  * @example
  * new Triangle(0, 10, 20)
  */
-declare class Triangle extends Shape {
+export declare class Triangle extends Shape {
     /**
      * Fuzzify
      * @param {number} x - Point on X axis
@@ -12,5 +12,4 @@ declare class Triangle extends Shape {
      */
     fuzzify(x: number): number;
 }
-export = Triangle;
 //# sourceMappingURL=triangle.d.ts.map

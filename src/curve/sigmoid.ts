@@ -6,7 +6,7 @@
  * sigmoid = new Sigmoid(0, 100000);
  * sigmoid2.fuzzify(10);
  */
-class Sigmoid {
+export class Sigmoid {
   private readonly center: number;
   private readonly slope: number;
 
@@ -34,4 +34,3 @@ class Sigmoid {
     return 1.0 / (1.0 + Math.exp(-(x - this.center) / this.slope));
   }
 }
-export = Sigmoid;

@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it, beforeEach  } from 'node:test';
-import Logic from '../../lib/logic';
+import { Logic } from '../../lib/logic';
 import assert from 'assert';
 
 describe('interface', () => {

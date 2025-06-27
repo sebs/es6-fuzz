@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import FuzzyFunction from '../../lib/curve/fuzzy-function';
+import { FuzzyFunction } from '../../lib/curve/fuzzy-function';
 
 describe('FuzzyFunction validation', function() {
   describe('invalid callback types', function() {

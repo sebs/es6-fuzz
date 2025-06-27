@@ -1,11 +1,11 @@
 'use strict';
-import Shape from './shape';
+import { Shape } from './shape';
 /**
  * Class representing a Trapezoid.
  * @example
  * new Trapezoid(0, 10, 15, 20)
  */
-class Trapezoid extends Shape {
+export class Trapezoid extends Shape {
   /**
    * Fuzzify
    * @param {number} val - Point on X axis
@@ -52,4 +52,3 @@ class Trapezoid extends Shape {
     return result;
   }
 }
-export = Trapezoid;

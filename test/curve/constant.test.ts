@@ -1,5 +1,5 @@
 import { describe, it  } from 'node:test';
-import Constant from '../../lib/curve/constant';
+import { Constant } from '../../lib/curve/constant';
 import assert from 'assert';
 
 describe('Constant', function() {

@@ -1,8 +1,8 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import Logic from '../lib/logic';
-import Triangle from '../lib/curve/triangle';
-import Trapezoid from '../lib/curve/trapezoid';
+import { Logic } from '../lib/logic';
+import { Triangle } from '../lib/curve/triangle';
+import { Trapezoid } from '../lib/curve/trapezoid';
 import assert from 'assert';
 const getEvaluator = require('boon-js').getEvaluator;
 

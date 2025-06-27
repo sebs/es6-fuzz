@@ -1,1 +1,1 @@
-{"version":3,"file":"grade.d.ts","sourceRoot":"","sources":["../../src/curve/grade.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,MAAM,SAAS,CAAC;AAC5B;;;;GAIG;AACH,cAAM,KAAM,SAAQ,KAAK;IACvB;;;;OAIG;IACH,OAAO,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM;CAmB7B;AACD,SAAS,KAAK,CAAC"}
+{"version":3,"file":"grade.d.ts","sourceRoot":"","sources":["../../src/curve/grade.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAChC;;;;GAIG;AACH,qBAAa,KAAM,SAAQ,KAAK;IAC9B;;;;OAIG;IACH,OAAO,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM;CAmB7B"}

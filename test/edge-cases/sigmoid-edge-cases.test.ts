@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Sigmoid from '../../lib/curve/sigmoid';
+import { Sigmoid } from '../../lib/curve/sigmoid';
 
 describe('Sigmoid edge cases', function() {
   describe('zero slope (becomes step function)', function() {

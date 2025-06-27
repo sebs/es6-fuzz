@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import Grade from '../../lib/curve/grade';
+import { Grade } from '../../lib/curve/grade';
 import assert from 'assert';
 
 describe('Grade', function() {

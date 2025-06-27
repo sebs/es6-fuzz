@@ -1,5 +1,5 @@
 /** Class representing a Constant. */
-declare class Constant {
+export declare class Constant {
     private readonly cValue;
     /**
      * Create a Constant Value.
@@ -14,5 +14,4 @@ declare class Constant {
      */
     fuzzify(): number;
 }
-export = Constant;
 //# sourceMappingURL=constant.d.ts.map

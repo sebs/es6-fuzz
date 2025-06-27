@@ -1,1 +1,1 @@
-{"version":3,"file":"reverse-grade.d.ts","sourceRoot":"","sources":["../../src/curve/reverse-grade.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,MAAM,SAAS,CAAC;AAC5B,yCAAyC;AACzC,cAAM,YAAa,SAAQ,KAAK;IAC9B;;;;OAIG;IACH,OAAO,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM;CAkB7B;AACD,SAAS,YAAY,CAAC"}
+{"version":3,"file":"reverse-grade.d.ts","sourceRoot":"","sources":["../../src/curve/reverse-grade.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAChC,yCAAyC;AACzC,qBAAa,YAAa,SAAQ,KAAK;IACrC;;;;OAIG;IACH,OAAO,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM;CAkB7B"}

@@ -1,15 +1,15 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
-import Triangle from '../../lib/curve/triangle';
-import Trapezoid from '../../lib/curve/trapezoid';
-import Grade from '../../lib/curve/grade';
-import ReverseGrade from '../../lib/curve/reverse-grade';
-import Sigmoid from '../../lib/curve/sigmoid';
-import Constant from '../../lib/curve/constant';
-import FuzzyFunction from '../../lib/curve/fuzzy-function';
-import Shape from '../../lib/curve/shape';
+import { Logic } from '../../lib/logic';
+import { Triangle } from '../../lib/curve/triangle';
+import { Trapezoid } from '../../lib/curve/trapezoid';
+import { Grade } from '../../lib/curve/grade';
+import { ReverseGrade } from '../../lib/curve/reverse-grade';
+import { Sigmoid } from '../../lib/curve/sigmoid';
+import { Constant } from '../../lib/curve/constant';
+import { FuzzyFunction } from '../../lib/curve/fuzzy-function';
+import { Shape } from '../../lib/curve/shape';
 
 describe('ES6 class instantiation', function() {
   describe('shapes without new keyword', function() {

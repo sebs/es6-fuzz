@@ -1,12 +1,12 @@
 'use strict'
-import Shape from './curve/shape';
-import Grade from './curve/grade';
-import ReverseGrade from './curve/reverse-grade';
-import Triangle from './curve/triangle';
-import Trapezoid from './curve/trapezoid';
-import Constant from './curve/constant';
-import FuzzyFunction from './curve/fuzzy-function';
-import Sigmoid from './curve/sigmoid';
+import { Shape } from './curve/shape';
+import { Grade } from './curve/grade';
+import { ReverseGrade } from './curve/reverse-grade';
+import { Triangle } from './curve/triangle';
+import { Trapezoid } from './curve/trapezoid';
+import { Constant } from './curve/constant';
+import { FuzzyFunction } from './curve/fuzzy-function';
+import { Sigmoid } from './curve/sigmoid';
 
 const TYPE_INIT = 'init';
 const TYPE_AND = 'and';
@@ -30,7 +30,7 @@ const ruleEngine = {
 };
 
 /** Class helping with FuzzyLogic. */
-class Logic {
+export class Logic {
   private initCalled: boolean = false;
   private rules: Rule[] = [];
   
@@ -181,4 +181,3 @@ namespace Logic {
   }
 }
 
-export = Logic;

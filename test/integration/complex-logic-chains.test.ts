@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
+import { Logic } from '../../lib/logic';
 
 describe('Complex AND/OR/NOT chains', function() {
   it('should handle 5+ shapes in complex logic', function() {

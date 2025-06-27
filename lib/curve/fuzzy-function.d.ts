@@ -1,5 +1,5 @@
 /** Class representing a FuzzyFunction. */
-declare class FuzzyFunction {
+export declare class FuzzyFunction {
     private readonly cb;
     /**
      * Create a FuzzyFunction.
@@ -12,5 +12,4 @@ declare class FuzzyFunction {
      */
     fuzzify(val: number): number;
 }
-export = FuzzyFunction;
 //# sourceMappingURL=fuzzy-function.d.ts.map

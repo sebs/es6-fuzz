@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Logic from '../../lib/logic';
+import { Logic } from '../../lib/logic';
 
 describe('Complex real-world scenarios', function() {
   it('should model temperature and humidity comfort zones', function() {

@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import Sigmoid from '../../../lib/curve/sigmoid';
+import { Sigmoid } from '../../../lib/curve/sigmoid';
 import assert from 'assert';
 
 describe('slope', function() {

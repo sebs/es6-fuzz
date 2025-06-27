@@ -1,7 +1,7 @@
 'use strict';
 import { describe, it  } from 'node:test';
 import assert from 'assert';
-import Constant from '../../lib/curve/constant';
+import { Constant } from '../../lib/curve/constant';
 
 describe('Constant edge values', function() {
   describe('all possible constant values', function() {

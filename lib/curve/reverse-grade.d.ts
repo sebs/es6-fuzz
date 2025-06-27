@@ -1,6 +1,6 @@
-import Shape from './shape';
+import { Shape } from './shape';
 /** Class representing a ReverseGrade. */
-declare class ReverseGrade extends Shape {
+export declare class ReverseGrade extends Shape {
     /**
      * Fuzzify
      * @param {number} val - Point on X axis
@@ -8,5 +8,4 @@ declare class ReverseGrade extends Shape {
      */
     fuzzify(val: number): number;
 }
-export = ReverseGrade;
 //# sourceMappingURL=reverse-grade.d.ts.map

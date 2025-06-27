@@ -1,9 +1,9 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import Logic from '../../lib/logic';
-import Triangle from '../../lib/curve/triangle';
-import Trapezoid from '../../lib/curve/trapezoid';
-import Grade from '../../lib/curve/grade';
+import { Logic } from '../../lib/logic';
+import { Triangle } from '../../lib/curve/triangle';
+import { Trapezoid } from '../../lib/curve/trapezoid';
+import { Grade } from '../../lib/curve/grade';
 import assert from 'assert';
 
 describe('behaves like a number', function() {

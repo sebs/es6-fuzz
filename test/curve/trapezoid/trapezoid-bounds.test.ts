@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import Trapezoid from '../../../lib/curve/trapezoid';
+import { Trapezoid } from '../../../lib/curve/trapezoid';
 import assert from 'assert';
 
 describe('bounds', ()=>{

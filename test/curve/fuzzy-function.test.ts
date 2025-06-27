@@ -1,6 +1,6 @@
 'use strict';
 import { describe, it  } from 'node:test';
-import FuzzyFunction from '../../lib/curve/fuzzy-function';
+import { FuzzyFunction } from '../../lib/curve/fuzzy-function';
 import assert from 'assert';
 
 describe('FuzzyFunction', function() {
