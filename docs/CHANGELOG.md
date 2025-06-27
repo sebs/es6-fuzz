@@ -1,9 +1,12 @@
 2025-06-27
 ==========
 
+  * 6.0.4
+  * feature: render examples
+  * feature: svg renderer
+  * (churn): changelog
   * 6.0.3
   * fix: all outputs
-  * (churn): changelog
   * 6.0.2
   * fix: exports
   * docs: update reademe version
@@ -153,5 +156,3 @@
   * 2.7.2
   * Changelog link
   * 2.7.1
-  * Dist
-  * 2.7.0
