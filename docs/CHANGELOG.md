@@ -1,10 +1,12 @@
 2025-06-27
 ==========
 
+  * 6.0.3
+  * fix: all outputs
+  * (churn): changelog
   * 6.0.2
   * fix: exports
   * docs: update reademe version
-  * (churn): changelog
   * 6.0.1
   * refactor: update docs solution
   * 6.0.0
@@ -153,5 +155,3 @@
   * 2.7.1
   * Dist
   * 2.7.0
-  * More docs
-  * 2.6.4
