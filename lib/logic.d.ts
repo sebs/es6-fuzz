@@ -29,7 +29,7 @@ export declare class Logic {
     not(output: string, shape: Shape): this;
     defuzzify(value: number, as?: string): Logic.DefuzzifyResult;
 }
-declare namespace Logic {
+export declare namespace Logic {
     type RuleType = 'init' | 'and' | 'or' | 'not';
     interface Rule {
         output: string;
@@ -46,5 +46,4 @@ declare namespace Logic {
         toString(): string;
     }
 }
-export {};
 //# sourceMappingURL=logic.d.ts.map

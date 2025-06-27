@@ -161,7 +161,7 @@ export class Logic {
   }
 }
 
-namespace Logic {
+export namespace Logic {
   export type RuleType = 'init' | 'and' | 'or' | 'not';
 
   export interface Rule {
