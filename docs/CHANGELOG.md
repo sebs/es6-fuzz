@@ -1,10 +1,13 @@
 2025-06-27
 ==========
 
+  * 6.0.5
+  * fix: less content from the repo gets published
+  * chore: unclaude my heart
+  * (churn): changelog
   * 6.0.4
   * feature: render examples
   * feature: svg renderer
-  * (churn): changelog
   * 6.0.3
   * fix: all outputs
   * 6.0.2
@@ -153,6 +156,3 @@
 
   * Readme
   * (churn): changelog
-  * 2.7.2
-  * Changelog link
-  * 2.7.1
