@@ -1,9 +1,15 @@
+2025-07-01
+==========
+
+  * 6.0.9
+  * docs: readme a little updated
+
 2025-06-27
 ==========
 
+  * (churn): changelog
   * 6.0.8
   * fix: unclaude my heart again
-  * (churn): changelog
   * 6.0.7
   * fix: changelog got lost
   * 6.0.6
@@ -139,6 +145,3 @@
   * readme
   * Readme
   * removed dist
-  * Removed es6 infrastructure
-  * Removed package remark
-  * Removed incompatible node versions from build
