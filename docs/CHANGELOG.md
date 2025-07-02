@@ -1,6 +1,15 @@
+2025-07-02
+==========
+
+  * 6.1.0
+  * feature: prettier
+  * chore: updated versions
+  * docs: added ts support in desc
+
 2025-07-01
 ==========
 
+  * (churn): changelog
   * 6.0.9
   * docs: readme a little updated
 
@@ -132,16 +141,3 @@
     Update logic.js
   * Update logic.js
     Added Trapezoid to Logic class
-
-2017-07-27
-==========
-
-  * 3.0.1
-  * Update readme
-
-2017-05-09
-==========
-
-  * readme
-  * Readme
-  * removed dist
