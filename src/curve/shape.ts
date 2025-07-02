@@ -16,19 +16,19 @@ export abstract class Shape {
   constructor(x0: number, x1: number, x2: number, x3: number) {
     Object.defineProperty(this, 'x0', {
       value: x0,
-      writable: false
+      writable: false,
     });
     Object.defineProperty(this, 'x1', {
       value: x1,
-      writable: false
+      writable: false,
     });
     Object.defineProperty(this, 'x2', {
       value: x2,
-      writable: false
+      writable: false,
     });
     Object.defineProperty(this, 'x3', {
       value: x3,
-      writable: false
+      writable: false,
     });
   }
 
@@ -39,4 +39,3 @@ export abstract class Shape {
    */
   abstract fuzzify(val: number): number;
 }
-

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict'
+'use strict';
 import { Logic } from './logic';
 import { SVGRenderer } from './svg-renderer';
 import * as fs from 'fs';
@@ -21,44 +21,44 @@ const examples = [
   {
     name: 'grade-cold',
     shape: new logic.c.Grade(10, 25, 25, 25),
-    description: 'Grade: Cold temperature (increases from 10°C to 25°C)'
+    description: 'Grade: Cold temperature (increases from 10°C to 25°C)',
   },
   {
     name: 'reverse-grade-hot',
     shape: new logic.c.ReverseGrade(25, 40, 40, 40),
-    description: 'ReverseGrade: Hot temperature (decreases from 25°C to 40°C)'
+    description: 'ReverseGrade: Hot temperature (decreases from 25°C to 40°C)',
   },
   {
     name: 'triangle-comfortable',
     shape: new logic.c.Triangle(18, 23, 23, 28),
-    description: 'Triangle: Comfortable temperature (peak at 23°C)'
+    description: 'Triangle: Comfortable temperature (peak at 23°C)',
   },
   {
     name: 'trapezoid-optimal',
     shape: new logic.c.Trapezoid(20, 22, 26, 28),
-    description: 'Trapezoid: Optimal temperature range (22°C to 26°C)'
+    description: 'Trapezoid: Optimal temperature range (22°C to 26°C)',
   },
   {
     name: 'sigmoid-transition',
     shape: new logic.c.Sigmoid(25, 2),
-    description: 'Sigmoid: Smooth transition (centered at 25, slope 2)'
+    description: 'Sigmoid: Smooth transition (centered at 25, slope 2)',
   },
   {
     name: 'sigmoid-steep',
     shape: new logic.c.Sigmoid(30, 0.5),
-    description: 'Sigmoid: Steep transition (centered at 30, slope 0.5)'
+    description: 'Sigmoid: Steep transition (centered at 30, slope 0.5)',
   },
   {
     name: 'constant-medium',
     shape: new logic.c.Constant(0.5),
-    description: 'Constant: Fixed membership value (0.5)'
+    description: 'Constant: Fixed membership value (0.5)',
   },
   {
     name: 'function-sine-wave',
     shape: new logic.c.FuzzyFunction((x: number) => {
-      return Math.sin(x * Math.PI / 25) * 0.4 + 0.5;
+      return Math.sin((x * Math.PI) / 25) * 0.4 + 0.5;
     }),
-    description: 'FuzzyFunction: Sine wave pattern'
+    description: 'FuzzyFunction: Sine wave pattern',
   },
   {
     name: 'function-gaussian',
@@ -67,8 +67,8 @@ const examples = [
       const stdDev = 5;
       return Math.exp(-Math.pow(x - mean, 2) / (2 * stdDev * stdDev));
     }),
-    description: 'FuzzyFunction: Gaussian distribution (mean=25, σ=5)'
-  }
+    description: 'FuzzyFunction: Gaussian distribution (mean=25, σ=5)',
+  },
 ];
 
 // Create renderer with nice defaults
@@ -88,7 +88,7 @@ const renderer = new SVGRenderer({
   labelColor: '#374151',
   strokeWidth: 3,
   strokeColor: '#2563eb',
-  fillOpacity: 0.15
+  fillOpacity: 0.15,
 });
 
 // Render individual examples
@@ -105,12 +105,30 @@ console.log('\nCreating composite visualizations...');
 
 // Temperature controller system
 const tempSystem = renderer.renderMultiple([
-  { shape: new logic.c.ReverseGrade(0, 15, 15, 15), options: { strokeColor: '#1e40af', fillOpacity: 0.15 } },
-  { shape: new logic.c.Trapezoid(10, 15, 20, 25), options: { strokeColor: '#3b82f6', fillOpacity: 0.15 } },
-  { shape: new logic.c.Triangle(20, 25, 25, 30), options: { strokeColor: '#06b6d4', fillOpacity: 0.15 } },
-  { shape: new logic.c.Triangle(25, 30, 30, 35), options: { strokeColor: '#f59e0b', fillOpacity: 0.15 } },
-  { shape: new logic.c.Trapezoid(30, 35, 40, 45), options: { strokeColor: '#f97316', fillOpacity: 0.15 } },
-  { shape: new logic.c.Grade(40, 50, 50, 50), options: { strokeColor: '#dc2626', fillOpacity: 0.15 } }
+  {
+    shape: new logic.c.ReverseGrade(0, 15, 15, 15),
+    options: { strokeColor: '#1e40af', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Trapezoid(10, 15, 20, 25),
+    options: { strokeColor: '#3b82f6', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Triangle(20, 25, 25, 30),
+    options: { strokeColor: '#06b6d4', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Triangle(25, 30, 30, 35),
+    options: { strokeColor: '#f59e0b', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Trapezoid(30, 35, 40, 45),
+    options: { strokeColor: '#f97316', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Grade(40, 50, 50, 50),
+    options: { strokeColor: '#dc2626', fillOpacity: 0.15 },
+  },
 ]);
 fs.writeFileSync(path.join(outDir, 'temperature-system.svg'), tempSystem);
 console.log('✓ Temperature control system (6 membership functions)');
@@ -120,16 +138,40 @@ console.log(`  → ${path.join(outDir, 'temperature-system.svg')}`);
 const tempRendererWithLegend = new SVGRenderer({
   ...renderer['options'],
   showLegend: true,
-  legendPosition: 'top-right'
+  legendPosition: 'top-right',
 });
 
 const tempSystemWithLegend = tempRendererWithLegend.renderMultiple([
-  { shape: new logic.c.ReverseGrade(0, 15, 15, 15), options: { strokeColor: '#1e40af', fillOpacity: 0.15 }, label: 'Freezing' },
-  { shape: new logic.c.Trapezoid(10, 15, 20, 25), options: { strokeColor: '#3b82f6', fillOpacity: 0.15 }, label: 'Cold' },
-  { shape: new logic.c.Triangle(20, 25, 25, 30), options: { strokeColor: '#06b6d4', fillOpacity: 0.15 }, label: 'Cool' },
-  { shape: new logic.c.Triangle(25, 30, 30, 35), options: { strokeColor: '#f59e0b', fillOpacity: 0.15 }, label: 'Warm' },
-  { shape: new logic.c.Trapezoid(30, 35, 40, 45), options: { strokeColor: '#f97316', fillOpacity: 0.15 }, label: 'Hot' },
-  { shape: new logic.c.Grade(40, 50, 50, 50), options: { strokeColor: '#dc2626', fillOpacity: 0.15 }, label: 'Scorching' }
+  {
+    shape: new logic.c.ReverseGrade(0, 15, 15, 15),
+    options: { strokeColor: '#1e40af', fillOpacity: 0.15 },
+    label: 'Freezing',
+  },
+  {
+    shape: new logic.c.Trapezoid(10, 15, 20, 25),
+    options: { strokeColor: '#3b82f6', fillOpacity: 0.15 },
+    label: 'Cold',
+  },
+  {
+    shape: new logic.c.Triangle(20, 25, 25, 30),
+    options: { strokeColor: '#06b6d4', fillOpacity: 0.15 },
+    label: 'Cool',
+  },
+  {
+    shape: new logic.c.Triangle(25, 30, 30, 35),
+    options: { strokeColor: '#f59e0b', fillOpacity: 0.15 },
+    label: 'Warm',
+  },
+  {
+    shape: new logic.c.Trapezoid(30, 35, 40, 45),
+    options: { strokeColor: '#f97316', fillOpacity: 0.15 },
+    label: 'Hot',
+  },
+  {
+    shape: new logic.c.Grade(40, 50, 50, 50),
+    options: { strokeColor: '#dc2626', fillOpacity: 0.15 },
+    label: 'Scorching',
+  },
 ]);
 fs.writeFileSync(path.join(outDir, 'temperature-system-with-legend.svg'), tempSystemWithLegend);
 console.log('✓ Temperature control system with legend');
@@ -140,14 +182,26 @@ const speedRenderer = new SVGRenderer({
   ...renderer['options'],
   xMin: 0,
   xMax: 120,
-  showLabels: true
+  showLabels: true,
 });
 
 const speedSystem = speedRenderer.renderMultiple([
-  { shape: new logic.c.ReverseGrade(0, 30, 30, 30), options: { strokeColor: '#10b981', fillOpacity: 0.15 } },
-  { shape: new logic.c.Triangle(20, 40, 40, 60), options: { strokeColor: '#3b82f6', fillOpacity: 0.15 } },
-  { shape: new logic.c.Triangle(50, 70, 70, 90), options: { strokeColor: '#f59e0b', fillOpacity: 0.15 } },
-  { shape: new logic.c.Grade(80, 110, 110, 110), options: { strokeColor: '#ef4444', fillOpacity: 0.15 } }
+  {
+    shape: new logic.c.ReverseGrade(0, 30, 30, 30),
+    options: { strokeColor: '#10b981', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Triangle(20, 40, 40, 60),
+    options: { strokeColor: '#3b82f6', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Triangle(50, 70, 70, 90),
+    options: { strokeColor: '#f59e0b', fillOpacity: 0.15 },
+  },
+  {
+    shape: new logic.c.Grade(80, 110, 110, 110),
+    options: { strokeColor: '#ef4444', fillOpacity: 0.15 },
+  },
 ]);
 fs.writeFileSync(path.join(outDir, 'speed-controller.svg'), speedSystem);
 console.log('✓ Speed controller (slow, medium, fast, very-fast)');
@@ -159,7 +213,7 @@ const sigmoidComparison = renderer.renderMultiple([
   { shape: new logic.c.Sigmoid(25, 1), options: { strokeColor: '#f97316', strokeWidth: 2 } },
   { shape: new logic.c.Sigmoid(25, 2), options: { strokeColor: '#f59e0b', strokeWidth: 2 } },
   { shape: new logic.c.Sigmoid(25, 4), options: { strokeColor: '#10b981', strokeWidth: 2 } },
-  { shape: new logic.c.Sigmoid(25, 8), options: { strokeColor: '#3b82f6', strokeWidth: 2 } }
+  { shape: new logic.c.Sigmoid(25, 8), options: { strokeColor: '#3b82f6', strokeWidth: 2 } },
 ]);
 fs.writeFileSync(path.join(outDir, 'sigmoid-slopes.svg'), sigmoidComparison);
 console.log('✓ Sigmoid slope comparison (slopes: 0.5, 1, 2, 4, 8)');
@@ -221,12 +275,16 @@ const indexHtml = `<!DOCTYPE html>
     
     <h2>Individual Curve Types</h2>
     <div class="grid">
-        ${examples.map(({ name, description }) => `
+        ${examples
+          .map(
+            ({ name, description }) => `
         <div class="card">
             <h3>${description.split(':')[0]}</h3>
             <p>${description.split(':')[1]}</p>
             <img src="${name}.svg" alt="${description}">
-        </div>`).join('')}
+        </div>`
+          )
+          .join('')}
     </div>
     
     <h2>Composite Systems</h2>

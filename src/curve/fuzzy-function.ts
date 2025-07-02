@@ -1,5 +1,5 @@
 /** Class representing a FuzzyFunction. */
-export class FuzzyFunction  {
+export class FuzzyFunction {
   private readonly cb: (val: number) => number;
 
   /**

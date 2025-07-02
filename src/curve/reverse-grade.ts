@@ -20,7 +20,7 @@ export class ReverseGrade extends Shape {
       if (this.x1 === this.x0) {
         result = 0;
       } else {
-        result = (-x / (this.x1 - this.x0)) + (this.x1 / (this.x1 - this.x0));
+        result = -x / (this.x1 - this.x0) + this.x1 / (this.x1 - this.x0);
       }
     }
     return result;

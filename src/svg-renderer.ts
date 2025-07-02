@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 import { Shape } from './curve/shape';
 import { Grade } from './curve/grade';
 import { ReverseGrade } from './curve/reverse-grade';
@@ -58,7 +58,7 @@ export class SVGRenderer {
     legendPadding: 10,
     legendBackgroundColor: '#ffffff',
     legendBorderColor: '#e5e5e5',
-    legendTextColor: '#525252'
+    legendTextColor: '#525252',
   };
 
   constructor(private options: SVGOptions = {}) {
@@ -77,39 +77,52 @@ export class SVGRenderer {
 
   private generatePath(points: Array<[number, number]>): string {
     if (points.length === 0) return '';
-    
+
     let path = `M ${this.scaleX(points[0][0])} ${this.scaleY(points[0][1])}`;
     for (let i = 1; i < points.length; i++) {
       path += ` L ${this.scaleX(points[i][0])} ${this.scaleY(points[i][1])}`;
     }
-    
+
     return path;
   }
 
   private renderGrid(): string {
-    const { xMin, xMax, yMin, yMax, width, height, padding, gridColor, axisColor, labelColor, fontSize, showLabels } = this.options as Required<SVGOptions>;
+    const {
+      xMin,
+      xMax,
+      yMin,
+      yMax,
+      width,
+      height,
+      padding,
+      gridColor,
+      axisColor,
+      labelColor,
+      fontSize,
+      showLabels,
+    } = this.options as Required<SVGOptions>;
     let svg = '';
-    
+
     // Grid lines
     const xStep = (xMax - xMin) / 10;
     const yStep = (yMax - yMin) / 5;
-    
+
     // Vertical grid lines
     for (let x = xMin; x <= xMax; x += xStep) {
       const xPos = this.scaleX(x);
       svg += `<line x1="${xPos}" y1="${padding}" x2="${xPos}" y2="${height - padding}" stroke="${gridColor}" stroke-width="1" />`;
     }
-    
+
     // Horizontal grid lines
     for (let y = yMin; y <= yMax; y += yStep) {
       const yPos = this.scaleY(y);
       svg += `<line x1="${padding}" y1="${yPos}" x2="${width - padding}" y2="${yPos}" stroke="${gridColor}" stroke-width="1" />`;
     }
-    
+
     // Axes
     svg += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="${axisColor}" stroke-width="2" />`;
     svg += `<line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="${axisColor}" stroke-width="2" />`;
-    
+
     // Labels
     if (showLabels) {
       // X-axis labels
@@ -117,33 +130,43 @@ export class SVGRenderer {
         const xPos = this.scaleX(x);
         svg += `<text x="${xPos}" y="${height - padding + 20}" text-anchor="middle" font-size="${fontSize}" fill="${labelColor}">${x}</text>`;
       }
-      
+
       // Y-axis labels
       for (let y = yMin; y <= yMax; y += yStep) {
         const yPos = this.scaleY(y);
         svg += `<text x="${padding - 10}" y="${yPos + 4}" text-anchor="end" font-size="${fontSize}" fill="${labelColor}">${y.toFixed(1)}</text>`;
       }
     }
-    
+
     return svg;
   }
 
-  private renderLegend(items: Array<{label: string, color: string}>): string {
-    const { width, height, padding, legendPosition, legendPadding, legendBackgroundColor, legendBorderColor, legendTextColor, fontSize } = this.options as Required<SVGOptions>;
-    
+  private renderLegend(items: Array<{ label: string; color: string }>): string {
+    const {
+      width,
+      height,
+      padding,
+      legendPosition,
+      legendPadding,
+      legendBackgroundColor,
+      legendBorderColor,
+      legendTextColor,
+      fontSize,
+    } = this.options as Required<SVGOptions>;
+
     if (items.length === 0) return '';
-    
+
     // Calculate legend dimensions
     const lineHeight = fontSize + 6;
     const legendItemHeight = lineHeight;
     const legendHeight = legendPadding * 2 + items.length * legendItemHeight;
-    const maxLabelLength = Math.max(...items.map(item => item.label.length));
+    const maxLabelLength = Math.max(...items.map((item) => item.label.length));
     const legendWidth = legendPadding * 2 + 20 + maxLabelLength * fontSize * 0.6; // 20 for color box + gap
-    
+
     // Calculate legend position
     let legendX: number;
     let legendY: number;
-    
+
     switch (legendPosition) {
       case 'top-left':
         legendX = padding + 10;
@@ -162,47 +185,53 @@ export class SVGRenderer {
         legendY = height - padding - legendHeight - 10;
         break;
     }
-    
+
     let svg = '';
-    
+
     // Legend background
     svg += `<rect x="${legendX}" y="${legendY}" width="${legendWidth}" height="${legendHeight}" fill="${legendBackgroundColor}" stroke="${legendBorderColor}" stroke-width="1" rx="4" />`;
-    
+
     // Legend items
     items.forEach((item, index) => {
       const itemY = legendY + legendPadding + index * legendItemHeight;
-      
+
       // Color box
       svg += `<rect x="${legendX + legendPadding}" y="${itemY}" width="${fontSize}" height="${fontSize}" fill="${item.color}" />`;
-      
+
       // Label
       svg += `<text x="${legendX + legendPadding + fontSize + 5}" y="${itemY + fontSize - 2}" font-size="${fontSize}" fill="${legendTextColor}">${item.label}</text>`;
     });
-    
+
     return svg;
   }
 
   private getShapePoints(shape: any): Array<[number, number]> {
     const { xMin, xMax } = this.options as Required<SVGOptions>;
     const points: Array<[number, number]> = [];
-    
+
     if (shape instanceof Grade || shape instanceof ReverseGrade) {
       // For Grade and ReverseGrade, we need key points and some intermediate points
       const x0 = shape.x0;
       const x1 = shape.x1;
-      
-      points.push([Math.max(xMin, x0 - (x1 - x0) * 0.2), shape.fuzzify(Math.max(xMin, x0 - (x1 - x0) * 0.2))]);
+
+      points.push([
+        Math.max(xMin, x0 - (x1 - x0) * 0.2),
+        shape.fuzzify(Math.max(xMin, x0 - (x1 - x0) * 0.2)),
+      ]);
       points.push([x0, shape.fuzzify(x0)]);
       if (x0 !== x1) {
         points.push([(x0 + x1) / 2, shape.fuzzify((x0 + x1) / 2)]);
       }
       points.push([x1, shape.fuzzify(x1)]);
-      points.push([Math.min(xMax, x1 + (x1 - x0) * 0.2), shape.fuzzify(Math.min(xMax, x1 + (x1 - x0) * 0.2))]);
+      points.push([
+        Math.min(xMax, x1 + (x1 - x0) * 0.2),
+        shape.fuzzify(Math.min(xMax, x1 + (x1 - x0) * 0.2)),
+      ]);
     } else if (shape instanceof Triangle) {
       const x0 = shape.x0;
       const x1 = shape.x1;
       const x2 = shape.x2;
-      
+
       points.push([Math.max(xMin, x0 - (x2 - x0) * 0.1), 0]);
       points.push([x0, 0]);
       if (x0 !== x1) {
@@ -219,7 +248,7 @@ export class SVGRenderer {
       const x1 = shape.x1;
       const x2 = shape.x2;
       const x3 = shape.x3;
-      
+
       points.push([Math.max(xMin, x0 - (x3 - x0) * 0.1), 0]);
       points.push([x0, 0]);
       if (x0 !== x1) {
@@ -256,79 +285,92 @@ export class SVGRenderer {
         }
       }
     }
-    
+
     return points;
   }
 
   render(shape: Shape | Constant | FuzzyFunction | Sigmoid): string {
-    const { width, height, backgroundColor, strokeColor, strokeWidth, fillOpacity, gridLines } = this.options as Required<SVGOptions>;
-    
+    const { width, height, backgroundColor, strokeColor, strokeWidth, fillOpacity, gridLines } =
+      this.options as Required<SVGOptions>;
+
     let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
     svg += `<rect width="${width}" height="${height}" fill="${backgroundColor}" />`;
-    
+
     if (gridLines) {
       svg += this.renderGrid();
     }
-    
+
     const points = this.getShapePoints(shape);
     const path = this.generatePath(points);
-    
+
     // Add fill area
     if (fillOpacity > 0 && points.length > 0) {
-      const fillPath = path + ` L ${this.scaleX(points[points.length - 1][0])} ${this.scaleY(0)} L ${this.scaleX(points[0][0])} ${this.scaleY(0)} Z`;
+      const fillPath =
+        path +
+        ` L ${this.scaleX(points[points.length - 1][0])} ${this.scaleY(0)} L ${this.scaleX(points[0][0])} ${this.scaleY(0)} Z`;
       svg += `<path d="${fillPath}" fill="${strokeColor}" fill-opacity="${fillOpacity}" />`;
     }
-    
+
     // Add stroke
     svg += `<path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="${strokeWidth}" />`;
-    
+
     svg += '</svg>';
-    
+
     return svg;
   }
 
-  renderMultiple(shapes: Array<{shape: Shape | Constant | FuzzyFunction | Sigmoid, options?: Partial<{strokeColor: string, fillOpacity: number, strokeWidth: number}>, label?: string}>): string {
-    const { width, height, backgroundColor, gridLines, showLegend } = this.options as Required<SVGOptions>;
-    
+  renderMultiple(
+    shapes: Array<{
+      shape: Shape | Constant | FuzzyFunction | Sigmoid;
+      options?: Partial<{ strokeColor: string; fillOpacity: number; strokeWidth: number }>;
+      label?: string;
+    }>
+  ): string {
+    const { width, height, backgroundColor, gridLines, showLegend } = this
+      .options as Required<SVGOptions>;
+
     let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
     svg += `<rect width="${width}" height="${height}" fill="${backgroundColor}" />`;
-    
+
     if (gridLines) {
       svg += this.renderGrid();
     }
-    
-    const legendItems: Array<{label: string, color: string}> = [];
-    
+
+    const legendItems: Array<{ label: string; color: string }> = [];
+
     shapes.forEach(({ shape, options = {}, label }) => {
       const strokeColor = options.strokeColor || this.options.strokeColor!;
-      const fillOpacity = options.fillOpacity !== undefined ? options.fillOpacity : this.options.fillOpacity!;
+      const fillOpacity =
+        options.fillOpacity !== undefined ? options.fillOpacity : this.options.fillOpacity!;
       const strokeWidth = options.strokeWidth || this.options.strokeWidth!;
-      
+
       // Collect legend items if label is provided
       if (label && showLegend) {
         legendItems.push({ label, color: strokeColor });
       }
-      
+
       const points = this.getShapePoints(shape);
       const path = this.generatePath(points);
-      
+
       // Add fill area
       if (fillOpacity > 0 && points.length > 0) {
-        const fillPath = path + ` L ${this.scaleX(points[points.length - 1][0])} ${this.scaleY(0)} L ${this.scaleX(points[0][0])} ${this.scaleY(0)} Z`;
+        const fillPath =
+          path +
+          ` L ${this.scaleX(points[points.length - 1][0])} ${this.scaleY(0)} L ${this.scaleX(points[0][0])} ${this.scaleY(0)} Z`;
         svg += `<path d="${fillPath}" fill="${strokeColor}" fill-opacity="${fillOpacity}" />`;
       }
-      
+
       // Add stroke
       svg += `<path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="${strokeWidth}" />`;
     });
-    
+
     // Add legend if enabled
     if (showLegend && legendItems.length > 0) {
       svg += this.renderLegend(legendItems);
     }
-    
+
     svg += '</svg>';
-    
+
     return svg;
   }
 }

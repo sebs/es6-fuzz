@@ -6,3 +6,4 @@ out/
 examples
 npm-debug.log
 .claude
+.eslintcache

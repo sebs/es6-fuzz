@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 import { Shape } from './curve/shape';
 import { Grade } from './curve/grade';
 import { ReverseGrade } from './curve/reverse-grade';
@@ -16,7 +16,6 @@ const TYPE_NOT = 'not';
 type RuleType = Logic.RuleType;
 type Rule = Logic.Rule;
 
-
 const ruleEngine = {
   and(a: Shape, b: Shape, value: number): number {
     return Math.min(a.fuzzify(value), b.fuzzify(value));
@@ -26,14 +25,14 @@ const ruleEngine = {
   },
   not(a: Shape, b: Shape | null = null, value: number): number {
     return 1 - a.fuzzify(value);
-  }
+  },
 };
 
 /** Class helping with FuzzyLogic. */
 export class Logic {
   private initCalled: boolean = false;
   private rules: Rule[] = [];
-  
+
   public c: {
     Shape: typeof Shape;
     Grade: typeof Grade;
@@ -54,7 +53,7 @@ export class Logic {
       Triangle,
       Constant,
       FuzzyFunction,
-      Sigmoid
+      Sigmoid,
     };
   }
 
@@ -67,7 +66,9 @@ export class Logic {
   private checkOutputName(name: string): void {
     const reg = /^[a-z]+$/i;
     if (!reg.test(name)) {
-      throw Error('Output names can only be strings without space, without numbers and without special chars');
+      throw Error(
+        'Output names can only be strings without space, without numbers and without special chars'
+      );
     }
   }
 
@@ -109,7 +110,7 @@ export class Logic {
     let fuzzified = 0;
     let lastShape: Shape | undefined;
 
-    this.rules.forEach(rule => {
+    this.rules.forEach((rule) => {
       rule.fuzzy = rule.shape.fuzzify(value);
       // lets keep the initial value
       if (rule.type === TYPE_INIT) {
@@ -138,7 +139,7 @@ export class Logic {
     }
 
     const boonJsInputs: Record<string, boolean> = {};
-    this.rules.forEach(rule => { 
+    this.rules.forEach((rule) => {
       boonJsInputs[`${namePrefix}${rule.output}`] = rule.output === defuzzified;
     });
 
@@ -156,7 +157,7 @@ export class Logic {
       },
       toString() {
         return defuzzified;
-      }
+      },
     };
   }
 }
@@ -180,4 +181,3 @@ export namespace Logic {
     toString(): string;
   }
 }
-
