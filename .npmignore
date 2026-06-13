@@ -9,7 +9,6 @@ test/
 # Documentation source
 docs/
 out/
-jsdoc.json
 
 # Development files
 .gitignore
@@ -22,8 +21,6 @@ scripts/
 
 # CI/CD
 .github/
-.travis.yml
-.circleci/
 
 # IDE
 .vscode/
@@ -55,5 +52,4 @@ node_modules/
 example.js
 example2.js
 typedoc.json
-.jscsrc
 .gitattributes
