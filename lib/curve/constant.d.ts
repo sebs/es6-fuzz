@@ -4,9 +4,9 @@ export declare class Constant implements Fuzzifier {
     private readonly cValue;
     /**
      * Create a Constant Value.
-     * @param {number} constantValue - The value.
+     * @param {number} constantValue - The membership value, must be within 0..1.
      * @example
-     * new Constant(10)
+     * new Constant(0.5)
      */
     constructor(constantValue: number);
     /**
