@@ -1,5 +1,6 @@
 'use strict';
 import { Shape } from './curve/shape';
+import { Fuzzifier } from './curve/fuzzifier';
 import { Grade } from './curve/grade';
 import { ReverseGrade } from './curve/reverse-grade';
 import { Triangle } from './curve/triangle';
@@ -17,13 +18,13 @@ type RuleType = Logic.RuleType;
 type Rule = Logic.Rule;
 
 const ruleEngine = {
-  and(a: Shape, b: Shape, value: number): number {
+  and(a: Fuzzifier, b: Fuzzifier, value: number): number {
     return Math.min(a.fuzzify(value), b.fuzzify(value));
   },
-  or(a: Shape, b: Shape, value: number): number {
+  or(a: Fuzzifier, b: Fuzzifier, value: number): number {
     return Math.max(a.fuzzify(value), b.fuzzify(value));
   },
-  not(a: Shape, b: Shape | null = null, value: number): number {
+  not(a: Fuzzifier, b: Fuzzifier | null = null, value: number): number {
     return 1 - a.fuzzify(value);
   },
 };
@@ -72,7 +73,7 @@ export class Logic {
     }
   }
 
-  init(output: string, shape: Shape): this {
+  init(output: string, shape: Fuzzifier): this {
     this.checkOutputName(output);
     this.initCalled = true;
     const type = TYPE_INIT;
@@ -80,7 +81,7 @@ export class Logic {
     return this;
   }
 
-  and(output: string, shape: Shape): this {
+  and(output: string, shape: Fuzzifier): this {
     this.checkOutputName(output);
     this.checkInitCalled();
     const type = TYPE_AND;
@@ -88,7 +89,7 @@ export class Logic {
     return this;
   }
 
-  or(output: string, shape: Shape): this {
+  or(output: string, shape: Fuzzifier): this {
     this.checkOutputName(output);
     this.checkInitCalled();
     const type = TYPE_OR;
@@ -96,7 +97,7 @@ export class Logic {
     return this;
   }
 
-  not(output: string, shape: Shape): this {
+  not(output: string, shape: Fuzzifier): this {
     this.checkOutputName(output);
     this.checkInitCalled();
     const type = TYPE_NOT;
@@ -108,7 +109,7 @@ export class Logic {
     this.checkInitCalled();
     let defuzzified = 'none';
     let fuzzified = 0;
-    let lastShape: Shape | undefined;
+    let lastShape: Fuzzifier | undefined;
 
     this.rules.forEach((rule) => {
       rule.fuzzy = rule.shape.fuzzify(value);
@@ -167,7 +168,7 @@ export namespace Logic {
 
   export interface Rule {
     output: string;
-    shape: Shape;
+    shape: Fuzzifier;
     type: RuleType;
     fuzzy?: number;
   }

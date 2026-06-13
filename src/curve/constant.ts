@@ -1,6 +1,7 @@
 'use strict';
+import { Fuzzifier } from './fuzzifier';
 /** Class representing a Constant. */
-export class Constant {
+export class Constant implements Fuzzifier {
   private readonly cValue: number;
 
   /**

@@ -1,5 +1,6 @@
+import { Fuzzifier } from './fuzzifier';
 /** Class representing a Constant. */
-export declare class Constant {
+export declare class Constant implements Fuzzifier {
     private readonly cValue;
     /**
      * Create a Constant Value.

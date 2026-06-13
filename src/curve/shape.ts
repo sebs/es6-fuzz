@@ -1,6 +1,7 @@
 'use strict';
+import { Fuzzifier } from './fuzzifier';
 /** Base class representing a Shape. */
-export abstract class Shape {
+export abstract class Shape implements Fuzzifier {
   readonly x0!: number;
   readonly x1!: number;
   readonly x2!: number;

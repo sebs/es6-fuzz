@@ -1,4 +1,5 @@
 'use strict';
+import { Fuzzifier } from './fuzzifier';
 /**
  * Class representing a Sigmoid.
  * @example
@@ -6,7 +7,7 @@
  * sigmoid = new Sigmoid(0, 100000);
  * sigmoid2.fuzzify(10);
  */
-export class Sigmoid {
+export class Sigmoid implements Fuzzifier {
   private readonly center: number;
   private readonly slope: number;
 

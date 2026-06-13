@@ -1,3 +1,4 @@
+import { Fuzzifier } from './fuzzifier';
 /**
  * Class representing a Sigmoid.
  * @example
@@ -5,7 +6,7 @@
  * sigmoid = new Sigmoid(0, 100000);
  * sigmoid2.fuzzify(10);
  */
-export declare class Sigmoid {
+export declare class Sigmoid implements Fuzzifier {
     private readonly center;
     private readonly slope;
     /**

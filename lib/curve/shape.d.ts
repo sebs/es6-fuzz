@@ -1,5 +1,6 @@
+import { Fuzzifier } from './fuzzifier';
 /** Base class representing a Shape. */
-export declare abstract class Shape {
+export declare abstract class Shape implements Fuzzifier {
     readonly x0: number;
     readonly x1: number;
     readonly x2: number;

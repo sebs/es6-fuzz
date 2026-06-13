@@ -1,4 +1,5 @@
 import { Shape } from './curve/shape';
+import { Fuzzifier } from './curve/fuzzifier';
 import { Grade } from './curve/grade';
 import { ReverseGrade } from './curve/reverse-grade';
 import { Triangle } from './curve/triangle';
@@ -23,17 +24,17 @@ export declare class Logic {
     constructor();
     private checkInitCalled;
     private checkOutputName;
-    init(output: string, shape: Shape): this;
-    and(output: string, shape: Shape): this;
-    or(output: string, shape: Shape): this;
-    not(output: string, shape: Shape): this;
+    init(output: string, shape: Fuzzifier): this;
+    and(output: string, shape: Fuzzifier): this;
+    or(output: string, shape: Fuzzifier): this;
+    not(output: string, shape: Fuzzifier): this;
     defuzzify(value: number, as?: string): Logic.DefuzzifyResult;
 }
 export declare namespace Logic {
     type RuleType = 'init' | 'and' | 'or' | 'not';
     interface Rule {
         output: string;
-        shape: Shape;
+        shape: Fuzzifier;
         type: RuleType;
         fuzzy?: number;
     }

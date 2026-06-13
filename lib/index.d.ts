@@ -1,5 +1,6 @@
 export { Logic } from './logic';
 export { Shape } from './curve/shape';
+export { Fuzzifier } from './curve/fuzzifier';
 export { Grade } from './curve/grade';
 export { ReverseGrade } from './curve/reverse-grade';
 export { Triangle } from './curve/triangle';

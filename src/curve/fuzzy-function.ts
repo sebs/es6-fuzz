@@ -1,5 +1,6 @@
+import { Fuzzifier } from './fuzzifier';
 /** Class representing a FuzzyFunction. */
-export class FuzzyFunction {
+export class FuzzyFunction implements Fuzzifier {
   private readonly cb: (val: number) => number;
 
   /**

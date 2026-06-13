@@ -1,5 +1,6 @@
+import { Fuzzifier } from './fuzzifier';
 /** Class representing a FuzzyFunction. */
-export declare class FuzzyFunction {
+export declare class FuzzyFunction implements Fuzzifier {
     private readonly cb;
     /**
      * Create a FuzzyFunction.
