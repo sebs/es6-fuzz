@@ -75,4 +75,20 @@ describe('Logic class validation', function() {
       assert.doesNotThrow(() => logic.init('veryHot', triangle));
     });
   });
+
+  describe('duplicate output names', function() {
+    const triangle = new Triangle(0, 5, 10);
+
+    it('should throw when an output name is reused across rules', function() {
+      const logic = new Logic();
+      logic.init('cold', triangle);
+      assert.throws(() => logic.or('cold', triangle), /Output name "cold" is already in use/);
+    });
+
+    it('should allow distinct output names', function() {
+      const logic = new Logic();
+      logic.init('cold', triangle);
+      assert.doesNotThrow(() => logic.or('hot', triangle));
+    });
+  });
 });

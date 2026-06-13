@@ -79,6 +79,9 @@ export class Logic {
         'Output names can only be strings without space, without numbers and without special chars'
       );
     }
+    if (this.rules.some((rule) => rule.output === name)) {
+      throw Error('Output name "' + name + '" is already in use');
+    }
   }
 
   init(output: string, shape: Fuzzifier): this {
@@ -90,24 +93,24 @@ export class Logic {
   }
 
   and(output: string, shape: Fuzzifier): this {
-    this.checkOutputName(output);
     this.checkInitCalled();
+    this.checkOutputName(output);
     const type = TYPE_AND;
     this.rules.push({ output, shape, type });
     return this;
   }
 
   or(output: string, shape: Fuzzifier): this {
-    this.checkOutputName(output);
     this.checkInitCalled();
+    this.checkOutputName(output);
     const type = TYPE_OR;
     this.rules.push({ output, shape, type });
     return this;
   }
 
   not(output: string, shape: Fuzzifier): this {
-    this.checkOutputName(output);
     this.checkInitCalled();
+    this.checkOutputName(output);
     const type = TYPE_NOT;
     this.rules.push({ output, shape, type });
     return this;
