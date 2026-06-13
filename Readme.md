@@ -37,9 +37,9 @@ const result = logic
   .init('noAttack', new Triangle(0, 20, 40))
   .or('normalAttack', new Trapezoid(20, 30, 90, 100))
   .or('enragedAttack', new Grade(90, 100))
-  .defuzzify(40);
+  .defuzzify(99);
 
-console.log(result); // 'enragedAttack'
+console.log(result.toString()); // 'enragedAttack'
 ```
 
 ## Temperature Example
@@ -55,7 +55,7 @@ const result = logic
   .or('hot', new Trapezoid(12, 14, 16, 100)) 
   .defuzzify(20);
 
-console.log(result); // 'hot'
+console.log(result.toString()); // 'hot'
 ```
 
 
