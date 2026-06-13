@@ -6,20 +6,15 @@
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "homepage": "https://github.com/sebs/es6-fuzz",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib && tsc",
     "build:watch": "tsc --watch",
-    "clean": "rm -rf lib",
-    "prebuild": "npm run clean",
-    "changelog": "rm ./docs/CHANGELOG.md && npx changelog https://github.com/sebs/es6-fuzz all > ./docs/CHANGELOG.md && git add . && git commit . -m '(churn): changelog'",
     "test": "npm run build && tsx --test ./test/*.test.ts ./test/**/*.test.ts ./test/curve/**/*.test.ts",
     "test:watch": "npm run build && tsx --test --watch ./test/*.test.ts ./test/**/*.test.ts ./test/curve/**/*.test.ts",
-    "addpush": "git add . && git commit . -m 'docs'",
-    "pages": "node ./scripts/publish-gh.js",
+    "check": "tsc --noEmit",
     "docs": "typedoc",
-    "preversion": "rm -f package-lock.json",
-    "postversion": "git push && git push --tags && npm run changelog && npm run docs && npm run pages",
+    "pages": "node ./scripts/publish-gh.js",
     "render-examples": "node lib/render-examples.js",
-    "check": "tsc --noEmit"
+    "postversion": "git push --follow-tags"
   },
   "keywords": [
     "fuzzylogic",

@@ -2,7 +2,9 @@ package-lock.json
 .idea/*
 *.iml
 node_modules
+lib/
 out/
+docs/CHANGELOG.md
 examples
 npm-debug.log
 .claude
