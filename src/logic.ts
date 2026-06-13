@@ -17,15 +17,23 @@ const TYPE_NOT = 'not';
 type RuleType = Logic.RuleType;
 type Rule = Logic.Rule;
 
-const ruleEngine = {
-  and(a: Fuzzifier, b: Fuzzifier, value: number): number {
-    return Math.min(a.fuzzify(value), b.fuzzify(value));
+/**
+ * Maps a rule to the membership degree of its output, given the membership
+ * carried along the chain so far (`prev`) and this rule's own shape value
+ * (`raw`). The winning output is then the one with the highest membership.
+ */
+const ruleEngine: Record<Logic.RuleType, (prev: number, raw: number) => number> = {
+  init(_prev: number, raw: number): number {
+    return raw;
   },
-  or(a: Fuzzifier, b: Fuzzifier, value: number): number {
-    return Math.max(a.fuzzify(value), b.fuzzify(value));
+  or(_prev: number, raw: number): number {
+    return raw;
   },
-  not(a: Fuzzifier, b: Fuzzifier | null = null, value: number): number {
-    return 1 - a.fuzzify(value);
+  and(prev: number, raw: number): number {
+    return Math.min(prev, raw);
+  },
+  not(_prev: number, raw: number): number {
+    return 1 - raw;
   },
 };
 
@@ -109,28 +117,21 @@ export class Logic {
     this.checkInitCalled();
     let defuzzified = 'none';
     let fuzzified = 0;
-    let lastShape: Fuzzifier | undefined;
+    let best = -Infinity;
+    // membership carried along the chain, used by AND to narrow the result
+    let running = 0;
 
     this.rules.forEach((rule) => {
-      rule.fuzzy = rule.shape.fuzzify(value);
-      // lets keep the initial value
-      if (rule.type === TYPE_INIT) {
+      const raw = rule.shape.fuzzify(value);
+      const membership = ruleEngine[rule.type](running, raw);
+      rule.fuzzy = membership;
+      running = membership;
+      // max-membership defuzzification: highest membership wins, ties keep
+      // the earliest rule (strict greater-than)
+      if (membership > best) {
+        best = membership;
         defuzzified = rule.output;
-        fuzzified = rule.fuzzy;
-        lastShape = rule.shape;
-        return;
-      } else {
-        if (!lastShape) return;
-        const fuzzyCompRes = ruleEngine[rule.type](lastShape, rule.shape, value);
-        lastShape.fuzzify(value);
-        // old value is kept, not is not yet implemented
-        if (fuzzyCompRes === lastShape.fuzzify(value)) {
-          return;
-        }
-        defuzzified = rule.output;
-        fuzzified = rule.fuzzy;
-        // if there is no shape, like for example for a NOT keep the last one
-        lastShape = rule.shape || lastShape;
+        fuzzified = membership;
       }
     });
 
