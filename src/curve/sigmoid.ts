@@ -14,7 +14,9 @@ export class Sigmoid implements Fuzzifier {
   /**
    * Create a Sigmoid Function.
    * @param {number} center - The center point of the sigmoid curve (where it outputs 0.5)
-   * @param {number} slope - The slope of the sigmoid curve (higher = steeper transition)
+   * @param {number} slope - Width of the transition: it appears in the denominator
+   *   as 1 / (1 + exp(-(x - center) / slope)), so a smaller slope means a steeper
+   *   transition and a larger slope a gentler one.
    */
   constructor(center: number = 0, slope: number = 1) {
     this.center = center;
