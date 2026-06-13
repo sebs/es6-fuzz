@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x, 24.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # package-lock.json is intentionally not committed (see .gitignore), so
+      # use `npm install` rather than `npm ci` and skip setup-node's npm cache.
+      - name: Install
+        run: npm install
+
+      - name: Test
+        run: npm test
+
+      - name: Type-check (strict)
+        run: npm run check
