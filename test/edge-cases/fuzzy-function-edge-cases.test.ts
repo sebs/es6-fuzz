@@ -17,7 +17,7 @@ describe('FuzzyFunction edge cases', function() {
       });
       
       it('should throw error for x=0.7', function() {
-        assert.throws(() => func1.fuzzify(0.7), /fuzzified result must be smaller than 1/);
+        assert.throws(() => func1.fuzzify(0.7), /fuzzified result must be between 0 and 1/);
       });
     });
     
@@ -25,7 +25,7 @@ describe('FuzzyFunction edge cases', function() {
       const func2 = new FuzzyFunction(x => x - 1);
       
       it('should throw error for x=0.5', function() {
-        assert.throws(() => func2.fuzzify(0.5), /fuzzified result must be smaller than 1/);
+        assert.throws(() => func2.fuzzify(0.5), /fuzzified result must be between 0 and 1/);
       });
       
       it('should return exactly 0 for x=1', function() {
@@ -33,7 +33,7 @@ describe('FuzzyFunction edge cases', function() {
       });
       
       it('should throw error for x=0.8', function() {
-        assert.throws(() => func2.fuzzify(0.8), /fuzzified result must be smaller than 1/);
+        assert.throws(() => func2.fuzzify(0.8), /fuzzified result must be between 0 and 1/);
       });
     });
   });

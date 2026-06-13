@@ -30,7 +30,7 @@ describe('FuzzyFunction validation', function() {
   describe('callback returns non-number types', function() {
     it('should throw error when callback returns string', function() {
       const func = new FuzzyFunction(() => 'string');
-      assert.throws(() => func.fuzzify(5), /fuzzified result must be smaller than 1/);
+      assert.throws(() => func.fuzzify(5), /fuzzified result must be between 0 and 1/);
     });
     
     it('should return null when callback returns null', function() {
@@ -40,7 +40,7 @@ describe('FuzzyFunction validation', function() {
     
     it('should throw error when callback returns undefined', function() {
       const func = new FuzzyFunction(() => undefined);
-      assert.throws(() => func.fuzzify(5), /fuzzified result must be smaller than 1/);
+      assert.throws(() => func.fuzzify(5), /fuzzified result must be between 0 and 1/);
     });
   });
 
@@ -56,11 +56,11 @@ describe('FuzzyFunction validation', function() {
     });
     
     it('should throw error for negative input', function() {
-      assert.throws(() => func.fuzzify(-1), /fuzzified result must be smaller than 1/);
+      assert.throws(() => func.fuzzify(-1), /fuzzified result must be between 0 and 1/);
     });
     
     it('should throw error for input greater than 1', function() {
-      assert.throws(() => func.fuzzify(2), /fuzzified result must be smaller than 1/);
+      assert.throws(() => func.fuzzify(2), /fuzzified result must be between 0 and 1/);
     });
   });
 });
