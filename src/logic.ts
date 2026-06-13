@@ -121,10 +121,11 @@ export class Logic {
     // membership carried along the chain, used by AND to narrow the result
     let running = 0;
 
-    this.rules.forEach((rule) => {
+    // Evaluate into fresh rule copies so the engine's internal state is never
+    // mutated or handed out to the caller.
+    const rules: Rule[] = this.rules.map((rule) => {
       const raw = rule.shape.fuzzify(value);
       const membership = ruleEngine[rule.type](running, raw);
-      rule.fuzzy = membership;
       running = membership;
       // max-membership defuzzification: highest membership wins, ties keep
       // the earliest rule (strict greater-than)
@@ -133,6 +134,7 @@ export class Logic {
         defuzzified = rule.output;
         fuzzified = membership;
       }
+      return { ...rule, fuzzy: membership };
     });
 
     let namePrefix = '';
@@ -141,7 +143,7 @@ export class Logic {
     }
 
     const boonJsInputs: Record<string, boolean> = {};
-    this.rules.forEach((rule) => {
+    rules.forEach((rule) => {
       boonJsInputs[`${namePrefix}${rule.output}`] = rule.output === defuzzified;
     });
 
@@ -153,7 +155,7 @@ export class Logic {
       boonJsInputs,
       fuzzified: fuzzified,
       defuzzified: defuzzified,
-      rules: this.rules,
+      rules,
       valueOf() {
         return fuzzified;
       },
