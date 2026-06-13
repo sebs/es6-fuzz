@@ -20,21 +20,18 @@ export class ReverseGrade extends Shape {
    * @return {number} fuzzy output 0..1
    */
   fuzzify(val: number): number {
-    let result = 0;
     const x = val;
 
-    if (x <= this.x0) {
-      result = 1;
-    } else if (x >= this.x1) {
-      result = 0;
-    } else {
-      // Handle case where x0 = x1 (vertical reverse grade)
-      if (this.x1 === this.x0) {
-        result = 0;
-      } else {
-        result = -x / (this.x1 - this.x0) + this.x1 / (this.x1 - this.x0);
-      }
+    // Vertical reverse grade (x0 = x1): step down, the mirror of Grade.
+    // (The previous inline x0 === x1 handling sat in an unreachable branch:
+    // when x0 === x1 every value is caught by x <= x0 or x >= x1 first.)
+    if (this.x1 === this.x0) {
+      if (x <= this.x0) return 1;
+      return 0; // x > x0
     }
-    return result;
+
+    if (x <= this.x0) return 1;
+    if (x >= this.x1) return 0;
+    return -x / (this.x1 - this.x0) + this.x1 / (this.x1 - this.x0);
   }
 }
