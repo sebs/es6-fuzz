@@ -1,1 +1,0 @@
-{"version":3,"file":"constant.d.ts","sourceRoot":"","sources":["../../src/curve/constant.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AACxC,qCAAqC;AACrC,qBAAa,QAAS,YAAW,SAAS;IACxC,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAS;IAEhC;;;;;OAKG;gBACS,aAAa,EAAE,MAAM;IAMjC;;;OAGG;IACH,OAAO,IAAI,MAAM;CAGlB"}
