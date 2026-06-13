@@ -1,13 +1,11 @@
-var Logic = require('./lib/logic')
-var Trapezoid = require('./lib/curve/trapezoid');
-var Triangle = require('./lib/curve/triangle');
-var Grade = require('./lib/curve/grade');
+'use strict';
+const { Logic, Triangle, Trapezoid, Grade } = require('./lib/index');
 
-var logic = new Logic();
-var res = logic
+const logic = new Logic();
+const res = logic
   .init('noAttack', new Triangle(0, 20, 40))
   .or('normalAttack', new Trapezoid(20, 30, 90, 100))
   .or('enragedAttack', new Grade(90, 100))
-	.defuzzify(40);
-	
-	console.log(res);
+  .defuzzify(99);
+
+console.log(res.toString()); // 'enragedAttack'

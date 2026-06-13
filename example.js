@@ -1,11 +1,10 @@
+'use strict';
+const { Logic, Trapezoid } = require('./lib/index');
 
-var Logic = require('./lib/logic')
-var Trapezoid = require('./lib/curve/trapezoid');
-
-var logic = new Logic();
-var res = logic
-  .init('cold', new Trapezoid(0, 12, 18, 20)) // until 12-18 around warm  
-  .or('warm', new Trapezoid(12, 14, 16, 100)) // until 12-18 around warm  
+const logic = new Logic();
+const res = logic
+  .init('cold', new Trapezoid(0, 12, 18, 20)) // cold roughly until 12-18
+  .or('warm', new Trapezoid(12, 14, 16, 100)) // warm from 12-18 upwards
   .defuzzify(20);
 
-console.log(res);
+console.log(res.toString()); // 'warm'
