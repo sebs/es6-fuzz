@@ -11,8 +11,8 @@ describe('Grade edge cases', function() {
       assert.equal(grade.fuzzify(4.9), 0);
     });
     
-    it('should return 1 for value at x0=x1', function() {
-      assert.equal(grade.fuzzify(5), 1);
+    it('should return 0 at x0=x1 (foot of the ramp, consistent with the normal grade)', function() {
+      assert.equal(grade.fuzzify(5), 0);
     });
     
     it('should return 1 for value after x1', function() {

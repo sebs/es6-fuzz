@@ -23,10 +23,12 @@ export class Grade extends Shape {
     let result = 0;
     const x = val;
 
-    // Handle case where x0 = x1 (vertical grade/step function)
+    // Handle case where x0 = x1 (vertical grade/step function).
+    // Treat it as the limit of the ramp: the foot at x0 is 0, like the normal
+    // grade below, so behaviour stays continuous as x1 approaches x0.
     if (this.x1 === this.x0) {
-      if (x < this.x0) return 0;
-      return 1; // x >= x0
+      if (x <= this.x0) return 0;
+      return 1; // x > x0
     }
 
     if (x <= this.x0) {
