@@ -20,17 +20,17 @@ const logic = new Logic();
 const examples = [
   {
     name: 'grade-cold',
-    shape: new logic.c.Grade(10, 25, 25, 25),
+    shape: new logic.c.Grade(10, 25),
     description: 'Grade: Cold temperature (increases from 10°C to 25°C)',
   },
   {
     name: 'reverse-grade-hot',
-    shape: new logic.c.ReverseGrade(25, 40, 40, 40),
+    shape: new logic.c.ReverseGrade(25, 40),
     description: 'ReverseGrade: Hot temperature (decreases from 25°C to 40°C)',
   },
   {
     name: 'triangle-comfortable',
-    shape: new logic.c.Triangle(18, 23, 23, 28),
+    shape: new logic.c.Triangle(18, 23, 28),
     description: 'Triangle: Comfortable temperature (peak at 23°C)',
   },
   {
@@ -106,7 +106,7 @@ console.log('\nCreating composite visualizations...');
 // Temperature controller system
 const tempSystem = renderer.renderMultiple([
   {
-    shape: new logic.c.ReverseGrade(0, 15, 15, 15),
+    shape: new logic.c.ReverseGrade(0, 15),
     options: { strokeColor: '#1e40af', fillOpacity: 0.15 },
   },
   {
@@ -114,11 +114,11 @@ const tempSystem = renderer.renderMultiple([
     options: { strokeColor: '#3b82f6', fillOpacity: 0.15 },
   },
   {
-    shape: new logic.c.Triangle(20, 25, 25, 30),
+    shape: new logic.c.Triangle(20, 25, 30),
     options: { strokeColor: '#06b6d4', fillOpacity: 0.15 },
   },
   {
-    shape: new logic.c.Triangle(25, 30, 30, 35),
+    shape: new logic.c.Triangle(25, 30, 35),
     options: { strokeColor: '#f59e0b', fillOpacity: 0.15 },
   },
   {
@@ -126,7 +126,7 @@ const tempSystem = renderer.renderMultiple([
     options: { strokeColor: '#f97316', fillOpacity: 0.15 },
   },
   {
-    shape: new logic.c.Grade(40, 50, 50, 50),
+    shape: new logic.c.Grade(40, 50),
     options: { strokeColor: '#dc2626', fillOpacity: 0.15 },
   },
 ]);
@@ -143,7 +143,7 @@ const tempRendererWithLegend = new SVGRenderer({
 
 const tempSystemWithLegend = tempRendererWithLegend.renderMultiple([
   {
-    shape: new logic.c.ReverseGrade(0, 15, 15, 15),
+    shape: new logic.c.ReverseGrade(0, 15),
     options: { strokeColor: '#1e40af', fillOpacity: 0.15 },
     label: 'Freezing',
   },
@@ -153,12 +153,12 @@ const tempSystemWithLegend = tempRendererWithLegend.renderMultiple([
     label: 'Cold',
   },
   {
-    shape: new logic.c.Triangle(20, 25, 25, 30),
+    shape: new logic.c.Triangle(20, 25, 30),
     options: { strokeColor: '#06b6d4', fillOpacity: 0.15 },
     label: 'Cool',
   },
   {
-    shape: new logic.c.Triangle(25, 30, 30, 35),
+    shape: new logic.c.Triangle(25, 30, 35),
     options: { strokeColor: '#f59e0b', fillOpacity: 0.15 },
     label: 'Warm',
   },
@@ -168,7 +168,7 @@ const tempSystemWithLegend = tempRendererWithLegend.renderMultiple([
     label: 'Hot',
   },
   {
-    shape: new logic.c.Grade(40, 50, 50, 50),
+    shape: new logic.c.Grade(40, 50),
     options: { strokeColor: '#dc2626', fillOpacity: 0.15 },
     label: 'Scorching',
   },
@@ -187,19 +187,19 @@ const speedRenderer = new SVGRenderer({
 
 const speedSystem = speedRenderer.renderMultiple([
   {
-    shape: new logic.c.ReverseGrade(0, 30, 30, 30),
+    shape: new logic.c.ReverseGrade(0, 30),
     options: { strokeColor: '#10b981', fillOpacity: 0.15 },
   },
   {
-    shape: new logic.c.Triangle(20, 40, 40, 60),
+    shape: new logic.c.Triangle(20, 40, 60),
     options: { strokeColor: '#3b82f6', fillOpacity: 0.15 },
   },
   {
-    shape: new logic.c.Triangle(50, 70, 70, 90),
+    shape: new logic.c.Triangle(50, 70, 90),
     options: { strokeColor: '#f59e0b', fillOpacity: 0.15 },
   },
   {
-    shape: new logic.c.Grade(80, 110, 110, 110),
+    shape: new logic.c.Grade(80, 110),
     options: { strokeColor: '#ef4444', fillOpacity: 0.15 },
   },
 ]);

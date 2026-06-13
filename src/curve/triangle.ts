@@ -7,6 +7,15 @@ import { Shape } from './shape';
  */
 export class Triangle extends Shape {
   /**
+   * Create a Triangle.
+   * @param {number} x0 - left base point
+   * @param {number} x1 - peak
+   * @param {number} x2 - right base point
+   */
+  constructor(x0: number, x1: number, x2: number) {
+    super(x0, x1, x2, x2);
+  }
+  /**
    * Fuzzify
    * @param {number} x - Point on X axis
    * @return {number} fuzzy output 0..1

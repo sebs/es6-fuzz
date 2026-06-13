@@ -1,7 +1,19 @@
 'use strict';
 import { Shape } from './shape';
-/** Class representing a ReverseGrade. */
+/**
+ * Class representing a ReverseGrade.
+ * @example
+ * new ReverseGrade(0, 10)
+ */
 export class ReverseGrade extends Shape {
+  /**
+   * Create a ReverseGrade.
+   * @param {number} x0 - end of the full-membership plateau (membership 1)
+   * @param {number} x1 - end of the falling edge (membership 0)
+   */
+  constructor(x0: number, x1: number) {
+    super(x0, x1, x1, x1);
+  }
   /**
    * Fuzzify
    * @param {number} val - Point on X axis
