@@ -42,6 +42,11 @@ export class Logic {
   private initCalled: boolean = false;
   private rules: Rule[] = [];
 
+  /**
+   * @deprecated Redundant with the package's named exports. Import the shape
+   * classes directly instead, e.g. `import { Triangle } from 'es6-fuzz'`.
+   * Kept for backwards compatibility and slated for removal in the next major.
+   */
   public c: {
     Shape: typeof Shape;
     Grade: typeof Grade;
@@ -84,6 +89,18 @@ export class Logic {
     }
   }
 
+  /**
+   * Registers the first rule. Must be called before {@link and}, {@link or},
+   * {@link not} or {@link defuzzify}.
+   *
+   * Rule composition is sequential and order-dependent: at {@link defuzzify}
+   * time each rule's membership is folded into a single value that is carried
+   * to the next rule (see {@link and}). `init` and `or` start a fresh value
+   * from the rule's own shape; `and` narrows it; `not` inverts it.
+   *
+   * @param output Output label, letters only (`/^[a-z]+$/i`), must be unique.
+   * @param shape Fuzzifier mapping a crisp input to a membership degree 0..1.
+   */
   init(output: string, shape: Fuzzifier): this {
     this.checkOutputName(output);
     this.initCalled = true;
@@ -92,6 +109,15 @@ export class Logic {
     return this;
   }
 
+  /**
+   * Narrows the carried membership with `min(previous, shape(value))`
+   * (the standard fuzzy-AND / T-norm). Because `previous` is whatever the
+   * immediately preceding rule produced, `and` is order-dependent — it
+   * composes against the prior rule in the chain, not a grouped rule set.
+   *
+   * @param output Output label, letters only, must be unique.
+   * @param shape Fuzzifier mapping a crisp input to a membership degree 0..1.
+   */
   and(output: string, shape: Fuzzifier): this {
     this.checkInitCalled();
     this.checkOutputName(output);
@@ -100,6 +126,14 @@ export class Logic {
     return this;
   }
 
+  /**
+   * Starts a fresh membership from this rule's own shape value, ignoring the
+   * value carried from previous rules (fuzzy-OR / max is applied implicitly by
+   * {@link defuzzify} picking the single highest membership across all rules).
+   *
+   * @param output Output label, letters only, must be unique.
+   * @param shape Fuzzifier mapping a crisp input to a membership degree 0..1.
+   */
   or(output: string, shape: Fuzzifier): this {
     this.checkInitCalled();
     this.checkOutputName(output);
@@ -108,6 +142,13 @@ export class Logic {
     return this;
   }
 
+  /**
+   * Inverts this rule's shape value: `1 - shape(value)` (fuzzy-NOT /
+   * complement). Like {@link or}, it does not depend on the carried value.
+   *
+   * @param output Output label, letters only, must be unique.
+   * @param shape Fuzzifier mapping a crisp input to a membership degree 0..1.
+   */
   not(output: string, shape: Fuzzifier): this {
     this.checkInitCalled();
     this.checkOutputName(output);
@@ -116,6 +157,21 @@ export class Logic {
     return this;
   }
 
+  /**
+   * Evaluates every rule for `value` and returns the result.
+   *
+   * Note on terminology: this performs **max-membership classification**, not
+   * centroid / center-of-gravity defuzzification. It returns the *label* of the
+   * rule with the highest membership (`defuzzified`) together with that
+   * membership degree (`fuzzified`) — it does not compute a crisp output
+   * number. On ties the earliest rule wins (strict greater-than).
+   *
+   * @param value Crisp input fed to every rule's shape.
+   * @param as Optional namespace prefix for {@link DefuzzifyResult.boonJsInputs}
+   *   keys, e.g. `'heat'` yields `heat.cold`. Useful when merging the inputs of
+   *   several `Logic` instances for boon-js evaluation.
+   * @example logic.defuzzify(10)
+   */
   defuzzify(value: number, as?: string): Logic.DefuzzifyResult {
     this.checkInitCalled();
     let defuzzified = 'none';
@@ -150,10 +206,6 @@ export class Logic {
       boonJsInputs[`${namePrefix}${rule.output}`] = rule.output === defuzzified;
     });
 
-    /**
-     *
-     * @example  fuzzy.defuzzify(10)
-     */
     return {
       boonJsInputs,
       fuzzified: fuzzified,

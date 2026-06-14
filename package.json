@@ -2,7 +2,19 @@
   "name": "es6-fuzz",
   "description": "fuzzy logic with and for typescript and javascript",
   "version": "7.0.0",
+  "type": "commonjs",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
   "repository": "git@github.com:sebs/es6-fuzz.git",
   "homepage": "https://github.com/sebs/es6-fuzz",
   "scripts": {

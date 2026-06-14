@@ -116,7 +116,7 @@ npm run docs:site   # Build documentation site
 
 ## Requirements
 
-* Node.js 20+
+* Node.js 22+
 
 ## Resources
 
