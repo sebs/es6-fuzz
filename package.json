@@ -22,6 +22,7 @@
     "build:watch": "tsc --watch",
     "test": "npm run build && tsx --test ./test/*.test.ts ./test/**/*.test.ts ./test/curve/**/*.test.ts",
     "test:watch": "npm run build && tsx --test --watch ./test/*.test.ts ./test/**/*.test.ts ./test/curve/**/*.test.ts",
+    "test:coverage": "npm run build && tsx --test --experimental-test-coverage --test-coverage-exclude='test/**' ./test/*.test.ts ./test/**/*.test.ts ./test/curve/**/*.test.ts",
     "check": "tsc --noEmit",
     "docs": "typedoc",
     "pages": "node ./scripts/publish-gh.js",

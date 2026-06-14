@@ -1,0 +1,55 @@
+name: Docs
+
+# Build the TypeDoc API site and deploy it to GitHub Pages on every push to
+# master. One-time setup: repo Settings -> Pages -> Build and deployment ->
+# Source: "GitHub Actions". This replaces the manual `npm run pages` flow
+# (which publishes to the gh-pages branch).
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Permissions required by the GitHub Pages deploy action.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent Pages deployment; let an in-progress run finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      # package-lock.json is intentionally not committed (see .gitignore).
+      - name: Install
+        run: npm install
+
+      - name: Build API docs
+        run: npm run docs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

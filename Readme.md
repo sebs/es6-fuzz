@@ -2,6 +2,7 @@
 
 > Fuzzy Logic in JavaScript
 
+[![CI](https://github.com/sebs/es6-fuzz/actions/workflows/ci.yml/badge.svg)](https://github.com/sebs/es6-fuzz/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/dt/es6-fuzz.svg)](https://www.npmjs.com/package/es6-fuzz)
 [![license](https://img.shields.io/github/license/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz/blob/master/LICENSE.md)
 [![GitHub tag](https://img.shields.io/github/tag/sebs/es6-fuzz.svg)](https://github.com/sebs/es6-fuzz)
@@ -14,12 +15,11 @@
 * **Reverse Grade** - Inverted linear membership
 * **Sigmoid** - S-shaped membership curve
 * **Trapezoid** - Trapezoidal membership function
-* **Triangle** - Triangular membership function
-
+* **Triangle** - Triangular membership functionve
 ## Documentation
 
 * [API Documentation](http://sebs.github.io/es6-fuzz)
-* [Changelog](https://github.com/sebs/es6-fuzz/blob/master/docs/CHANGELOG.md)
+* [Changelog](https://github.com/sebs/es6-fuzz/releases)
 
 ## Installation
 
@@ -104,15 +104,31 @@ console.log(monsterBiteTest(jsBoonInput)); // true
 ### Running Tests
 
 ```bash
-npm test
+npm test               # build + run the test suite
+npm run test:coverage  # same, with a coverage report
 ```
 
 ### Building Documentation
 
 ```bash
-npm run docs        # Generate API docs
-npm run docs:site   # Build documentation site
+npm run docs    # Generate the TypeDoc API site into ./out
 ```
+
+The site is deployed to GitHub Pages automatically on every push to `master`
+by the [Docs workflow](.github/workflows/docs.yml); `npm run docs` is for local
+preview.
+
+### Visual Examples
+
+The `render-examples` script renders every fuzzifier and a few composite
+systems (temperature/speed controllers) to SVG, plus an `index.html` viewer:
+
+```bash
+npm run build            # render-examples runs from the compiled output
+npm run render-examples  # writes SVGs + index.html into ./examples
+```
+
+Open `examples/index.html` in a browser to see the membership curves.
 
 ## Requirements
 
