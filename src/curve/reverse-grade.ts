@@ -28,6 +28,9 @@ export class ReverseGrade extends Shape {
   fuzzify(val: number): number {
     const x = val;
 
+    // NaN has no meaningful membership; treat it as outside the ramp (0).
+    if (Number.isNaN(x)) return 0;
+
     // Vertical reverse grade (x0 = x1): step down, the mirror of Grade.
     // (The previous inline x0 === x1 handling sat in an unreachable branch:
     // when x0 === x1 every value is caught by x <= x0 or x >= x1 first.)

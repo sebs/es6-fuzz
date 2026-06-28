@@ -30,6 +30,9 @@ export class Grade extends Shape {
     let result = 0;
     const x = val;
 
+    // NaN has no meaningful membership; treat it as outside the ramp (0).
+    if (Number.isNaN(x)) return 0;
+
     // Handle case where x0 = x1 (vertical grade/step function).
     // Treat it as the limit of the ramp: the foot at x0 is 0, like the normal
     // grade below, so behaviour stays continuous as x1 approaches x0.

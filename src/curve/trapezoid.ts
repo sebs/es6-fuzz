@@ -41,6 +41,10 @@ export class Trapezoid extends Shape {
     let result = 0;
     const x = val;
 
+    // NaN has no meaningful membership; treat it as outside the support (0)
+    // instead of letting it propagate through the edge arithmetic.
+    if (Number.isNaN(x)) return 0;
+
     // Special case: all points equal (spike at single point)
     if (this.x0 === this.x1 && this.x1 === this.x2 && this.x2 === this.x3) {
       return x === this.x0 ? 1 : 0;

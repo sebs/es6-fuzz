@@ -28,6 +28,8 @@ export class Sigmoid implements Fuzzifier {
    * @return {number} fuzzy output 0..1
    */
   fuzzify(x: number): number {
+    // NaN has no meaningful membership; treat it as 0 instead of returning NaN.
+    if (Number.isNaN(x)) return 0;
     if (this.slope === 0) {
       // When slope is 0, sigmoid becomes a step function
       if (x < this.center) return 0;
