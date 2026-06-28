@@ -35,9 +35,11 @@ describe('Trapezoid', function() {
   });
 
   it('edge case triangle', function() {
+    // x0===x1===0 is a vertical left edge: x=0 is the start of the plateau, so
+    // membership is 1 there (consistent with the rectangle case and Triangle).
     var trapez = new Trapezoid(0, 0, 1.5, 2.5);
     var res = trapez.fuzzify(0);
-    assert.equal(res, 0);
+    assert.equal(res, 1);
   });
 
   it('edge case triangle right bounds', function() {

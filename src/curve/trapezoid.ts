@@ -54,12 +54,16 @@ export class Trapezoid extends Shape {
       return 0;
     }
 
-    if (x <= this.x0) {
+    if (x >= this.x1 && x <= this.x2) {
+      // Plateau, corners included. When a single edge is vertical (x0===x1 or
+      // x2===x3) the corner must read 1 — consistent with the rectangle case
+      // above and with Triangle. Evaluating the plateau before the x<=x0 / x>=x3
+      // zero guards is what makes those corners correct instead of dropping to 0.
+      result = 1;
+    } else if (x <= this.x0) {
       result = 0;
     } else if (x >= this.x3) {
       result = 0;
-    } else if (x >= this.x1 && x <= this.x2) {
-      result = 1;
     } else if (x > this.x0 && x < this.x1) {
       // Handle case where x0 = x1 (vertical left edge)
       if (this.x1 === this.x0) {
