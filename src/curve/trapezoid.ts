@@ -7,6 +7,32 @@ import { Shape } from './shape';
  */
 export class Trapezoid extends Shape {
   /**
+   * Create a Trapezoid.
+   * @param {number} x0 - left foot (membership 0)
+   * @param {number} x1 - start of the plateau (membership 1)
+   * @param {number} x2 - end of the plateau (membership 1)
+   * @param {number} x3 - right foot (membership 0)
+   */
+  constructor(x0: number, x1: number, x2: number, x3: number) {
+    super(x0, x1, x2, x3);
+    // Reject out-of-order finite params. In particular an inverted plateau
+    // (x1 > x2) makes the plateau branch unsatisfiable, so the curve never
+    // reaches membership 1 and develops a discontinuity. NaN/Infinity, and the
+    // 3-argument form (x3 === undefined), are left untouched.
+    if (
+      Number.isFinite(x0) &&
+      Number.isFinite(x1) &&
+      Number.isFinite(x2) &&
+      Number.isFinite(x3) &&
+      !(x0 <= x1 && x1 <= x2 && x2 <= x3)
+    ) {
+      throw Error(
+        'Trapezoid requires x0 <= x1 <= x2 <= x3 but got x0=' +
+          x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3
+      );
+    }
+  }
+  /**
    * Fuzzify
    * @param {number} val - Point on X axis
    * @return {number} fuzzy output 0..1
