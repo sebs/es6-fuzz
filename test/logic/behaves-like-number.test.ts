@@ -17,6 +17,9 @@ describe('behaves like a number', function() {
     .or('enragedAttack', new Grade(90, 100))
     .defuzzify(99);
 
+  // enragedAttack wins at x=99 with membership Grade(90,100).fuzzify(99) = 0.9
+  // exactly (the stable formula no longer leaks a cancellation error), so
+  // 0 + 0.9 + 0.9 === 1.8.
   var res2 = 0 + res + res;
-  assert.equal(res2, 1.8000000000000007);
+  assert.equal(res2, 1.8);
 });
