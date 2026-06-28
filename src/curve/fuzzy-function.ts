@@ -16,7 +16,10 @@ export class FuzzyFunction implements Fuzzifier {
    */
   fuzzify(val: number): number {
     const res = this.cb(val);
-    if (res >= 0 && res <= 1) {
+    // The relational checks coerce their operands, so a non-number (string,
+    // boolean, null, array) could pass `res >= 0 && res <= 1` and be returned
+    // verbatim, breaking the `number` contract. Require an actual number.
+    if (typeof res === 'number' && res >= 0 && res <= 1) {
       return res;
     }
     throw Error('fuzzified result must be between 0 and 1 but is ' + res);

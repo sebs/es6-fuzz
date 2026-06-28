@@ -33,9 +33,9 @@ describe('FuzzyFunction validation', function() {
       assert.throws(() => func.fuzzify(5), /fuzzified result must be between 0 and 1/);
     });
     
-    it('should return null when callback returns null', function() {
+    it('should throw when callback returns null', function() {
       const func = new FuzzyFunction(() => null);
-      assert.equal(func.fuzzify(5), null);
+      assert.throws(() => func.fuzzify(5), /fuzzified result must be between 0 and 1/);
     });
     
     it('should throw error when callback returns undefined', function() {
