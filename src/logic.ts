@@ -93,8 +93,10 @@ export class Logic {
   }
 
   /**
-   * Registers the first rule. Must be called before {@link and}, {@link or},
-   * {@link not} or {@link defuzzify}.
+   * Registers a rule and marks the logic chain as started; one `init` call must
+   * precede {@link and}, {@link or}, {@link not} or {@link defuzzify}. It may be
+   * called more than once — a later `init` just adds another rule that starts a
+   * fresh membership, which is the same effect as {@link or}.
    *
    * Rule composition is sequential and order-dependent: at {@link defuzzify}
    * time each rule's membership is folded into a single value that is carried
