@@ -65,19 +65,11 @@ export class Trapezoid extends Shape {
     } else if (x >= this.x3) {
       result = 0;
     } else if (x > this.x0 && x < this.x1) {
-      // Handle case where x0 = x1 (vertical left edge)
-      if (this.x1 === this.x0) {
-        result = 1;
-      } else {
-        result = x / (this.x1 - this.x0) - this.x0 / (this.x1 - this.x0);
-      }
+      // Rising edge — only reached when x0 < x1, so the divisor is never 0.
+      result = x / (this.x1 - this.x0) - this.x0 / (this.x1 - this.x0);
     } else {
-      // Handle case where x2 = x3 (vertical right edge)
-      if (this.x3 === this.x2) {
-        result = 1;
-      } else {
-        result = -x / (this.x3 - this.x2) + this.x3 / (this.x3 - this.x2);
-      }
+      // Falling edge — only reached when x2 < x3, so the divisor is never 0.
+      result = -x / (this.x3 - this.x2) + this.x3 / (this.x3 - this.x2);
     }
     return result;
   }
