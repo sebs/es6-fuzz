@@ -32,6 +32,9 @@ export class ReverseGrade extends Shape {
 
     if (x <= this.x0) return 1;
     if (x >= this.x1) return 0;
-    return -x / (this.x1 - this.x0) + this.x1 / (this.x1 - this.x0);
+    // Algebraically equal to -x/(x1-x0) + x1/(x1-x0) but numerically stable:
+    // the split form adds two large nearly-equal quotients and loses
+    // significance for large coordinates.
+    return (this.x1 - x) / (this.x1 - this.x0);
   }
 }
