@@ -78,10 +78,13 @@ export class Logic {
   }
 
   private checkOutputName(name: string): void {
+    // ASCII letters only — the keys end up as boon-js identifiers, which are
+    // not Unicode-aware, so non-ASCII letters (e.g. "ÜberHeiss") are rejected
+    // by design rather than silently producing an unusable boon-js input.
     const reg = /^[a-z]+$/i;
     if (!reg.test(name)) {
       throw Error(
-        'Output names can only be strings without space, without numbers and without special chars'
+        'Output names can only be strings without space, without numbers and without special chars (ASCII letters a-z only)'
       );
     }
     if (this.rules.some((rule) => rule.output === name)) {
