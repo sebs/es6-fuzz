@@ -184,10 +184,17 @@ export class Logic {
     // membership carried along the chain, used by AND to narrow the result
     let running = 0;
 
+    // Defend against fuzzifiers that violate the 0..1 contract: clamp the raw
+    // value (and map NaN to 0) before composing. Otherwise a rogue shape — or
+    // `not` computing 1 - raw on it — could make the winner's fuzzified value
+    // fall outside 0..1.
+    const clamp = (v: number): number =>
+      Number.isNaN(v) ? 0 : Math.min(1, Math.max(0, v));
+
     // Evaluate into fresh rule copies so the engine's internal state is never
     // mutated or handed out to the caller.
     const rules: Rule[] = this.rules.map((rule) => {
-      const raw = rule.shape.fuzzify(value);
+      const raw = clamp(rule.shape.fuzzify(value));
       const membership = ruleEngine[rule.type](running, raw);
       running = membership;
       // max-membership defuzzification: highest membership wins, ties keep
