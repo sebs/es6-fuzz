@@ -176,7 +176,11 @@ export class Logic {
     this.checkInitCalled();
     let defuzzified = 'none';
     let fuzzified = 0;
-    let best = -Infinity;
+    // Seed at 0, not -Infinity: a rule only wins with membership strictly above
+    // 0. When no rule fires (every membership is 0) there is genuinely no winner,
+    // so 'none' is returned instead of the first rule being reported with a
+    // membership of 0 (which also kept its boonJsInputs entry wrongly true).
+    let best = 0;
     // membership carried along the chain, used by AND to narrow the result
     let running = 0;
 

@@ -34,7 +34,9 @@ describe('Edge case combinations', function() {
     // In the gap (x=15), both return 0
     const result = logic.defuzzify(15);
     assert.equal(result.fuzzified, 0);
-    assert.equal(result.defuzzified, 'shapeA'); // First shape wins when all are 0
+    assert.equal(result.defuzzified, 'none'); // No rule fires when all are 0
+    assert.equal(result.boonJsInputs.shapeA, false);
+    assert.equal(result.boonJsInputs.shapeB, false);
   });
 
   it('should handle shapes meeting at boundaries', function() {
