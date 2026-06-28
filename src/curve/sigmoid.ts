@@ -13,10 +13,14 @@ export class Sigmoid implements Fuzzifier {
 
   /**
    * Create a Sigmoid Function.
-   * @param {number} center - The center point of the sigmoid curve (where it outputs 0.5)
+   * @param {number} center - The center point of the sigmoid curve (where it outputs 0.5).
+   *   Must be finite.
    * @param {number} slope - Width of the transition: it appears in the denominator
-   *   as 1 / (1 + exp(-(x - center) / slope)), so a smaller slope means a steeper
-   *   transition and a larger slope a gentler one.
+   *   as 1 / (1 + exp(-(x - center) / slope)), so a smaller magnitude means a steeper
+   *   transition and a larger magnitude a gentler one. A **negative** slope inverts the
+   *   curve into a decreasing S (high membership below the center, low above). A slope of
+   *   `0` degenerates to an increasing step at the center (0.5 exactly at the center).
+   *   Must be finite; non-finite center/slope throw.
    */
   constructor(center: number = 0, slope: number = 1) {
     // Validate up front (like Constant/FuzzyFunction): a non-finite center or
