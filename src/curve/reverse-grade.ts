@@ -13,6 +13,12 @@ export class ReverseGrade extends Shape {
    */
   constructor(x0: number, x1: number) {
     super(x0, x1, x1, x1);
+    // Reject reversed finite params: with x0 > x1 the falling edge collapses
+    // into a hard step and the linear branch becomes dead code. NaN/Infinity
+    // are left untouched (handled at fuzzify time).
+    if (Number.isFinite(x0) && Number.isFinite(x1) && x0 > x1) {
+      throw Error('ReverseGrade requires x0 <= x1 but got x0=' + x0 + ', x1=' + x1);
+    }
   }
   /**
    * Fuzzify
