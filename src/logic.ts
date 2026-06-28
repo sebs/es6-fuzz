@@ -208,7 +208,15 @@ export class Logic {
     });
 
     let namePrefix = '';
-    if (as && typeof as === 'string') {
+    if (as) {
+      // Validate the namespace prefix with the same rule as output names, so it
+      // can't inject spaces, dots or other characters into the boonJsInputs keys
+      // (which are meant to be valid boon-js identifiers).
+      if (typeof as !== 'string' || !/^[a-z]+$/i.test(as)) {
+        throw Error(
+          'The "as" namespace prefix can only be letters without space, without numbers and without special chars'
+        );
+      }
       namePrefix = as + '.';
     }
 
