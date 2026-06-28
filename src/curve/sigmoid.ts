@@ -19,6 +19,15 @@ export class Sigmoid implements Fuzzifier {
    *   transition and a larger slope a gentler one.
    */
   constructor(center: number = 0, slope: number = 1) {
+    // Validate up front (like Constant/FuzzyFunction): a non-finite center or
+    // slope makes fuzzify return NaN, breaking the documented 0..1 contract and
+    // making defuzzify report no winner ('none') for an otherwise valid rule.
+    if (!Number.isFinite(center)) {
+      throw Error('Sigmoid center must be a finite number but is ' + center);
+    }
+    if (!Number.isFinite(slope)) {
+      throw Error('Sigmoid slope must be a finite number but is ' + slope);
+    }
     this.center = center;
     this.slope = slope;
   }
