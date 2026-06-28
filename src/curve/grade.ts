@@ -36,7 +36,10 @@ export class Grade extends Shape {
     } else if (x >= this.x1) {
       result = 1;
     } else {
-      result = x / (this.x1 - this.x0) - this.x0 / (this.x1 - this.x0);
+      // Algebraically equal to x/(x1-x0) - x0/(x1-x0) but numerically stable:
+      // the split form subtracts two large nearly-equal quotients and loses
+      // significance for large coordinates (see Grade large-coordinate bug).
+      result = (x - this.x0) / (this.x1 - this.x0);
     }
     return result;
   }
