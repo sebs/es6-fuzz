@@ -203,6 +203,15 @@ export class Logic {
     const clamp = (v: number): number =>
       Number.isNaN(v) ? 0 : Math.min(1, Math.max(0, v));
 
+    // Return an isolated, frozen copy of a shape so the caller cannot reach back
+    // into the engine's internal fuzzifier and mutate it (which would silently
+    // change later evaluations — findings.md F7). Keeps the prototype so
+    // `shape.fuzzify` still works, and copies own coordinates for Shape curves.
+    const isolateShape = (shape: Fuzzifier): Fuzzifier => {
+      const copy = Object.assign(Object.create(Object.getPrototypeOf(shape)), shape);
+      return Object.freeze(copy);
+    };
+
     // Evaluate into fresh rule copies so the engine's internal state is never
     // mutated or handed out to the caller.
     const rules: Rule[] = this.rules.map((rule) => {
@@ -216,7 +225,7 @@ export class Logic {
         defuzzified = rule.output;
         fuzzified = membership;
       }
-      return { ...rule, fuzzy: membership };
+      return { ...rule, shape: isolateShape(rule.shape), fuzzy: membership };
     });
 
     let namePrefix = '';
