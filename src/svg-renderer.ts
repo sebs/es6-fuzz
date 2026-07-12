@@ -65,6 +65,18 @@ export class SVGRenderer {
     this.options = { ...this.defaultOptions, ...options };
   }
 
+  /**
+   * Escape a caller-supplied string for use as SVG/XML text content, so a label
+   * like `</text><script>…` cannot break out of its element and inject nodes
+   * (findings.md F8).
+   */
+  private escapeText(value: string): string {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
   private scaleX(x: number): number {
     const { xMin, xMax, width, padding } = this.options as Required<SVGOptions>;
     return padding + ((x - xMin) / (xMax - xMin)) * (width - 2 * padding);
@@ -198,8 +210,8 @@ export class SVGRenderer {
       // Color box
       svg += `<rect x="${legendX + legendPadding}" y="${itemY}" width="${fontSize}" height="${fontSize}" fill="${item.color}" />`;
 
-      // Label
-      svg += `<text x="${legendX + legendPadding + fontSize + 5}" y="${itemY + fontSize - 2}" font-size="${fontSize}" fill="${legendTextColor}">${item.label}</text>`;
+      // Label (escaped: caller-supplied text must not break out of <text>)
+      svg += `<text x="${legendX + legendPadding + fontSize + 5}" y="${itemY + fontSize - 2}" font-size="${fontSize}" fill="${legendTextColor}">${this.escapeText(item.label)}</text>`;
     });
 
     return svg;
