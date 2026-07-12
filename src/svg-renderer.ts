@@ -63,6 +63,17 @@ export class SVGRenderer {
 
   constructor(private options: SVGOptions = {}) {
     this.options = { ...this.defaultOptions, ...options };
+    const { xMin, xMax, yMin, yMax } = this.options as Required<SVGOptions>;
+    // A zero-width/height domain makes scaleX/scaleY divide by zero (NaN/Infinity
+    // path coordinates) and makes the grid loop step by zero — an infinite loop
+    // that grows the SVG string until Node throws RangeError. Reject it up front
+    // (findings.md F10). `!(a > b)` also catches NaN and reversed bounds.
+    if (!(xMax > xMin)) {
+      throw Error('SVGRenderer requires xMax > xMin but got xMin=' + xMin + ', xMax=' + xMax);
+    }
+    if (!(yMax > yMin)) {
+      throw Error('SVGRenderer requires yMax > yMin but got yMin=' + yMin + ', yMax=' + yMax);
+    }
   }
 
   /**
