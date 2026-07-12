@@ -220,6 +220,15 @@ export class SVGRenderer {
         legendX = width - padding - legendWidth - 10;
         legendY = height - padding - legendHeight - 10;
         break;
+      default:
+        // Without this, an unrecognized legendPosition left legendX/legendY
+        // undefined and the legend rendered at x="undefined" y="undefined"
+        // (findings.md F11).
+        throw Error(
+          'Unknown legendPosition "' +
+            legendPosition +
+            '" (expected top-left, top-right, bottom-left or bottom-right)'
+        );
     }
 
     let svg = '';
