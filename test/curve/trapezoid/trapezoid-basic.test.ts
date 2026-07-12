@@ -31,7 +31,9 @@ describe('Trapezoid', function() {
   it('avoid NaN if going over max', function() {
     var trapez = new Trapezoid(20, 30, 90, 100);
     var res = trapez.fuzzify(99);
-    assert.equal(res, 0.09999999999999964);
+    // Stable falling-edge form (x3 - x)/(x3 - x2) = 1/10 = 0.1 exactly; the old
+    // split form returned 0.09999999999999964 (findings.md F3).
+    assert.equal(res, 0.1);
   });
 
   it('edge case triangle', function() {

@@ -90,10 +90,14 @@ export class Trapezoid extends Shape {
       result = 0;
     } else if (x > this.x0 && x < this.x1) {
       // Rising edge — only reached when x0 < x1, so the divisor is never 0.
-      result = x / (this.x1 - this.x0) - this.x0 / (this.x1 - this.x0);
+      // Stable form (x - x0)/(x1 - x0), matching Grade/Triangle. The split form
+      // x/(x1-x0) - x0/(x1-x0) subtracts two large nearly-equal quotients and
+      // loses significance for large coordinates (findings.md F3).
+      result = (x - this.x0) / (this.x1 - this.x0);
     } else {
       // Falling edge — only reached when x2 < x3, so the divisor is never 0.
-      result = -x / (this.x3 - this.x2) + this.x3 / (this.x3 - this.x2);
+      // Stable form (x3 - x)/(x3 - x2), matching Grade/Triangle.
+      result = (this.x3 - x) / (this.x3 - this.x2);
     }
     return result;
   }
