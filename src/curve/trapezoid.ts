@@ -20,17 +20,24 @@ export class Trapezoid extends Shape {
     // the falling edge can never divide by `undefined` and return NaN.
     const x3r = x3 === undefined ? x2 : x3;
     super(x0, x1, x2, x3r);
-    // Reject out-of-order finite params. In particular an inverted plateau
-    // (x1 > x2) makes the plateau branch unsatisfiable, so the curve never
-    // reaches membership 1 and develops a discontinuity. NaN/Infinity are left
-    // untouched here (rejected separately by the finite-coordinate guard).
+    // Coordinates must be finite: a non-finite bound (e.g. x3=Infinity) makes the
+    // adjacent edge compute Inf/Inf = NaN for finite inputs, violating the
+    // documented 0..1 contract (see findings.md F1).
     if (
-      Number.isFinite(x0) &&
-      Number.isFinite(x1) &&
-      Number.isFinite(x2) &&
-      Number.isFinite(x3r) &&
-      !(x0 <= x1 && x1 <= x2 && x2 <= x3r)
+      !Number.isFinite(x0) ||
+      !Number.isFinite(x1) ||
+      !Number.isFinite(x2) ||
+      !Number.isFinite(x3r)
     ) {
+      throw Error(
+        'Trapezoid requires finite coordinates but got x0=' +
+          x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3r
+      );
+    }
+    // Reject out-of-order params. In particular an inverted plateau (x1 > x2)
+    // makes the plateau branch unsatisfiable, so the curve never reaches
+    // membership 1 and develops a discontinuity.
+    if (!(x0 <= x1 && x1 <= x2 && x2 <= x3r)) {
       throw Error(
         'Trapezoid requires x0 <= x1 <= x2 <= x3 but got x0=' +
           x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3r

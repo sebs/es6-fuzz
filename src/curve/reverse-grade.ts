@@ -13,10 +13,15 @@ export class ReverseGrade extends Shape {
    */
   constructor(x0: number, x1: number) {
     super(x0, x1, x1, x1);
-    // Reject reversed finite params: with x0 > x1 the falling edge collapses
-    // into a hard step and the linear branch becomes dead code. NaN/Infinity
-    // are left untouched (handled at fuzzify time).
-    if (Number.isFinite(x0) && Number.isFinite(x1) && x0 > x1) {
+    // Coordinates must be finite: a non-finite bound (Infinity/NaN) drives the
+    // falling edge into Inf/Inf or NaN arithmetic and returns NaN, violating the
+    // documented 0..1 contract (see findings.md F1).
+    if (!Number.isFinite(x0) || !Number.isFinite(x1)) {
+      throw Error('ReverseGrade requires finite coordinates but got x0=' + x0 + ', x1=' + x1);
+    }
+    // Reject reversed params: with x0 > x1 the falling edge collapses into a hard
+    // step and the linear branch becomes dead code.
+    if (x0 > x1) {
       throw Error('ReverseGrade requires x0 <= x1 but got x0=' + x0 + ', x1=' + x1);
     }
   }

@@ -14,16 +14,19 @@ export class Triangle extends Shape {
    */
   constructor(x0: number, x1: number, x2: number) {
     super(x0, x1, x2, x2);
-    // Reject out-of-order finite params. With x0 > x1 or x1 > x2 the branch
-    // guards make whole edges unreachable, so the peak (x1) never reaches 1 and
-    // the curve is discontinuous or collapses to the empty set. NaN/Infinity are
-    // left untouched (handled at fuzzify time, relied on for open-ended shapes).
-    if (
-      Number.isFinite(x0) &&
-      Number.isFinite(x1) &&
-      Number.isFinite(x2) &&
-      !(x0 <= x1 && x1 <= x2)
-    ) {
+    // Coordinates must be finite: an infinite base (e.g. x2=Infinity) makes the
+    // adjacent edge compute Inf/Inf = NaN for finite inputs, violating the
+    // documented 0..1 contract. (An earlier comment claimed non-finite bounds were
+    // "relied on for open-ended shapes"; they never worked — see findings.md F1.)
+    if (!Number.isFinite(x0) || !Number.isFinite(x1) || !Number.isFinite(x2)) {
+      throw Error(
+        'Triangle requires finite coordinates but got x0=' + x0 + ', x1=' + x1 + ', x2=' + x2
+      );
+    }
+    // Reject out-of-order params. With x0 > x1 or x1 > x2 the branch guards make
+    // whole edges unreachable, so the peak (x1) never reaches 1 and the curve is
+    // discontinuous or collapses to the empty set.
+    if (!(x0 <= x1 && x1 <= x2)) {
       throw Error(
         'Triangle requires x0 <= x1 <= x2 but got x0=' + x0 + ', x1=' + x1 + ', x2=' + x2
       );

@@ -4,60 +4,39 @@ import assert from 'assert';
 import { Triangle } from '../../lib/curve/triangle';
 import { Trapezoid } from '../../lib/curve/trapezoid';
 import { Grade } from '../../lib/curve/grade';
+import { ReverseGrade } from '../../lib/curve/reverse-grade';
 import { Sigmoid } from '../../lib/curve/sigmoid';
 
 describe('Shape constructor validation', function() {
-  describe('NaN parameters', function() {
-    it('should return number when Triangle has NaN in x0', function() {
-      const triangle = new Triangle(NaN, 5, 10);
-      const result = triangle.fuzzify(5);
-      assert(typeof result === 'number');
+  describe('NaN parameters are rejected', function() {
+    it('should throw when Triangle has NaN in x0', function() {
+      assert.throws(() => new Triangle(NaN, 5, 10), /Triangle requires finite coordinates/);
     });
-    
-    it('should return number when Trapezoid has NaN in x1', function() {
-      const trapezoid = new Trapezoid(0, NaN, 10, 15);
-      const result = trapezoid.fuzzify(5);
-      assert(typeof result === 'number');
+
+    it('should throw when Trapezoid has NaN in x1', function() {
+      assert.throws(() => new Trapezoid(0, NaN, 10, 15), /Trapezoid requires finite coordinates/);
     });
-    
-    it('should return number when Grade has NaN in x0', function() {
-      const grade = new Grade(NaN, 10);
-      const result = grade.fuzzify(5);
-      assert(typeof result === 'number');
+
+    it('should throw when Grade has NaN in x0', function() {
+      assert.throws(() => new Grade(NaN, 10), /Grade requires finite coordinates/);
     });
   });
 
-  describe('Infinity parameters', function() {
-    describe('Triangle with Infinity in x2', function() {
-      const triangle = new Triangle(0, 10, Infinity);
-      
-      it('should return 0 for value at x0', function() {
-        assert.equal(triangle.fuzzify(0), 0);
-      });
-      
-      it('should return 1 for value at x1', function() {
-        assert.equal(triangle.fuzzify(10), 1);
-      });
-      
-      it('should return NaN for value beyond x1', function() {
-        assert(isNaN(triangle.fuzzify(20)));
-      });
+  describe('Infinity parameters are rejected', function() {
+    it('should throw when Triangle has Infinity in x2', function() {
+      assert.throws(() => new Triangle(0, 10, Infinity), /Triangle requires finite coordinates/);
     });
-    
-    describe('Grade with Infinity in x1', function() {
-      const grade = new Grade(0, Infinity);
-      
-      it('should return 0 for value at x0', function() {
-        assert.equal(grade.fuzzify(0), 0);
-      });
-      
-      it('should return 0 for large finite value', function() {
-        assert.equal(grade.fuzzify(1000), 0);
-      });
-      
-      it('should return 1 for Infinity value', function() {
-        assert.equal(grade.fuzzify(Infinity), 1);
-      });
+
+    it('should throw when Grade has Infinity in x1', function() {
+      assert.throws(() => new Grade(0, Infinity), /Grade requires finite coordinates/);
+    });
+
+    it('should throw when ReverseGrade has -Infinity in x0', function() {
+      assert.throws(() => new ReverseGrade(-Infinity, 10), /ReverseGrade requires finite coordinates/);
+    });
+
+    it('should throw when Trapezoid has Infinity in x3', function() {
+      assert.throws(() => new Trapezoid(0, 10, 20, Infinity), /Trapezoid requires finite coordinates/);
     });
   });
 
