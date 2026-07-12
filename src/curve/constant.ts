@@ -11,7 +11,11 @@ export class Constant implements Fuzzifier {
    * new Constant(0.5)
    */
   constructor(constantValue: number) {
-    if (!(constantValue >= 0 && constantValue <= 1)) {
+    // Require an actual number: the >=/<= comparisons coerce their operands, so
+    // without the typeof check `true`, "0.5", [1] etc. would pass validation and
+    // be returned verbatim by fuzzify, breaking the number contract and letting a
+    // non-number "membership" win a Logic classification (findings.md F4).
+    if (typeof constantValue !== 'number' || !(constantValue >= 0 && constantValue <= 1)) {
       throw Error('Constant value must be between 0 and 1 but is ' + constantValue);
     }
     this.cValue = constantValue;

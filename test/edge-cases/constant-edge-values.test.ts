@@ -36,6 +36,30 @@ describe('Constant edge values', function() {
     });
   });
 
+  describe('non-number constant values are rejected', function() {
+    // findings.md F4: >=/<= coercion previously let these through and fuzzify
+    // returned them verbatim (a boolean/string/array "membership").
+    it('should throw for boolean true', function() {
+      assert.throws(() => new Constant(true as unknown as number), /Constant value must be between 0 and 1/);
+    });
+
+    it('should throw for numeric string "0.5"', function() {
+      assert.throws(() => new Constant('0.5' as unknown as number), /Constant value must be between 0 and 1/);
+    });
+
+    it('should throw for empty string', function() {
+      assert.throws(() => new Constant('' as unknown as number), /Constant value must be between 0 and 1/);
+    });
+
+    it('should throw for an array', function() {
+      assert.throws(() => new Constant([1] as unknown as number), /Constant value must be between 0 and 1/);
+    });
+
+    it('should throw for null', function() {
+      assert.throws(() => new Constant(null as unknown as number), /Constant value must be between 0 and 1/);
+    });
+  });
+
   describe('ignoring x parameter in fuzzify', function() {
     const constant = new Constant(0.7);
     
