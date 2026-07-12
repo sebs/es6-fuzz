@@ -15,7 +15,9 @@
 * **Reverse Grade** - Inverted linear membership
 * **Sigmoid** - S-shaped membership curve
 * **Trapezoid** - Trapezoidal membership function
-* **Triangle** - Triangular membership functionve
+* **Triangle** - Triangular membership function
+* **FuzzyFunction** - Custom membership from a user-supplied `(x) => 0..1` callback
+
 ## Documentation
 
 * [API Documentation](http://sebs.github.io/es6-fuzz)
