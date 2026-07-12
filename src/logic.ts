@@ -87,6 +87,13 @@ export class Logic {
         'Output names can only be strings without space, without numbers and without special chars (ASCII letters a-z only)'
       );
     }
+    // 'none' is the sentinel defuzzify() returns when no rule fires. A real output
+    // with that name collides with the sentinel, so a non-firing rule named 'none'
+    // is falsely reported as the winner in boonJsInputs (findings.md F6). Reserve
+    // it, case-insensitively, so the no-winner signal stays unambiguous.
+    if (name.toLowerCase() === 'none') {
+      throw Error('Output name "none" is reserved (it is the no-winner sentinel)');
+    }
     if (this.rules.some((rule) => rule.output === name)) {
       throw Error('Output name "' + name + '" is already in use');
     }

@@ -76,6 +76,31 @@ describe('Logic class validation', function() {
     });
   });
 
+  describe('reserved output name "none"', function() {
+    const triangle = new Triangle(0, 5, 10);
+
+    it('should throw when init uses the reserved name "none"', function() {
+      const logic = new Logic();
+      assert.throws(() => logic.init('none', triangle), /Output name "none" is reserved/);
+    });
+
+    it('should throw case-insensitively (e.g. "None")', function() {
+      const logic = new Logic();
+      assert.throws(() => logic.init('None', triangle), /Output name "none" is reserved/);
+    });
+
+    it('should keep "none" unambiguous as the no-winner signal', function() {
+      // With 'none' reserved, no output can collide with the sentinel, so when no
+      // rule fires every boonJsInputs entry is false (findings.md F6).
+      const logic = new Logic();
+      logic.init('cold', new Triangle(0, 5, 10));
+      const result = logic.defuzzify(-100);
+      assert.equal(result.defuzzified, 'none');
+      assert.equal(result.boonJsInputs['cold'], false);
+      assert.equal(result.boonJsInputs['none'], undefined);
+    });
+  });
+
   describe('duplicate output names', function() {
     const triangle = new Triangle(0, 5, 10);
 
