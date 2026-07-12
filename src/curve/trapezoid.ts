@@ -13,22 +13,27 @@ export class Trapezoid extends Shape {
    * @param {number} x2 - end of the plateau (membership 1)
    * @param {number} x3 - right foot (membership 0)
    */
-  constructor(x0: number, x1: number, x2: number, x3: number) {
-    super(x0, x1, x2, x3);
+  constructor(x0: number, x1: number, x2: number, x3?: number) {
+    // 3-argument form: collapse the right foot onto the plateau end (x3 = x2),
+    // the same way Triangle/Grade fill their trailing coordinates. This keeps the
+    // `readonly x3: number` contract honest (x3 is always a concrete number) so
+    // the falling edge can never divide by `undefined` and return NaN.
+    const x3r = x3 === undefined ? x2 : x3;
+    super(x0, x1, x2, x3r);
     // Reject out-of-order finite params. In particular an inverted plateau
     // (x1 > x2) makes the plateau branch unsatisfiable, so the curve never
-    // reaches membership 1 and develops a discontinuity. NaN/Infinity, and the
-    // 3-argument form (x3 === undefined), are left untouched.
+    // reaches membership 1 and develops a discontinuity. NaN/Infinity are left
+    // untouched here (rejected separately by the finite-coordinate guard).
     if (
       Number.isFinite(x0) &&
       Number.isFinite(x1) &&
       Number.isFinite(x2) &&
-      Number.isFinite(x3) &&
-      !(x0 <= x1 && x1 <= x2 && x2 <= x3)
+      Number.isFinite(x3r) &&
+      !(x0 <= x1 && x1 <= x2 && x2 <= x3r)
     ) {
       throw Error(
         'Trapezoid requires x0 <= x1 <= x2 <= x3 but got x0=' +
-          x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3
+          x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3r
       );
     }
   }

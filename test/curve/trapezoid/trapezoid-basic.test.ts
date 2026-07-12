@@ -53,4 +53,23 @@ describe('Trapezoid', function() {
     var res = trapez.fuzzify(1.5);
     assert.equal(res, 1);
   });
+
+  describe('3-argument form (x3 defaults to x2)', function() {
+    it('exposes x3 as a concrete number equal to x2', function() {
+      var trapez = new Trapezoid(0, 10, 20);
+      assert.equal(typeof trapez.x3, 'number');
+      assert.equal(trapez.x3, 20);
+    });
+    it('returns 0 (not NaN) for a value beyond the plateau', function() {
+      var trapez = new Trapezoid(0, 10, 20);
+      var res = trapez.fuzzify(25);
+      assert.equal(res, 0);
+      assert.equal(Number.isNaN(res), false);
+    });
+    it('still evaluates the rising edge and plateau', function() {
+      var trapez = new Trapezoid(0, 10, 20);
+      assert.equal(trapez.fuzzify(5), 0.5);
+      assert.equal(trapez.fuzzify(15), 1);
+    });
+  });
 });

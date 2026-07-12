@@ -28,6 +28,13 @@ export abstract class Shape implements Fuzzifier {
       ['x3', x3],
     ];
     for (const [name, value] of coords) {
+      // Enforce the `readonly xN: number` field contract at runtime: a missing
+      // constructor argument (e.g. a 3-argument Trapezoid) would otherwise store
+      // `undefined` here and later produce NaN in fuzzify. Subclasses that accept
+      // fewer coordinates must resolve them to concrete numbers before super().
+      if (typeof value !== 'number') {
+        throw Error('Shape coordinate ' + name + ' must be a number but is ' + value);
+      }
       Object.defineProperty(this, name, {
         value,
         writable: false,
