@@ -4,8 +4,8 @@ import { Fuzzifier } from './fuzzifier';
  * Class representing a Sigmoid.
  * @example
  * // long slope
- * sigmoid = new Sigmoid(0, 100000);
- * sigmoid2.fuzzify(10);
+ * const sigmoid = new Sigmoid(0, 100000);
+ * sigmoid.fuzzify(10); // ~0.500025
  */
 export class Sigmoid implements Fuzzifier {
   private readonly center: number;
