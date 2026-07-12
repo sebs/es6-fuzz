@@ -34,6 +34,14 @@ export class Trapezoid extends Shape {
           x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3r
       );
     }
+    // Finite coordinates can still have edge spans that overflow to Infinity,
+    // making that edge collapse to 0/NaN; reject a non-finite span (findings.md F2).
+    if (!Number.isFinite(x1 - x0) || !Number.isFinite(x3r - x2)) {
+      throw Error(
+        'Trapezoid edge span overflows to a non-finite value: x0=' +
+          x0 + ', x1=' + x1 + ', x2=' + x2 + ', x3=' + x3r
+      );
+    }
     // Reject out-of-order params. In particular an inverted plateau (x1 > x2)
     // makes the plateau branch unsatisfiable, so the curve never reaches
     // membership 1 and develops a discontinuity.

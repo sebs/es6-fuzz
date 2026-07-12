@@ -23,6 +23,13 @@ export class Triangle extends Shape {
         'Triangle requires finite coordinates but got x0=' + x0 + ', x1=' + x1 + ', x2=' + x2
       );
     }
+    // Finite coordinates can still have edge spans that overflow to Infinity,
+    // making that edge collapse to 0/NaN; reject a non-finite span (findings.md F2).
+    if (!Number.isFinite(x1 - x0) || !Number.isFinite(x2 - x1)) {
+      throw Error(
+        'Triangle edge span overflows to a non-finite value: x0=' + x0 + ', x1=' + x1 + ', x2=' + x2
+      );
+    }
     // Reject out-of-order params. With x0 > x1 or x1 > x2 the branch guards make
     // whole edges unreachable, so the peak (x1) never reaches 1 and the curve is
     // discontinuous or collapses to the empty set.

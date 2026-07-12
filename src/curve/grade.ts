@@ -21,6 +21,12 @@ export class Grade extends Shape {
     if (!Number.isFinite(x0) || !Number.isFinite(x1)) {
       throw Error('Grade requires finite coordinates but got x0=' + x0 + ', x1=' + x1);
     }
+    // The coordinates are finite but their span can still overflow to Infinity
+    // (e.g. x0=-1e308, x1=1e308). The ramp then divides by Infinity and collapses
+    // to 0/NaN across the whole interior, so reject a non-finite span (findings.md F2).
+    if (!Number.isFinite(x1 - x0)) {
+      throw Error('Grade span x1 - x0 overflows to a non-finite value: x0=' + x0 + ', x1=' + x1);
+    }
     // Reject reversed params: with x0 > x1 the `x <= x0` guard swallows the whole
     // interior, so the ramp collapses into a hard step and the linear branch
     // becomes dead code.

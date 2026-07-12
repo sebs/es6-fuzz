@@ -19,6 +19,12 @@ export class ReverseGrade extends Shape {
     if (!Number.isFinite(x0) || !Number.isFinite(x1)) {
       throw Error('ReverseGrade requires finite coordinates but got x0=' + x0 + ', x1=' + x1);
     }
+    // Finite coordinates can still have a span that overflows to Infinity, which
+    // makes the falling edge collapse to 0/NaN across the interior; reject it
+    // (findings.md F2).
+    if (!Number.isFinite(x1 - x0)) {
+      throw Error('ReverseGrade span x1 - x0 overflows to a non-finite value: x0=' + x0 + ', x1=' + x1);
+    }
     // Reject reversed params: with x0 > x1 the falling edge collapses into a hard
     // step and the linear branch becomes dead code.
     if (x0 > x1) {
