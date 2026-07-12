@@ -77,6 +77,19 @@ export class SVGRenderer {
       .replace(/>/g, '&gt;');
   }
 
+  /**
+   * Escape a caller-supplied string for use inside a double-quoted SVG/XML
+   * attribute, so a color/style value containing `"` cannot terminate the
+   * attribute and inject markup (findings.md F9).
+   */
+  private escapeAttr(value: string): string {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   private scaleX(x: number): number {
     const { xMin, xMax, width, padding } = this.options as Required<SVGOptions>;
     return padding + ((x - xMin) / (xMax - xMin)) * (width - 2 * padding);
@@ -122,31 +135,31 @@ export class SVGRenderer {
     // Vertical grid lines
     for (let x = xMin; x <= xMax; x += xStep) {
       const xPos = this.scaleX(x);
-      svg += `<line x1="${xPos}" y1="${padding}" x2="${xPos}" y2="${height - padding}" stroke="${gridColor}" stroke-width="1" />`;
+      svg += `<line x1="${xPos}" y1="${padding}" x2="${xPos}" y2="${height - padding}" stroke="${this.escapeAttr(gridColor)}" stroke-width="1" />`;
     }
 
     // Horizontal grid lines
     for (let y = yMin; y <= yMax; y += yStep) {
       const yPos = this.scaleY(y);
-      svg += `<line x1="${padding}" y1="${yPos}" x2="${width - padding}" y2="${yPos}" stroke="${gridColor}" stroke-width="1" />`;
+      svg += `<line x1="${padding}" y1="${yPos}" x2="${width - padding}" y2="${yPos}" stroke="${this.escapeAttr(gridColor)}" stroke-width="1" />`;
     }
 
     // Axes
-    svg += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="${axisColor}" stroke-width="2" />`;
-    svg += `<line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="${axisColor}" stroke-width="2" />`;
+    svg += `<line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="${this.escapeAttr(axisColor)}" stroke-width="2" />`;
+    svg += `<line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="${this.escapeAttr(axisColor)}" stroke-width="2" />`;
 
     // Labels
     if (showLabels) {
       // X-axis labels
       for (let x = xMin; x <= xMax; x += xStep * 2) {
         const xPos = this.scaleX(x);
-        svg += `<text x="${xPos}" y="${height - padding + 20}" text-anchor="middle" font-size="${fontSize}" fill="${labelColor}">${x}</text>`;
+        svg += `<text x="${xPos}" y="${height - padding + 20}" text-anchor="middle" font-size="${fontSize}" fill="${this.escapeAttr(labelColor)}">${x}</text>`;
       }
 
       // Y-axis labels
       for (let y = yMin; y <= yMax; y += yStep) {
         const yPos = this.scaleY(y);
-        svg += `<text x="${padding - 10}" y="${yPos + 4}" text-anchor="end" font-size="${fontSize}" fill="${labelColor}">${y.toFixed(1)}</text>`;
+        svg += `<text x="${padding - 10}" y="${yPos + 4}" text-anchor="end" font-size="${fontSize}" fill="${this.escapeAttr(labelColor)}">${y.toFixed(1)}</text>`;
       }
     }
 
@@ -201,17 +214,17 @@ export class SVGRenderer {
     let svg = '';
 
     // Legend background
-    svg += `<rect x="${legendX}" y="${legendY}" width="${legendWidth}" height="${legendHeight}" fill="${legendBackgroundColor}" stroke="${legendBorderColor}" stroke-width="1" rx="4" />`;
+    svg += `<rect x="${legendX}" y="${legendY}" width="${legendWidth}" height="${legendHeight}" fill="${this.escapeAttr(legendBackgroundColor)}" stroke="${this.escapeAttr(legendBorderColor)}" stroke-width="1" rx="4" />`;
 
     // Legend items
     items.forEach((item, index) => {
       const itemY = legendY + legendPadding + index * legendItemHeight;
 
       // Color box
-      svg += `<rect x="${legendX + legendPadding}" y="${itemY}" width="${fontSize}" height="${fontSize}" fill="${item.color}" />`;
+      svg += `<rect x="${legendX + legendPadding}" y="${itemY}" width="${fontSize}" height="${fontSize}" fill="${this.escapeAttr(item.color)}" />`;
 
       // Label (escaped: caller-supplied text must not break out of <text>)
-      svg += `<text x="${legendX + legendPadding + fontSize + 5}" y="${itemY + fontSize - 2}" font-size="${fontSize}" fill="${legendTextColor}">${this.escapeText(item.label)}</text>`;
+      svg += `<text x="${legendX + legendPadding + fontSize + 5}" y="${itemY + fontSize - 2}" font-size="${fontSize}" fill="${this.escapeAttr(legendTextColor)}">${this.escapeText(item.label)}</text>`;
     });
 
     return svg;
@@ -306,7 +319,7 @@ export class SVGRenderer {
       this.options as Required<SVGOptions>;
 
     let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
-    svg += `<rect width="${width}" height="${height}" fill="${backgroundColor}" />`;
+    svg += `<rect width="${width}" height="${height}" fill="${this.escapeAttr(backgroundColor)}" />`;
 
     if (gridLines) {
       svg += this.renderGrid();
@@ -320,11 +333,11 @@ export class SVGRenderer {
       const fillPath =
         path +
         ` L ${this.scaleX(points[points.length - 1][0])} ${this.scaleY(0)} L ${this.scaleX(points[0][0])} ${this.scaleY(0)} Z`;
-      svg += `<path d="${fillPath}" fill="${strokeColor}" fill-opacity="${fillOpacity}" />`;
+      svg += `<path d="${fillPath}" fill="${this.escapeAttr(strokeColor)}" fill-opacity="${fillOpacity}" />`;
     }
 
     // Add stroke
-    svg += `<path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="${strokeWidth}" />`;
+    svg += `<path d="${path}" fill="none" stroke="${this.escapeAttr(strokeColor)}" stroke-width="${strokeWidth}" />`;
 
     svg += '</svg>';
 
@@ -342,7 +355,7 @@ export class SVGRenderer {
       .options as Required<SVGOptions>;
 
     let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
-    svg += `<rect width="${width}" height="${height}" fill="${backgroundColor}" />`;
+    svg += `<rect width="${width}" height="${height}" fill="${this.escapeAttr(backgroundColor)}" />`;
 
     if (gridLines) {
       svg += this.renderGrid();
@@ -369,11 +382,11 @@ export class SVGRenderer {
         const fillPath =
           path +
           ` L ${this.scaleX(points[points.length - 1][0])} ${this.scaleY(0)} L ${this.scaleX(points[0][0])} ${this.scaleY(0)} Z`;
-        svg += `<path d="${fillPath}" fill="${strokeColor}" fill-opacity="${fillOpacity}" />`;
+        svg += `<path d="${fillPath}" fill="${this.escapeAttr(strokeColor)}" fill-opacity="${fillOpacity}" />`;
       }
 
       // Add stroke
-      svg += `<path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="${strokeWidth}" />`;
+      svg += `<path d="${path}" fill="none" stroke="${this.escapeAttr(strokeColor)}" stroke-width="${strokeWidth}" />`;
     });
 
     // Add legend if enabled
